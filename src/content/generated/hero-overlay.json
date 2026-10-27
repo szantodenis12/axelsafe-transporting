@@ -1,0 +1,176 @@
+{
+ "width": 3840,
+ "height": 2160,
+ "cities": [
+  {
+   "name": "Reghin",
+   "x": 83.92,
+   "y": 66.247,
+   "origin": true
+  },
+  {
+   "name": "Budapest",
+   "x": 74.655,
+   "y": 66.059,
+   "origin": false
+  },
+  {
+   "name": "Vienna",
+   "x": 70.598,
+   "y": 64.73,
+   "origin": false
+  },
+  {
+   "name": "Munich",
+   "x": 63.783,
+   "y": 66.352,
+   "origin": false
+  },
+  {
+   "name": "Milan",
+   "x": 59.738,
+   "y": 75.465,
+   "origin": false
+  },
+  {
+   "name": "Lyon",
+   "x": 53.971,
+   "y": 75.241,
+   "origin": false
+  },
+  {
+   "name": "Paris",
+   "x": 52.627,
+   "y": 66.222,
+   "origin": false
+  },
+  {
+   "name": "Rotterdam",
+   "x": 56.594,
+   "y": 57.456,
+   "origin": false
+  },
+  {
+   "name": "Hamburg",
+   "x": 63.293,
+   "y": 51.986,
+   "origin": false
+  },
+  {
+   "name": "Berlin",
+   "x": 67.016,
+   "y": 53.562,
+   "origin": false
+  },
+  {
+   "name": "Warsaw",
+   "x": 76.713,
+   "y": 51.799,
+   "origin": false
+  },
+  {
+   "name": "Prague",
+   "x": 67.992,
+   "y": 59.823,
+   "origin": false
+  },
+  {
+   "name": "Bucharest",
+   "x": 87.514,
+   "y": 73.722,
+   "origin": false
+  },
+  {
+   "name": "Sofia",
+   "x": 83.298,
+   "y": 81.328,
+   "origin": false
+  },
+  {
+   "name": "Barcelona",
+   "x": 48.297,
+   "y": 90.506,
+   "origin": false
+  },
+  {
+   "name": "Madrid",
+   "x": 40.525,
+   "y": 93.622,
+   "origin": false
+  },
+  {
+   "name": "Istanbul",
+   "x": 95.312,
+   "y": 85.569,
+   "origin": false
+  },
+  {
+   "name": "Copenhagen",
+   "x": 66.677,
+   "y": 46.326,
+   "origin": false
+  }
+ ],
+ "eroads": [
+  {
+   "name": "E60",
+   "x": 85.678,
+   "y": 68.858
+  },
+  {
+   "name": "E70",
+   "x": 80.472,
+   "y": 72.151
+  },
+  {
+   "name": "E75",
+   "x": 84.897,
+   "y": 98.984
+  },
+  {
+   "name": "E81",
+   "x": 80.563,
+   "y": 63.724
+  },
+  {
+   "name": "E68",
+   "x": 86.174,
+   "y": 73.277
+  },
+  {
+   "name": "E65",
+   "x": 71.08,
+   "y": 80.252
+  },
+  {
+   "name": "E45",
+   "x": 65.623,
+   "y": 88.749
+  },
+  {
+   "name": "E40",
+   "x": 88.062,
+   "y": 54.045
+  },
+  {
+   "name": "E30",
+   "x": 64.756,
+   "y": 54.99
+  },
+  {
+   "name": "E15",
+   "x": 44.752,
+   "y": 95.315
+  },
+  {
+   "name": "E80",
+   "x": 55.038,
+   "y": 83.004
+  },
+  {
+   "name": "E55",
+   "x": 64.967,
+   "y": 80.102
+  }
+ ]
+}

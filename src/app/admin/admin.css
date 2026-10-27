@@ -1,0 +1,117 @@
+/* --- admin (ticket #3) --- scoped to .admin-root; reuses the public site's tokens/classes from globals.css */
+.admin-root {
+  /* a touch brighter tertiary text + hairlines than the public site: legibility for long sessions */
+  --color-ink-3: #8a9bb3;
+  --color-line: rgba(190, 210, 235, 0.14);
+  --color-line-strong: rgba(190, 210, 235, 0.26);
+  color-scheme: dark;
+  scrollbar-color: rgba(190, 210, 235, 0.25) transparent;
+  scrollbar-width: thin;
+}
+.admin-root body {
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+/* Static, cheap version of AmbientBackground: the same navy radial fields, no animation, no grain layer. */
+.admin-ambient {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  pointer-events: none;
+  background:
+    radial-gradient(60vmax 55vmax at -8% -12%, rgba(53, 112, 200, 0.16), rgba(53, 112, 200, 0.05) 45%, transparent 70%),
+    radial-gradient(55vmax 50vmax at 108% 12%, rgba(183, 212, 247, 0.07), transparent 68%),
+    radial-gradient(60vmax 50vmax at 30% 118%, rgba(33, 89, 166, 0.14), rgba(33, 89, 166, 0.04) 45%, transparent 70%);
+}
+
+.admin-root *:focus-visible {
+  outline: 1.5px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+/* Headings: light weight like the site's t-h2/t-h3 */
+.a-title {
+  font-weight: 300;
+  font-size: clamp(1.75rem, 2.4vw, 2.375rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: var(--color-ink);
+  text-wrap: balance;
+}
+.a-h2 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.018em;
+  color: var(--color-ink);
+}
+.a-num {
+  font-weight: 300;
+  font-size: clamp(2.5rem, 3.4vw, 3.25rem);
+  line-height: 1;
+  letter-spacing: -0.045em;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink);
+}
+.admin-root .tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Small pill-shaped actions (copy, mailto, tel, filters) — lighter siblings of .pill-ghost */
+.a-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 36px;
+  padding-inline: 14px;
+  border-radius: 999px;
+  border: 1px solid var(--color-line-strong);
+  background: rgba(11, 18, 32, 0.35);
+  font-size: 0.875rem;
+  color: var(--color-ink);
+  white-space: nowrap;
+  transition: background-color 0.3s var(--ease-out-expo), border-color 0.3s var(--ease-out-expo);
+}
+.a-chip:hover {
+  border-color: rgba(190, 210, 235, 0.45);
+  background: rgba(17, 27, 44, 0.7);
+}
+.a-chip[aria-current="true"],
+.a-chip[data-on="true"] {
+  background: rgba(244, 247, 251, 0.09);
+  border-color: rgba(190, 210, 235, 0.4);
+}
+.a-chip:disabled {
+  opacity: 0.6;
+}
+
+/* Subtle tinted card (tiles, lead rows) without the heavy glow */
+.a-tile {
+  border: 1px solid var(--color-line);
+  border-radius: 16px;
+  background: linear-gradient(180deg, rgba(17, 27, 44, 0.55), rgba(11, 18, 32, 0.55));
+  transition: border-color 0.4s var(--ease-out-expo), background-color 0.4s var(--ease-out-expo);
+}
+a.a-tile:hover {
+  border-color: var(--color-line-strong);
+}
+
+/* keyboard-selected row in the leads list */
+.admin-root tr[data-row]:focus-within {
+  background: rgba(183, 212, 247, 0.06);
+  box-shadow: inset 2px 0 0 var(--color-accent);
+}
+
+/* Pill inside card-glow shouldn't be clipped */
+.admin-root .pill:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-root * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
