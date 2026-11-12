@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import type { z } from "zod";
 import { scrollElementToCenter } from "@/lib/lenis";
 import { defaultLocale, getDictionary, hasLocale, type Locale } from "@/lib/i18n";
-import { fieldErrorsOf, UTM_KEYS, type FieldErrors, type LeadType, type Utm } from "@/lib/leads/schema";
+import { fieldErrorsOf, formNameFor, UTM_KEYS, type FieldErrors, type FormMode, type LeadType, type Utm } from "@/lib/leads/schema";
 
 declare global {
   interface Window {
@@ -18,16 +18,23 @@ export type SubmitErrorKind = "generic" | "not_configured" | "rate_limited";
 
 type Options = {
   type: LeadType;
+  /** quote only: "quick" = Cerere rapidă. */
+  mode?: FormMode;
+  /** Checkbox groups — always sent as arrays. */
+  arrayFields?: readonly string[];
   schema: z.ZodType<unknown, Record<string, unknown>>;
   fieldOrder: readonly string[];
 };
 
-function collect(form: HTMLFormElement): Record<string, string | boolean> {
+function collect(form: HTMLFormElement, arrayFields: readonly string[] = []): Record<string, string | boolean | string[]> {
   const fd = new FormData(form);
-  const out: Record<string, string | boolean> = {};
+  const out: Record<string, string | boolean | string[]> = {};
+  for (const name of arrayFields) out[name] = [];
   for (const [key, value] of fd.entries()) {
     if (key === "website") continue; // honeypot travels separately
-    if (typeof value === "string") out[key] = value;
+    if (typeof value !== "string") continue;
+    if (arrayFields.includes(key)) (out[key] as string[]).push(value);
+    else out[key] = value;
   }
   out.consent = fd.get("consent") === "on";
   return out;
@@ -44,14 +51,15 @@ function readUtm(): Utm | undefined {
 }
 
 function focusField(form: HTMLFormElement, name: string) {
-  const el = form.elements.namedItem(name);
+  let el: unknown = form.elements.namedItem(name);
+  if (el instanceof RadioNodeList) el = el[0]; // checkbox / radio group → first option
   if (el instanceof HTMLElement) {
     el.focus({ preventScroll: true });
     scrollElementToCenter(el);
   }
 }
 
-export function useEnquiryForm({ type, schema, fieldOrder }: Options) {
+export function useEnquiryForm({ type, mode, arrayFields, schema, fieldOrder }: Options) {
   const pathname = usePathname();
   const seg = pathname?.split("/")[1] ?? "";
   const locale: Locale = hasLocale(seg) ? seg : defaultLocale;
@@ -93,7 +101,7 @@ export function useEnquiryForm({ type, schema, fieldOrder }: Options) {
       const form = event.currentTarget;
       if (status === "submitting") return;
 
-      const raw = collect(form);
+      const raw = collect(form, arrayFields);
       const parsed = schema.safeParse(raw);
       if (!parsed.success) {
         const errs = fieldErrorsOf(parsed.error);
@@ -110,6 +118,7 @@ export function useEnquiryForm({ type, schema, fieldOrder }: Options) {
       const honeypot = (form.elements.namedItem("website") as HTMLInputElement | null)?.value ?? "";
       const payload = {
         type,
+        ...(mode ? { mode } : {}),
         ...raw,
         website: honeypot,
         source: window.location.pathname,
@@ -129,7 +138,7 @@ export function useEnquiryForm({ type, schema, fieldOrder }: Options) {
           const id = data.requestId ?? null;
           setRequestId(id);
           setStatus("success");
-          window.dataLayer?.push({ event: "lead_submit", form: type, event_id: id });
+          window.dataLayer?.push({ event: "lead_submit", form: formNameFor(type, mode), event_id: id });
           return;
         }
 
@@ -149,7 +158,7 @@ export function useEnquiryForm({ type, schema, fieldOrder }: Options) {
         setStatus("error");
       }
     },
-    [status, schema, type, locale, focusFirstInvalid],
+    [status, schema, type, mode, arrayFields, locale, focusFirstInvalid],
   );
 
   return { t, locale, formRef, successRef, status, errors, errorKind, requestId, onSubmit, clearError };

@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { Locale } from "@/lib/i18n";
+import { localisePath } from "@/lib/routes";
 
 export type LanguageOption = { code: string; label: string; available: boolean };
 
@@ -18,7 +20,6 @@ export function LanguageSwitcher({
   className?: string;
 }) {
   const pathname = usePathname();
-  const rest = pathname.split("/").slice(2).join("/");
 
   return (
     <nav aria-label={label} className={className}>
@@ -31,7 +32,7 @@ export function LanguageSwitcher({
           return (
             <li key={o.code}>
               {o.available && !active ? (
-                <Link href={`/${o.code}${rest ? `/${rest}` : ""}`} hrefLang={o.code} lang={o.code} className={cls}>
+                <Link href={localisePath(pathname, o.code as Locale)} hrefLang={o.code} lang={o.code} className={cls}>
                   {o.label}
                 </Link>
               ) : (

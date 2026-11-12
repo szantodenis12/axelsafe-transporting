@@ -11,7 +11,8 @@ import { PlaceholderBadge } from "@/components/dev/PlaceholderBadge";
 import { getDictionary, hasLocale, localeLabels, locales, plannedLocales } from "@/lib/i18n";
 import { href, anchors, type RouteKey } from "@/lib/routes";
 import { isPreview, siteUrl } from "@/lib/site";
-import { listPlaceholders } from "@/content/companyData";
+import { fact, listPlaceholders } from "@/content/companyData";
+import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 
 const geist = Geist({ subsets: ["latin", "latin-ext"], variable: "--font-geist", display: "swap" });
 const geistMono = Geist_Mono({ subsets: ["latin", "latin-ext"], variable: "--font-geist-mono", display: "swap" });
@@ -63,6 +64,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
           cta={{ href: href(locale, "contact", anchors.quote), label: t.nav.cta }}
           labels={{ menu: t.nav.menu, close: t.nav.close, language: t.common.language }}
           locale={locale}
+          phone={{ ...fact("phone"), label: t.common.call }}
           languages={plannedLocales.map((code) => ({
             code,
             label: localeLabels[code],
@@ -71,6 +73,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
         />
         <main id="main">{children}</main>
         <SiteFooter locale={locale} t={t.footer} />
+        <WhatsAppButton label={t.common.whatsapp.label} message={t.common.whatsapp.message} raised={isPreview} />
         {isPreview && <PlaceholderBadge items={listPlaceholders()} />}
       </body>
     </html>

@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
-    "check:placeholders": "tsx scripts/check-placeholders.ts"
+    "check:placeholders": "tsx scripts/check-placeholders.ts",
+    "admin:user": "tsx scripts/create-admin-user.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "2.118.0",

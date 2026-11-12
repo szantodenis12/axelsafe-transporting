@@ -38,6 +38,16 @@ export const es: Dictionary = {
       description:
         "Contacte con AXEL SAFE TRANSPORTING para solicitar la organización de un transporte por carretera o tratar las necesidades de envío de su empresa.",
     },
+    vetting: {
+      title: "Cómo verificamos a los transportistas | AXEL SAFE",
+      description:
+        "Antes de que un transportista cargue su mercancía, comprobamos su licencia comunitaria, el seguro CMR, la documentación del vehículo y la situación de la empresa.",
+    },
+    guides: {
+      title: "Guías de transporte por carretera | AXEL SAFE",
+      description:
+        "Guías para cargadores: la carta de porte CMR, cómo se forma el precio de un transporte por carretera y en qué se diferencian transitario, transportista y bolsa de cargas.",
+    },
   },
 
   nav: {
@@ -63,6 +73,8 @@ export const es: Dictionary = {
       { key: "about", label: "Sobre nosotros" },
       { key: "forCarriers", label: "Para transportistas" },
       { key: "contact", label: "Contacto" },
+      { key: "vetting", label: "Cómo verificamos a los transportistas" },
+      { key: "guides", label: "Guías" },
     ],
     contact: "Contacto",
     legal: "Información legal",
@@ -98,7 +110,7 @@ export const es: Dictionary = {
     hero: {
       eyebrow: "AXEL SAFE TRANSPORTING / COORDINACIÓN DE TRANSPORTE POR CARRETERA",
       titleLines: ["Mercancías en movimiento.", "Empresas conectadas."],
-      text: "Organizamos el transporte de mercancías por carretera a través de una red de transportistas independientes, conectando cada necesidad de envío con la solución de transporte adecuada.",
+      text: "Organizamos transporte de mercancías por carretera en toda Europa y el Reino Unido, sobre todo en la ruta Rumanía–España. Nuestro equipo de tráfico atiende las 24 horas.",
       primary: "Solicitar presupuesto",
       secondary: "Ver nuestros servicios",
       micro: ["Transporte por carretera", "Coordinación de transportes", "Logística empresarial"],
@@ -171,7 +183,7 @@ export const es: Dictionary = {
           title: "Confirmación del transporte",
           text: "Una vez acordados los detalles, coordinamos la operación con el transportista seleccionado.",
         },
-        { title: "Seguimos en contacto", text: "Seguimos siendo su interlocutor para la coordinación del transporte y las novedades pertinentes." },
+        { title: "Seguimos en contacto", text: "Seguimos siendo su interlocutor para la coordinación del transporte. El equipo de tráfico está disponible 24/7." },
       ],
       cta: "Conozca nuestro proceso",
     },
@@ -197,7 +209,7 @@ export const es: Dictionary = {
       origin: "Reghin, Rumanía",
       coverageLabel: "Cobertura",
       equipmentLabel: "Equipos",
-      baseLabel: "Coordinado desde",
+      baseLabel: "Domicilio social",
       baseValue: "Reghin, Rumanía · desde 2018",
     },
   },
@@ -309,6 +321,7 @@ export const es: Dictionary = {
       ],
       diagram: ["Cargador", "AXEL SAFE TRANSPORTING", "Transportista independiente"],
       diagramNotes: ["Tiene mercancía que transportar", "Coordina el transporte", "Realiza el transporte"],
+      vettingLink: "Cómo verificamos a los transportistas",
     },
     stages: {
       eyebrow: "02 / PASO A PASO",
@@ -458,11 +471,54 @@ export const es: Dictionary = {
       requirementsTitle: "Antes de trabajar juntos.",
       conditionsEyebrow: "04 / CÓMO COLABORAMOS",
       conditionsTitle: "Condiciones claras en cada envío.",
+      requirementsLink: "Por qué comprobamos estos cuatro puntos",
+      benefitsEyebrow: "05 / QUÉ OBTIENE",
+      benefitsTitle: "Con qué puede contar.",
     },
     enquiry: {
       title: "¿Le interesa trabajar con AXEL SAFE?",
       text: "Presente su empresa y cuéntenos su capacidad de transporte.",
       cta: "Enviar solicitud de colaboración",
+    },
+  },
+
+  /** [PLACEHOLDER] BORRADOR de EDH a partir de los datos confirmados en la llamada del 10.11.2026; requiere aprobación del cliente antes del lanzamiento. */
+  vetting: {
+    hero: {
+      eyebrow: "AXEL SAFE / VERIFICACIÓN DE TRANSPORTISTAS",
+      titleLines: ["Quién transporta su mercancía", "y cómo lo comprobamos."],
+      text: "Su envío lo realiza un transportista independiente de nuestra red. Antes de asignarle la carga, comprobamos cuatro cosas.",
+    },
+    why: {
+      title: "Por qué importa la verificación.",
+      paragraphs: [
+        "Cuando entrega mercancía para transportar, viaja en el camión de otra empresa y con el conductor de otra empresa. Si ese transportista no tiene la licencia en vigor o su seguro ha caducado, el problema recae en su carga.",
+        "Muchos riesgos del transporte por carretera se ven antes de cargar: una póliza caducada, una empresa en concurso de acreedores, un semirremolque que no se ajusta a la carga. Los buscamos antes de que un transportista reciba un envío, no cuando ya ha surgido un problema.",
+        "Trabajamos con más de 30 transportistas independientes. Todos pasan las mismas cuatro comprobaciones.",
+      ],
+    },
+    checks: {
+      title: "Cuatro comprobaciones antes de cargar.",
+      notes: [
+        "El transporte internacional de mercancías por carretera por cuenta ajena dentro de la UE exige licencia comunitaria. Comprobamos que el transportista es una empresa registrada y que su licencia está en vigor.",
+        "El seguro CMR cubre la responsabilidad del transportista por pérdida o daño de la mercancía en el transporte internacional. No nos basta con una copia de la póliza: llamamos a la aseguradora y confirmamos que está en vigor y pagada.",
+        "Revisamos la documentación del camión y del semirremolque, y que el equipo se ajuste a su mercancía: frigorífico para la carga que necesita una temperatura determinada, megatráiler para cargas voluminosas.",
+        "Comprobamos que la empresa no está en concurso de acreedores. Un transportista con dificultades financieras puede cancelar a última hora o dejar un envío a medias.",
+      ],
+    },
+    roles: {
+      title: "Quién hace qué.",
+      paragraphs: [
+        "El transporte en sí lo realiza el transportista independiente, con su propio camión, su conductor y su seguro CMR.",
+        "AXEL SAFE TRANSPORTING organiza el envío: elegimos al transportista, confirmamos por escrito las condiciones del viaje y seguimos siendo su interlocutor hasta la entrega. Nuestro equipo de tráfico responde 24/7.",
+        "Además del seguro CMR del transportista, la mercancía está asegurada.",
+      ],
+      guideLink: "Guía: transitario, transportista o bolsa de cargas",
+    },
+    finalCta: {
+      title: "¿Tiene un envío que organizar?",
+      text: "Envíenos la ruta, la mercancía y las fechas. Normalmente respondemos en menos de una hora.",
+      cta: "Solicitar presupuesto",
     },
   },
 
@@ -477,9 +533,11 @@ export const es: Dictionary = {
       text: "Rellene el formulario con los datos esenciales del transporte para que podamos revisar su solicitud.",
     },
     direct: {
+      officeHeading: "Oficina",
+      transportHeading: "Departamento de transporte",
       eyebrow: "¿PREFIERE CONTACTARNOS DIRECTAMENTE?",
       title: "Hablemos.",
-      labels: { email: "Correo electrónico", phone: "Teléfono", location: "Ubicación", hours: "Horario de atención" },
+      labels: { email: "Correo electrónico", phone: "Teléfono", location: "Domicilio social", hours: "Horario de atención" },
       location: "Reghin, distrito de Mureș, Rumanía",
     },
     carriers: {
@@ -518,8 +576,33 @@ export const es: Dictionary = {
         vehicleTypes: "Tipos de vehículo",
         regions: "Zonas de operación / Rutas preferidas",
         message: "Información adicional",
+        vatNumber: "NIF / número de IVA (CUI)",
+        cmrInsurance: "Seguro CMR vigente",
+        licenceNumber: "Número de licencia de transporte",
       },
+      vehicleOptions: { curtainsider: "Lona (tautliner)", reefer: "Frigorífico", mega: "Mega", other: "Otros" },
+      cmrOptions: { yes: "Sí", no: "No" },
       submit: "Enviar solicitud de colaboración",
+    },
+    /** Solicitud rápida: solo ruta y teléfono. */
+    quick: {
+      fields: { contactPerson: "Nombre", phone: "Teléfono", pickupLocation: "Origen", deliveryLocation: "Destino", note: "Nota" },
+      submit: "Enviar solicitud rápida",
+    },
+    /** Le llamamos. */
+    callback: {
+      fields: { contactPerson: "Nombre", phone: "Teléfono", preferredTime: "¿Cuándo le llamamos?" },
+      timeOptions: { any: "En cualquier momento", morning: "Por la mañana", afternoon: "Por la tarde", evening: "Por la noche" },
+      submit: "Solicitar llamada",
+    },
+    /** Bloques de formulario de la página de contacto. */
+    contactBlocks: {
+      tabsLabel: "Tipo de solicitud",
+      tabFull: "Solicitud completa",
+      tabQuick: "Solicitud rápida",
+      quickText: "Solo la ruta y un teléfono. Los detalles los vemos con usted por teléfono.",
+      callbackTitle: "Le llamamos.",
+      callbackText: "Déjenos su número y díganos cuándo le viene bien hablar.",
     },
     consent:
       "Acepto que AXEL SAFE TRANSPORTING trate los datos facilitados a través de este formulario para responder a mi solicitud, tal como se describe en la Política de privacidad.",
@@ -538,6 +621,8 @@ export const es: Dictionary = {
       notConfigured:
         "Las solicitudes en línea aún no están activas, por lo que su mensaje no se ha enviado. Contáctenos directamente por correo electrónico o teléfono.",
       rateLimited: "Demasiados intentos en poco tiempo. Espere un minuto e inténtelo de nuevo.",
+      invalid: "Revise el formato de este campo.",
+      tooLong: "Acorte este campo, por favor.",
     },
   },
 
@@ -583,11 +668,27 @@ export const es: Dictionary = {
       },
       {
         q: "¿Para qué países organizan transporte por carretera?",
-        a: "Organizamos transporte por carretera en toda Europa. Indíquenos los lugares de recogida y entrega y revisaremos las opciones de transporte disponibles para esa ruta.",
+        a: "Organizamos transporte por carretera en toda Europa y el Reino Unido, sobre todo en la ruta Rumanía–España. No organizamos transportes con origen o destino en Suiza. Indíquenos los lugares de recogida y entrega y revisaremos las opciones de transporte disponibles para esa ruta.",
       },
       {
         q: "¿Qué tipos de semirremolque pueden organizar?",
         a: "A través de nuestros transportistas colaboradores organizamos semirremolques de lona (tautliner), frigoríficos y mega. Para envíos que necesiten otros equipos o condiciones de transporte particulares, la disponibilidad se confirma en cada solicitud.",
+      },
+      {
+        q: "¿En cuánto tiempo recibo un presupuesto?",
+        a: "Normalmente en menos de una hora desde que recibimos los datos. Nuestro equipo de tráfico trabaja 24/7.",
+      },
+      {
+        q: "¿La mercancía está asegurada?",
+        a: "Sí. Además, cada transportista colaborador tiene un seguro CMR en vigor, que comprobamos antes del transporte.",
+      },
+      {
+        q: "¿Qué transportes no organizan?",
+        a: "Transporte especial (sobredimensionado) y animales vivos. La mercancía ADR solo se organiza con camión equipado ADR y conductor autorizado.",
+      },
+      {
+        q: "¿En qué idiomas podemos hablar?",
+        a: "Rumano, inglés y español.",
       },
       {
         q: "¿Qué información necesitan para preparar un presupuesto?",
@@ -630,5 +731,10 @@ export const es: Dictionary = {
   common: {
     skip: "Saltar al contenido",
     language: "Idioma",
+    call: "Llámenos",
+    whatsapp: {
+      label: "Escríbanos por WhatsApp",
+      message: "Hola, quisiera un presupuesto para un transporte por carretera. Carga: … Descarga: … Mercancía: … Fecha: …",
+    },
   },
 };

@@ -12,10 +12,13 @@ type Overridable = Pick<
   | "coverage"
   | "businessHours"
   | "responseTime"
+  | "languages"
   | "caen"
   | "registeredOffice"
   | "carrierVerification"
   | "carrierConditions"
+  | "carrierBenefits"
+  | "carrierOffer"
   | "stats"
   | "equipmentSpecs"
 >;
@@ -30,25 +33,34 @@ const overrides: Record<Exclude<Lang, "en">, Partial<{ [K in keyof Overridable]:
       { title: "Semiremorci frigorifice", short: "Frigorific", text: "Transport cu temperatură controlată pentru mărfuri care trebuie păstrate într-un anumit interval de temperatură." },
       { title: "Semiremorci mega", short: "Mega", text: "Înălțime interioară mărită, pentru mărfuri voluminoase și ușoare." },
     ],
-    coverage: ["Toată Europa"],
-    businessHours: "Luni-vineri, 08:00-17:00",
-    responseTime: "în cel mult 2 ore lucrătoare",
+    coverage: ["Toată Europa", "Marea Britanie"],
+    businessHours: "Non-stop, 24/7",
+    responseTime: "De obicei răspundem în mai puțin de o oră.",
+    languages: ["română", "engleză", "spaniolă"],
     caen: "Transporturi rutiere de mărfuri, CAEN 4941",
     registeredOffice: { ...office, county: "jud. Mureș", country: "România" },
     carrierVerification: [
       "Înregistrare valabilă a firmei și licență comunitară UE",
-      "Dovada asigurării CMR active",
+      "Asigurare CMR activă, confirmată la asigurator",
       "Documentele vehiculului și ale semiremorcii, corespunzătoare echipamentului solicitat",
-      "Referințe sau colaborări anterioare",
+      "Verificarea stării firmei (fără insolvență)",
     ],
     carrierConditions: [
       { title: "Condiții agreate pentru fiecare transport", text: "Tariful, intervalul de încărcare și documentele se confirmă în scris înainte de fiecare transport." },
-      { title: "Termen de plată", text: "Plata în 30 de zile de la primirea facturii și a CMR-ului semnat." },
+      { title: "Termen de plată", text: "Termenul de plată se agreează în scris înainte de fiecare transport." },
       { title: "O persoană de contact clară", text: "Un coordonator pentru fiecare transport, de la încărcare până la confirmarea livrării." },
     ],
+    carrierBenefits: [
+      { title: "Dispecerat disponibil 24/7", text: "Dispeceratul nostru răspunde non-stop, în fiecare zi a săptămânii." },
+      { title: "Aproximativ 100 de curse pe lună", text: "Curse în toată Europa și în Marea Britanie, cele mai multe pe ruta România–Spania." },
+      { title: "Termen de plată în scris", text: "Termenul de plată se agreează în scris înainte de fiecare transport." },
+      { title: "Un coordonator pentru fiecare cursă", text: "Aceeași persoană urmărește cursa de la încărcare până la confirmarea livrării." },
+    ],
+    carrierOffer: [{ title: "Comandă de transport în scris", text: "Pentru fiecare cursă primiți o comandă de transport scrisă." }],
     stats: [
-      { value: "150+", label: "transportatori parteneri independenți" },
-      { value: "2 h", label: "timp obișnuit până la primul răspuns" },
+      { value: "~100", label: "curse organizate pe lună" },
+      { value: "30+", label: "transportatori parteneri independenți" },
+      { value: "< 1 h", label: "timp obișnuit până la primul răspuns" },
     ],
     equipmentSpecs: { ...specs, refrigerated: { ...specs.refrigerated, temperature: "între −25 °C și +25 °C" } },
   },
@@ -58,25 +70,34 @@ const overrides: Record<Exclude<Lang, "en">, Partial<{ [K in keyof Overridable]:
       { title: "Semirremolques frigoríficos", short: "Frigorífico", text: "Transporte a temperatura controlada para mercancías que deben mantenerse dentro de un rango de temperatura determinado." },
       { title: "Megatráileres", short: "Mega", text: "Mayor altura interior para cargas voluminosas y ligeras." },
     ],
-    coverage: ["Toda Europa"],
-    businessHours: "Lunes a viernes, 08:00 – 17:00 (EET)",
-    responseTime: "en un plazo de 2 horas laborables",
+    coverage: ["Toda Europa", "Reino Unido"],
+    businessHours: "24/7, todos los días",
+    responseTime: "Normalmente respondemos en menos de una hora.",
+    languages: ["rumano", "inglés", "español"],
     caen: "Transporte de mercancías por carretera, CAEN 4941",
     registeredOffice: { ...office, county: "distrito de Mureș", country: "Rumanía" },
     carrierVerification: [
       "Registro mercantil vigente y licencia comunitaria UE",
-      "Justificante de seguro CMR en vigor",
+      "Seguro CMR en vigor, confirmado con la aseguradora",
       "Documentación del vehículo y del semirremolque acorde con el equipo solicitado",
-      "Referencias o historial de colaboración previo",
+      "Comprobación de la situación de la empresa (sin insolvencia)",
     ],
     carrierConditions: [
       { title: "Condiciones acordadas en cada envío", text: "Tarifa, ventana de carga y documentación se confirman por escrito antes de cada transporte." },
-      { title: "Plazo de pago", text: "Pago a 30 días desde la recepción de la factura y del CMR firmado." },
+      { title: "Plazo de pago", text: "El plazo de pago se acuerda por escrito antes de cada transporte." },
       { title: "Un interlocutor claro", text: "Un coordinador para cada envío, desde la carga hasta la prueba de entrega." },
     ],
+    carrierBenefits: [
+      { title: "Tráfico localizable 24/7", text: "Nuestro equipo de tráfico responde a cualquier hora, todos los días de la semana." },
+      { title: "Unos 100 envíos al mes", text: "Cargas por toda Europa y el Reino Unido, la mayoría en la ruta Rumanía–España." },
+      { title: "Plazo de pago por escrito", text: "El plazo de pago se acuerda por escrito antes de cada transporte." },
+      { title: "Un coordinador por envío", text: "Una misma persona sigue el envío desde la carga hasta la prueba de entrega." },
+    ],
+    carrierOffer: [{ title: "Orden de carga por escrito", text: "Cada envío va acompañado de una orden de carga por escrito." }],
     stats: [
-      { value: "150+", label: "transportistas colaboradores independientes" },
-      { value: "2 h", label: "tiempo habitual de primera respuesta" },
+      { value: "~100", label: "envíos organizados al mes" },
+      { value: "30+", label: "transportistas colaboradores independientes" },
+      { value: "< 1 h", label: "tiempo habitual de primera respuesta" },
     ],
     equipmentSpecs: { ...specs, refrigerated: { ...specs.refrigerated, temperature: "de −25 °C a +25 °C" } },
   },

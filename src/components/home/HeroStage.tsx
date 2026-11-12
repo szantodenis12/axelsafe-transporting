@@ -3,6 +3,7 @@
 import { useEffect, useRef, type ReactNode } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Phone } from "lucide-react";
 import { Pill, ArrowLink } from "@/components/ui/Pill";
 import { EarthFrame, REGHIN } from "./EarthFrame";
 import { DESKTOP_SCENE_QUERY, MOBILE_SCENE_QUERY, isLiteDevice } from "./heroMotion";
@@ -18,6 +19,8 @@ type Props = {
     text: string;
     primary: { href: string; label: string };
     secondary: { href: string; label: string };
+    /** Click-to-call (companyData.phone). */
+    phone: { href: string; display: string; label: string };
     micro: readonly string[];
   };
   intro: {
@@ -605,6 +608,11 @@ export function HeroStage({ hero, intro, originLabel, networkPanel }: Props) {
               <Pill href={hero.secondary.href} variant="ghost" arrow="diag">
                 {hero.secondary.label}
               </Pill>
+              <a href={hero.phone.href} className="link-arrow ml-1 inline-flex min-h-11 items-center tabular-nums sm:ml-3">
+                <Phone size={16} strokeWidth={1.6} aria-hidden />
+                <span className="sr-only">{hero.phone.label}: </span>
+                {hero.phone.display}
+              </a>
             </div>
             <div
               className="fade-up mt-[clamp(40px,8vh,88px)] flex items-center justify-between gap-6 border-t border-line pt-5"

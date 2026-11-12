@@ -18,7 +18,7 @@ export default function AdminLoginPage({ searchParams }: { searchParams: SearchP
           <div className="flex flex-col gap-3">
             <p className="t-label eyebrow">CRM dispecerat</p>
             <h1 className="a-title">Autentificare</h1>
-            <p className="text-[0.9375rem] text-ink-2">Acces intern. Intră pentru a gestiona cererile de ofertă și solicitările transportatorilor.</p>
+            <p className="text-[0.9375rem] text-ink-2">Acces intern. Intră pentru a gestiona cererile de ofertă, cererile de apel și înscrierile transportatorilor.</p>
           </div>
         </header>
         <Suspense fallback={<div aria-hidden className="h-[172px] animate-pulse rounded-[18px] border border-line bg-bg-2/60" />}>
@@ -32,7 +32,14 @@ export default function AdminLoginPage({ searchParams }: { searchParams: SearchP
 /** Request-time: reads the session cookie and the env. Already signed in → /admin. */
 async function LoginGate({ searchParams }: { searchParams: SearchParams }) {
   if (await hasAdminSession()) redirect("/admin");
-  const config = getAdminConfig();
+  const config = await getAdminConfig();
   const next = safeAdminPath((await searchParams).next);
-  return <LoginForm configured={config.configured} missing={config.configured ? [] : config.missing} next={next} />;
+  return (
+    <LoginForm
+      configured={config.configured}
+      mode={config.configured ? config.mode : "fallback"}
+      missing={config.configured ? [] : config.missing}
+      next={next}
+    />
+  );
 }

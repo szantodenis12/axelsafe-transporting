@@ -3,16 +3,22 @@
 import { useActionState, useState } from "react";
 import { AlertCircle, Eye, EyeOff, LockKeyhole, LogIn } from "lucide-react";
 import { loginAction, type LoginState } from "@/app/admin/login/actions";
+import type { LoginMode } from "@/lib/admin/auth";
 import { adminInputH, label as labelClass, panel, PillButton } from "./ui";
 
 const MESSAGES: Record<NonNullable<LoginState["error"]>, string> = {
-  invalid: "Parolă incorectă.",
-  missing: "Introdu parola de administrare.",
+  invalid: "Date de autentificare incorecte.",
+  missing: "Completează datele de autentificare.",
   not_configured: "Administrarea nu este configurată pe acest server.",
   rate_limited: "Prea multe încercări. Așteaptă 15 minute și încearcă din nou.",
+  server: "Nu am putut verifica datele. Încearcă din nou.",
 };
 
-export function LoginForm({ configured, missing, next }: { configured: boolean; missing: string[]; next: string }) {
+/**
+ * users mode: e-mail + password (per-person accounts). fallback mode: only the shared ADMIN_PASSWORD,
+ * accepted while no active account exists.
+ */
+export function LoginForm({ configured, mode, missing, next }: { configured: boolean; mode: LoginMode; missing: string[]; next: string }) {
   const [state, action, pending] = useActionState<LoginState, FormData>(loginAction, {});
   const [show, setShow] = useState(false);
 
@@ -39,9 +45,34 @@ export function LoginForm({ configured, missing, next }: { configured: boolean; 
   return (
     <form action={action} className={`${panel} flex flex-col gap-6 p-7`} aria-busy={pending || undefined}>
       <input type="hidden" name="next" value={next} />
+      {mode === "users" ? (
+        <div className="flex flex-col gap-2">
+          <label htmlFor="admin-email" className={labelClass}>
+            E-mail
+          </label>
+          <input
+            id="admin-email"
+            name="email"
+            type="email"
+            autoComplete="username"
+            autoFocus={!state.email}
+            defaultValue={state.email ?? ""}
+            key={state.email ?? ""}
+            required
+            maxLength={254}
+            className={adminInputH}
+            aria-invalid={state.error ? true : undefined}
+            aria-describedby={state.error ? "admin-password-error" : undefined}
+          />
+        </div>
+      ) : (
+        <p className="rounded-2xl border border-line bg-ink/[0.03] px-4 py-3 text-[0.875rem] text-ink-2">
+          Nu există încă conturi personale. Intră cu parola comună, apoi creează conturile cu <code className="font-mono text-[0.8125rem] text-ink">pnpm admin:user</code> (docs/CRM.md).
+        </p>
+      )}
       <div className="flex flex-col gap-2">
         <label htmlFor="admin-password" className={labelClass}>
-          Parolă
+          {mode === "users" ? "Parolă" : "Parolă comună"}
         </label>
         <div className="relative">
           <input
@@ -49,7 +80,7 @@ export function LoginForm({ configured, missing, next }: { configured: boolean; 
             name="password"
             type={show ? "text" : "password"}
             autoComplete="current-password"
-            autoFocus
+            autoFocus={mode !== "users" || Boolean(state.email)}
             required
             className={`${adminInputH} pr-12`}
             aria-invalid={state.error ? true : undefined}

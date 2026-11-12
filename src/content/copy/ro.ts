@@ -39,6 +39,16 @@ export const ro: Dictionary = {
       description:
         "Contactați AXEL SAFE TRANSPORTING pentru organizarea unui transport rutier de marfă sau pentru a discuta cerințele de transport ale companiei dumneavoastră.",
     },
+    vetting: {
+      title: "Cum verificăm transportatorii | AXEL SAFE TRANSPORTING",
+      description:
+        "Înainte ca un transportator să vă încarce marfa, verificăm licența comunitară, asigurarea CMR, documentele vehiculului și starea firmei. Ce acoperă fiecare verificare.",
+    },
+    guides: {
+      title: "Ghiduri transport rutier | AXEL SAFE TRANSPORTING",
+      description:
+        "Ghiduri pentru expeditori: scrisoarea de transport CMR, cum se formează prețul unui transport rutier și diferența dintre casa de expediții, transportator și bursa de transport.",
+    },
   },
 
   nav: {
@@ -64,6 +74,8 @@ export const ro: Dictionary = {
       { key: "about", label: "Despre noi" },
       { key: "forCarriers", label: "Pentru transportatori" },
       { key: "contact", label: "Contact" },
+      { key: "vetting", label: "Cum verificăm transportatorii" },
+      { key: "guides", label: "Ghiduri" },
     ],
     contact: "Contact",
     legal: "Legal",
@@ -99,7 +111,7 @@ export const ro: Dictionary = {
     hero: {
       eyebrow: "AXEL SAFE TRANSPORTING / ORGANIZARE TRANSPORT RUTIER",
       titleLines: ["Marfa se mișcă.", "Afacerile se leagă."],
-      text: "Organizăm transportul rutier de marfă printr-o rețea de transportatori independenți și potrivim fiecare cerere de expediere cu opțiunile de transport adecvate.",
+      text: "Organizăm transport rutier de marfă în toată Europa și în Marea Britanie, cel mai des pe ruta România–Spania. Dispeceratul răspunde non-stop.",
       primary: "Solicitați o ofertă",
       secondary: "Vedeți serviciile",
       micro: ["Transport rutier", "Organizare transport", "Logistică pentru companii"],
@@ -172,7 +184,7 @@ export const ro: Dictionary = {
           title: "Confirmăm transportul",
           text: "După ce detaliile sunt agreate, coordonăm organizarea cu transportatorul ales.",
         },
-        { title: "Rămânem în legătură", text: "Rămânem punctul dumneavoastră de contact pentru coordonarea transportului și pentru informările relevante." },
+        { title: "Rămânem în legătură", text: "Rămânem punctul dumneavoastră de contact pentru coordonarea transportului. Dispeceratul este disponibil non-stop." },
       ],
       cta: "Vedeți cum lucrăm",
     },
@@ -198,7 +210,7 @@ export const ro: Dictionary = {
       origin: "Reghin, România",
       coverageLabel: "Acoperire",
       equipmentLabel: "Echipamente",
-      baseLabel: "Coordonat din",
+      baseLabel: "Sediul social",
       baseValue: "Reghin, România · din 2018",
     },
   },
@@ -310,6 +322,7 @@ export const ro: Dictionary = {
       ],
       diagram: ["Expeditor", "AXEL SAFE TRANSPORTING", "Transportator independent"],
       diagramNotes: ["Are marfă de transportat", "Coordonează transportul", "Efectuează transportul"],
+      vettingLink: "Cum verificăm transportatorii",
     },
     stages: {
       eyebrow: "02 / PAS CU PAS",
@@ -459,11 +472,54 @@ export const ro: Dictionary = {
       requirementsTitle: "Înainte să lucrăm împreună.",
       conditionsEyebrow: "04 / CUM COLABORĂM",
       conditionsTitle: "Condiții clare la fiecare transport.",
+      requirementsLink: "De ce verificăm aceste patru lucruri",
+      benefitsEyebrow: "05 / CE PRIMIȚI",
+      benefitsTitle: "Ce primiți de la noi.",
     },
     enquiry: {
       title: "Doriți să colaborați cu AXEL SAFE?",
       text: "Prezentați-ne compania și spuneți-ne ce capacitate de transport aveți.",
       cta: "Trimiteți o solicitare de parteneriat",
+    },
+  },
+
+  /** [PLACEHOLDER] DRAFT scris de EDH din faptele confirmate la apelul din 10.11.2026; necesită aprobarea clientului înainte de lansare. */
+  vetting: {
+    hero: {
+      eyebrow: "AXEL SAFE / VERIFICAREA TRANSPORTATORILOR",
+      titleLines: ["Cine vă transportă marfa", "și cum verificăm transportatorul."],
+      text: "Transportul este efectuat de un transportator independent din rețeaua noastră. Înainte să îi dăm cursa, verificăm patru lucruri.",
+    },
+    why: {
+      title: "De ce contează verificarea.",
+      paragraphs: [
+        "Când predați marfa pentru transport, ea circulă cu camionul și cu șoferul altei firme. Dacă acel transportator nu are licența valabilă sau asigurarea i-a expirat, problema ajunge la marfa dumneavoastră.",
+        "Multe riscuri din transportul rutier se văd înainte de încărcare: o poliță expirată, o firmă în insolvență, o semiremorcă nepotrivită pentru marfă. Le căutăm înainte ca transportatorul să primească o cursă, nu după ce a apărut o problemă.",
+        "Lucrăm cu peste 30 de transportatori independenți. Fiecare dintre ei trece prin aceleași patru verificări.",
+      ],
+    },
+    checks: {
+      title: "Patru verificări înainte de încărcare.",
+      notes: [
+        "Pentru transportul internațional de marfă contra cost în Uniunea Europeană, transportatorul are nevoie de licență comunitară. Verificăm că firma este înregistrată și că licența este valabilă.",
+        "Asigurarea CMR acoperă răspunderea transportatorului pentru pierderea sau deteriorarea mărfii în transportul internațional. Nu ne bazăm doar pe o copie a poliței: sunăm la asigurator și confirmăm că polița este activă și plătită.",
+        "Verificăm documentele camionului și ale semiremorcii și dacă echipamentul se potrivește cu marfa: semiremorcă frigorifică pentru mărfurile care cer o anumită temperatură, mega pentru încărcăturile voluminoase.",
+        "Verificăm că firma nu este în insolvență. Un transportator cu probleme financiare poate anula o cursă în ultimul moment sau o poate lăsa neterminată.",
+      ],
+    },
+    roles: {
+      title: "Cine ce face.",
+      paragraphs: [
+        "Transportul propriu-zis îl face transportatorul independent, cu camionul, șoferul și asigurarea CMR proprii.",
+        "AXEL SAFE TRANSPORTING organizează transportul: alegem transportatorul, confirmăm în scris condițiile cursei și rămânem persoana dumneavoastră de contact până la livrare. Dispeceratul răspunde non-stop.",
+        "Pe lângă asigurarea CMR a transportatorului, marfa este asigurată.",
+      ],
+      guideLink: "Ghid: casă de expediții, transportator sau bursă de transport",
+    },
+    finalCta: {
+      title: "Aveți un transport de organizat?",
+      text: "Trimiteți-ne ruta, marfa și datele. De obicei răspundem în mai puțin de o oră.",
+      cta: "Solicitați o ofertă",
     },
   },
 
@@ -478,9 +534,11 @@ export const ro: Dictionary = {
       text: "Completați formularul cu detaliile esențiale ale transportului, ca să putem analiza solicitarea.",
     },
     direct: {
+      officeHeading: "Birou",
+      transportHeading: "Departament transport",
       eyebrow: "PREFERAȚI SĂ NE CONTACTAȚI DIRECT?",
       title: "Să vorbim.",
-      labels: { email: "E-mail", phone: "Telefon", location: "Locație", hours: "Program" },
+      labels: { email: "E-mail", phone: "Telefon", location: "Sediul social", hours: "Program" },
       location: "Reghin, județul Mureș, România",
     },
     carriers: {
@@ -519,8 +577,33 @@ export const ro: Dictionary = {
         vehicleTypes: "Tipuri de vehicule",
         regions: "Zone de operare / rute preferate",
         message: "Informații suplimentare",
+        vatNumber: "CUI / cod de TVA",
+        cmrInsurance: "Asigurare CMR valabilă",
+        licenceNumber: "Număr licență de transport",
       },
+      vehicleOptions: { curtainsider: "Prelată", reefer: "Frigorific", mega: "Mega", other: "Altele" },
+      cmrOptions: { yes: "Da", no: "Nu" },
       submit: "Trimiteți solicitarea de parteneriat",
+    },
+    /** Cerere rapidă: doar ruta și telefonul. */
+    quick: {
+      fields: { contactPerson: "Nume", phone: "Telefon", pickupLocation: "De la", deliveryLocation: "Până la", note: "Notă" },
+      submit: "Trimiteți cererea rapidă",
+    },
+    /** Vă sunăm noi. */
+    callback: {
+      fields: { contactPerson: "Nume", phone: "Telefon", preferredTime: "Când vă putem suna?" },
+      timeOptions: { any: "Oricând", morning: "Dimineața", afternoon: "După-amiaza", evening: "Seara" },
+      submit: "Solicitați un apel",
+    },
+    /** Blocurile de formular de pe pagina de contact (taburi + caseta de apel). */
+    contactBlocks: {
+      tabsLabel: "Tipul solicitării",
+      tabFull: "Solicitare completă",
+      tabQuick: "Cerere rapidă",
+      quickText: "Doar ruta și un număr de telefon. Detaliile le stabilim împreună, la telefon.",
+      callbackTitle: "Vă sunăm noi.",
+      callbackText: "Lăsați-ne numărul de telefon și spuneți-ne când vă este comod să vorbim.",
     },
     consent:
       "Sunt de acord ca AXEL SAFE TRANSPORTING să prelucreze informațiile transmise prin acest formular pentru a răspunde solicitării mele, conform Politicii de confidențialitate.",
@@ -539,6 +622,8 @@ export const ro: Dictionary = {
       notConfigured:
         "Formularul nu este încă activ, așa că mesajul nu a fost trimis. Vă rugăm să ne contactați direct, prin e-mail sau telefon.",
       rateLimited: "Prea multe încercări într-un timp scurt. Așteptați un minut și încercați din nou.",
+      invalid: "Verificați formatul acestui câmp.",
+      tooLong: "Textul este prea lung. Vă rugăm să îl scurtați.",
     },
   },
 
@@ -584,11 +669,27 @@ export const ro: Dictionary = {
       },
       {
         q: "Pentru ce țări organizați transport rutier?",
-        a: "Organizăm transport rutier în toată Europa. Trimiteți-ne locul de încărcare și cel de livrare, iar noi analizăm opțiunile de transport disponibile pentru ruta respectivă.",
+        a: "Organizăm transport rutier în toată Europa și în Marea Britanie, cel mai des pe ruta România–Spania. Nu organizăm transporturi în Elveția. Trimiteți-ne locul de încărcare și cel de livrare, iar noi analizăm opțiunile de transport disponibile pentru ruta respectivă.",
       },
       {
         q: "Ce tipuri de remorci puteți organiza?",
         a: "Prin partenerii noștri transportatori organizăm transport cu prelată (tautliner), frigorific și mega. Pentru transporturile care necesită alte echipamente sau condiții speciale, disponibilitatea se confirmă la fiecare solicitare.",
+      },
+      {
+        q: "În cât timp primesc o ofertă?",
+        a: "De obicei, în mai puțin de o oră de la primirea detaliilor. Dispeceratul lucrează non-stop.",
+      },
+      {
+        q: "Marfa este asigurată?",
+        a: "Da. În plus, fiecare transportator partener are asigurare CMR valabilă, pe care o verificăm înainte de transport.",
+      },
+      {
+        q: "Ce transporturi nu organizați?",
+        a: "Transport agabaritic și animale vii. Marfa ADR o organizăm doar cu camion echipat ADR și șofer autorizat.",
+      },
+      {
+        q: "În ce limbi putem discuta?",
+        a: "Română, engleză și spaniolă.",
       },
       {
         q: "Ce informații vă trebuie pentru a pregăti o ofertă?",
@@ -631,5 +732,10 @@ export const ro: Dictionary = {
   common: {
     skip: "Salt la conținut",
     language: "Limbă",
+    call: "Sunați-ne",
+    whatsapp: {
+      label: "Scrieți-ne pe WhatsApp",
+      message: "Bună ziua, aș dori o ofertă pentru un transport rutier. Încărcare: … Descărcare: … Marfă: … Data: …",
+    },
   },
 };

@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { PageHero } from "@/components/pages/PageHero";
 import { breadcrumbJsonLd } from "@/components/pages/breadcrumbs";
-import { QuoteForm } from "@/components/forms/QuoteForm";
+import { CallbackForm } from "@/components/forms/CallbackForm";
+import { QuoteRequestTabs } from "@/components/forms/QuoteRequestTabs";
 import { Reveal } from "@/components/ui/Reveal";
 import { Pill } from "@/components/ui/Pill";
 import { Ph } from "@/components/ui/Ph";
@@ -45,7 +46,7 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
               <p className="t-lead mt-4 max-w-[42ch] md:mt-6">{t.quote.text}</p>
             </Reveal>
             <Reveal variant="fade" delay={120} className="mt-6 md:mt-12">
-              <QuoteForm />
+              <QuoteRequestTabs copy={dict.forms.contactBlocks} />
             </Reveal>
           </div>
 
@@ -57,7 +58,7 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
 
                 <dl className="mt-5 border-t border-line md:mt-7">
                   <ContactGroup
-                    heading="Office"
+                    heading={t.direct.officeHeading}
                     emailLabel={t.direct.labels.email}
                     phoneLabel={t.direct.labels.phone}
                     email={email}
@@ -66,7 +67,7 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
                     phoneKey="phone"
                   />
                   <ContactGroup
-                    heading="Transport desk"
+                    heading={t.direct.transportHeading}
                     emailLabel={t.direct.labels.email}
                     phoneLabel={t.direct.labels.phone}
                     email={transportEmail}
@@ -87,8 +88,18 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
                 </dl>
                 <p className="t-small mt-5 flex gap-3 !text-ink-3">
                   <span aria-hidden className="mt-[0.75em] h-px w-4 shrink-0 bg-accent/70" />
-                  <Ph k="responseTime">We usually reply {responseTime}.</Ph>
+                  <Ph k="responseTime">{responseTime}</Ph>
                 </p>
+              </Reveal>
+
+              <Reveal delay={200} className="m-card rounded-[20px] border border-line bg-bg-2/60 p-7 lg:p-8">
+                <div id="callback" className="scroll-mt-[calc(var(--header-h)+24px)]">
+                  <h2 className="t-h3">{dict.forms.contactBlocks.callbackTitle}</h2>
+                  <p className="t-small mt-3 max-w-[32ch]">{dict.forms.contactBlocks.callbackText}</p>
+                  <div className="mt-6">
+                    <CallbackForm />
+                  </div>
+                </div>
               </Reveal>
 
               <Reveal delay={240} className="m-card rounded-[20px] border border-line bg-bg-2/60 p-7 lg:p-8">

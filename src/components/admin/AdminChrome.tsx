@@ -3,12 +3,16 @@ import { connection } from "next/server";
 import { LogOut } from "lucide-react";
 import { Logo, AxelWordmark } from "@/components/ui/Logo";
 import { logoutAction } from "@/app/admin/login/actions";
-import { adminAuthor } from "@/lib/admin/auth";
-import { adminStore } from "@/lib/admin/data";
+import { getCurrentUser } from "@/lib/admin/auth";
+import { leadStats } from "@/lib/admin/data";
 import { initials } from "@/lib/admin/format";
+import { ROLE_LABEL } from "@/lib/leads/labels";
 import { AdminNav, type NavCounts } from "./AdminNav";
 
-function UserBlock({ name }: { name?: string }) {
+export type ChromeUser = { name: string; role: string };
+
+function UserBlock({ user }: { user?: ChromeUser }) {
+  const name = user?.name;
   return (
     <div className="flex min-w-0 items-center gap-2.5">
       <span aria-hidden className="grid h-8 w-8 shrink-0 place-items-center rounded-full border border-line-strong bg-ink/[0.06] font-mono text-[0.6875rem] tracking-[0.04em] text-ink">
@@ -16,7 +20,7 @@ function UserBlock({ name }: { name?: string }) {
       </span>
       <div className="min-w-0 leading-tight">
         <p className="truncate text-[0.8125rem] font-medium text-ink">{name ?? "…"}</p>
-        <p className="text-[0.75rem] text-ink-3">Autentificat</p>
+        <p className="truncate text-[0.75rem] text-ink-3">{user?.role ?? "Autentificat"}</p>
       </div>
     </div>
   );
@@ -38,7 +42,7 @@ function SignOut() {
 }
 
 /** Static chrome: desktop sidebar + mobile top bar. Counts/user stream in via <ChromeData />. */
-export function Chrome({ counts, name }: { counts?: NavCounts; name?: string }) {
+export function Chrome({ counts, user }: { counts?: NavCounts; user?: ChromeUser }) {
   return (
     <>
       <aside className="fixed inset-y-0 left-0 z-30 hidden w-[244px] flex-col border-r border-line bg-bg/60 backdrop-blur-xl lg:flex">
@@ -52,7 +56,7 @@ export function Chrome({ counts, name }: { counts?: NavCounts; name?: string }) 
           <AdminNav counts={counts} orientation="vertical" />
         </div>
         <div className="flex items-center justify-between gap-2 border-t border-line px-4 py-3">
-          <UserBlock name={name} />
+          <UserBlock user={user} />
           <SignOut />
         </div>
       </aside>
@@ -64,7 +68,10 @@ export function Chrome({ counts, name }: { counts?: NavCounts; name?: string }) 
             <span className="t-label !text-ink-3">CRM</span>
           </Link>
           <div className="flex items-center gap-2">
-            <span className="max-w-[9rem] truncate text-[0.75rem] text-ink-2">{name}</span>
+            <span className="flex max-w-[10rem] flex-col items-end leading-tight" title={user?.role}>
+              <span className="max-w-full truncate text-[0.75rem] text-ink-2">{user?.name}</span>
+              <span className="max-w-full truncate text-[0.6875rem] text-ink-3">{user?.role}</span>
+            </span>
             <SignOut />
           </div>
         </div>
@@ -74,25 +81,30 @@ export function Chrome({ counts, name }: { counts?: NavCounts; name?: string }) 
   );
 }
 
-/** Request-time: verifies the session, reads counts + author name. Falls back to a count-less chrome on store errors. */
+/** Request-time: verifies the session, reads counts + the signed-in user. Falls back to a count-less chrome on store errors. */
 export async function ChromeData() {
   await connection();
-  const name = adminAuthor();
+  const current = await getCurrentUser();
+  const user: ChromeUser | undefined = current
+    ? { name: current.name, role: current.fallback ? "Parolă comună" : ROLE_LABEL[current.role] }
+    : undefined;
   let counts: NavCounts | undefined;
-  try {
-    const { repo } = await adminStore();
-    if (repo) {
-      const s = await repo.stats();
-      counts = {
-        all: s.total,
-        quoteNew: s.byType.quote.byStatus.new ?? 0,
-        carrierNew: s.byType.carrier.byStatus.new ?? 0,
-        spam: (s.byType.quote.byStatus.spam ?? 0) + (s.byType.carrier.byStatus.spam ?? 0),
-      };
+  if (current) {
+    try {
+      const s = await leadStats();
+      if (s) {
+        counts = {
+          all: s.total,
+          quoteNew: s.byType.quote.byStatus.new ?? 0,
+          callbackNew: s.byType.callback.byStatus.new ?? 0,
+          carrierNew: s.byType.carrier.byStatus.new ?? 0,
+          spam: (s.byType.quote.byStatus.spam ?? 0) + (s.byType.carrier.byStatus.spam ?? 0) + (s.byType.callback.byStatus.spam ?? 0),
+        };
+      }
+    } catch (err) {
+      if (err && typeof err === "object" && "digest" in err) throw err; // let redirect() through
+      console.error("[admin] nav counts failed:", err instanceof Error ? err.message : err);
     }
-  } catch (err) {
-    if (err && typeof err === "object" && "digest" in err) throw err; // let redirect() through
-    console.error("[admin] nav counts failed:", err instanceof Error ? err.message : err);
   }
-  return <Chrome counts={counts} name={name} />;
+  return <Chrome counts={counts} user={user} />;
 }

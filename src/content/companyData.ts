@@ -58,12 +58,13 @@ export const companyData = {
     { display: "+40 728 743 509", href: "tel:+40728743509" },
     "client, 22.10.2026 — sent together with transport@ (pairing assumed from message order)",
   ),
-  carrierEmail: placeholder(
-    "transport@axelsafe-transporting.com",
-    "assumed carriers write to transport@ — confirm",
+  carrierEmail: verified(
+    "office@axelsafe-transporting.com",
+    "discovery call 10.11.2026 — all enquiries centralised via office@ (transport@ is being renamed)",
   ),
-  businessHours: placeholder("Monday – Friday, 08:00 – 17:00 (EET)", "confirm office hours"),
-  responseTime: placeholder("within 2 business hours", "confirm a realistic response time — or remove"),
+  businessHours: verified("24/7 — dispatch answers round the clock", "discovery call 10.11.2026: „non-stop, 24 din 24, 7 din 7”"),
+  responseTime: verified("We usually reply in under an hour.", "discovery call 10.11.2026: quote in 2–3 minutes once details are in, „sub o oră”"),
+  languages: verified(["Romanian", "English", "Spanish"], "discovery call 10.11.2026"),
   social: placeholder(
     [
       { network: "facebook", label: "Facebook", url: "https://www.facebook.com/axelsafetransporting" },
@@ -74,7 +75,7 @@ export const companyData = {
   ),
 
   /* ───────────── Operations ───────────── */
-  coverage: verified(["All of Europe"], "client, 22.10.2026: „TOATA EUROPA”"),
+  coverage: verified(["All of Europe", "United Kingdom"], "client 22.10.2026 + discovery call 10.11.2026 (UK added; Switzerland excluded)"),
   transportTypes: verified(
     [
       { title: "Curtainsider trailers", short: "Curtainsider", text: "Tautliner equipment for palletised and general cargo, loadable from the side, rear or top." },
@@ -94,37 +95,51 @@ export const companyData = {
   ),
   /** Client is early-stage: works with partner organisers, building its own client base → no sectors to show. */
   industries: verified([] as string[], "client, 22.10.2026 — no own client base yet; do not publish sectors"),
-  stats: placeholder(
+  stats: verified(
     [
-      { value: "150+", label: "independent carrier partners" },
-      { value: "2 h", label: "typical first response" },
+      { value: "~100", label: "shipments organised per month" },
+      { value: "30+", label: "independent carrier partners" },
+      { value: "< 1 h", label: "typical first response" },
     ],
-    "operational metrics — replace with verified numbers or remove",
+    "discovery call 10.11.2026",
   ),
 
   /* ───────────── Trust — all [PLACEHOLDER]; must be verified or removed before launch ───────────── */
-  insurance: placeholder(
-    "Freight forwarder liability insurance",
-    "confirm whether the company holds forwarder liability insurance (insurer + cover) — otherwise remove",
-  ),
-  memberships: placeholder([] as string[], "transport platforms / associations (e.g. TimoCom, UNTRR) — confirm or leave empty"),
-  carrierVerification: placeholder(
+  /** NEVER publish the insured amount (Roland, 10.11.2026). Only „the cargo is insured”. */
+  insurance: verified("The cargo is insured.", "discovery call 10.11.2026 — amount confidential, never shown"),
+  memberships: verified([] as string[], "discovery call 10.11.2026 — no memberships to show"),
+  carrierVerification: verified(
     [
       "Valid company registration and EU Community Licence",
-      "Proof of active CMR insurance",
+      "Active CMR insurance, confirmed with the insurer",
       "Vehicle and trailer documents matching the requested equipment",
-      "References or previous cooperation history",
+      "A company status check (no insolvency)",
     ],
-    "confirm the carrier vetting procedure",
+    "discovery call 10.11.2026",
   ),
-  carrierConditions: placeholder(
+  carrierConditions: verified(
     [
       { title: "Agreed terms per shipment", text: "Rate, loading window and documents are confirmed in writing before every transport." },
-      { title: "Payment terms", text: "Payment within 30 days of receiving the invoice and signed CMR." },
+      { title: "Payment terms", text: "The payment term is agreed in writing before each transport." },
       { title: "Clear point of contact", text: "One coordinator for each shipment, from loading to proof of delivery." },
     ],
-    "confirm payment terms and cooperation conditions for carriers",
+    "discovery call 10.11.2026 — real terms 35/50 days, deliberately not published",
   ),
+  /** "What you get" block on the for-carriers page (verified items). */
+  carrierBenefits: verified(
+    [
+      { title: "Dispatch reachable 24/7", text: "Our dispatch team answers around the clock, every day of the week." },
+      { title: "Around 100 shipments a month", text: "Loads across Europe and the United Kingdom, most of them on the Romania–Spain route." },
+      { title: "Payment term in writing", text: "The payment term is agreed in writing before each transport." },
+      { title: "One coordinator per shipment", text: "One person follows the shipment from loading to proof of delivery." },
+    ],
+    "discovery call 10.11.2026 (24/7 dispatch, ~100 shipments/month, mostly RO–ES, payment term per transport, coordinator per shipment)",
+  ),
+  carrierOffer: placeholder(
+    [{ title: "A written transport order", text: "Every shipment comes with a written transport order." }],
+    "confirm written orders per trip with client",
+  ),
+  whatsapp: placeholder({ number: "40759419010" }, "confirm the WhatsApp number with the client"),
 } as const;
 
 export type CompanyData = typeof companyData;

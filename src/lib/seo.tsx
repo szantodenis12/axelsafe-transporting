@@ -11,15 +11,29 @@ export function pageMetadata(
   meta: { title: string; description: string },
   image = "/media/og-default.jpg",
 ): Metadata {
-  const path = href(locale, key);
-  const languages: Record<string, string> = Object.fromEntries(locales.map((l) => [hreflang[l], href(l, key)]));
-  languages["x-default"] = href("en", key);
+  return metadataForPaths(locale, Object.fromEntries(locales.map((l) => [l, href(l, key)])) as Record<Locale, string>, meta, image);
+}
+
+/**
+ * Same as pageMetadata, for pages whose URL is not a single route key (guide articles):
+ * pass the page's path in every locale.
+ */
+export function metadataForPaths(
+  locale: Locale,
+  paths: Record<Locale, string>,
+  meta: { title: string; description: string },
+  image = "/media/og-default.jpg",
+  type: "website" | "article" = "website",
+): Metadata {
+  const path = paths[locale];
+  const languages: Record<string, string> = Object.fromEntries(locales.map((l) => [hreflang[l], paths[l]]));
+  languages["x-default"] = paths.en;
   return {
     title: meta.title,
     description: meta.description,
     alternates: { canonical: path, languages },
     openGraph: {
-      type: "website",
+      type,
       url: path,
       siteName: companyData.brandName.value,
       title: meta.title,
@@ -109,5 +123,24 @@ export function servicesJsonLd(services: readonly { title: string; text: string 
         ? { hasOfferCatalog: { "@type": "OfferCatalog", name: "Trailer types", itemListElement: companyData.transportTypes.value.map((t) => ({ "@type": "Offer", itemOffered: { "@type": "Service", name: t.title } })) } }
         : {}),
     })),
+  };
+}
+
+/** Article JSON-LD for the guides. Author + publisher = the organisation (no personal bylines). */
+export function articleJsonLd(a: { title: string; description: string; path: string; locale: Locale; published: string }) {
+  const org = { "@type": "Organization", name: companyData.legalName.value, url: siteUrl, logo: { "@type": "ImageObject", url: `${siteUrl}/icon.svg` } };
+  return {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: a.title,
+    description: a.description,
+    inLanguage: hreflang[a.locale],
+    datePublished: a.published,
+    dateModified: a.published,
+    mainEntityOfPage: { "@type": "WebPage", "@id": `${siteUrl}${a.path}` },
+    url: `${siteUrl}${a.path}`,
+    image: `${siteUrl}/media/og-default.jpg`,
+    author: org,
+    publisher: org,
   };
 }

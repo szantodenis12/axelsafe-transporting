@@ -11,6 +11,7 @@ import { FaqSection } from "@/components/sections/FaqSection";
 import { EquipmentSection } from "@/components/showcase/EquipmentSection";
 import { ExampleEnquiry } from "@/components/showcase/ExampleEnquiry";
 import { Ph } from "@/components/ui/Ph";
+import { fact } from "@/content/companyData";
 
 import { getDictionary, hasLocale } from "@/lib/i18n";
 import { anchors, href } from "@/lib/routes";
@@ -46,6 +47,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           ...t.hero,
           primary: { href: href(locale, "contact", anchors.quote), label: t.hero.primary },
           secondary: { href: href(locale, "services"), label: t.hero.secondary },
+          phone: { ...fact("phone"), label: dict.common.call },
         }}
         intro={{ ...t.intro, cta: { href: href(locale, "howWeWork"), label: t.intro.cta } }}
         originLabel={t.network.origin}

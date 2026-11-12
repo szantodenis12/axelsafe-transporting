@@ -6,7 +6,7 @@ import { StickyStages } from "@/components/pages/StickyStages";
 import { SectionHead } from "@/components/pages/SectionHead";
 import { breadcrumbJsonLd } from "@/components/pages/breadcrumbs";
 import { Reveal } from "@/components/ui/Reveal";
-import { Pill } from "@/components/ui/Pill";
+import { ArrowLink, Pill } from "@/components/ui/Pill";
 import { EarthBackdrop } from "@/components/sections/EarthBackdrop";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 import { anchors, href } from "@/lib/routes";
@@ -61,6 +61,9 @@ export default async function HowWeWorkPage({ params }: PageProps<"/[locale]/how
                   </p>
                 ))}
               </div>
+              <ArrowLink href={href(locale, "vetting")} className="mt-7">
+                {t.model.vettingLink}
+              </ArrowLink>
             </Reveal>
           </div>
 

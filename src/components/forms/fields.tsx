@@ -12,21 +12,14 @@ type FormsCopy = Dictionary["forms"];
 
 /* ───────────────────────── Error code → copy ───────────────────────── */
 
-/**
- * Codes without approved copy. These only trigger on inputs the browser normally
- * prevents (over max length, malformed phone/date). Flagged for copy approval.
- */
-const UNAPPROVED_FALLBACKS: Record<string, string> = {
-  too_long: "Please shorten this field.",
-  invalid: "Please check the format of this field.",
-};
-
 export function messageFor(code: string | undefined, t: FormsCopy): string | undefined {
   if (!code) return undefined;
   if (code === "required") return t.errors.required;
   if (code === "email") return t.errors.email;
   if (code === "consent") return t.errors.consent;
-  return UNAPPROVED_FALLBACKS[code] ?? t.errors.required;
+  if (code === "too_long") return t.errors.tooLong;
+  if (code === "invalid") return t.errors.invalid;
+  return t.errors.required;
 }
 
 /* ───────────────────────── Styles ───────────────────────── */
@@ -143,7 +136,81 @@ export function TextAreaField({
   );
 }
 
+/* ───────────────────────── Choice groups (checkboxes / radios) ───────────────────────── */
+
+export function ChoiceGroup({
+  id,
+  name,
+  label,
+  type,
+  options,
+  required,
+  errors,
+  t,
+  onClear,
+  className = "",
+  defaultValue,
+}: {
+  id: string;
+  name: string;
+  label: string;
+  type: "checkbox" | "radio";
+  options: { value: string; label: string }[];
+  required?: boolean;
+  errors: FieldErrors;
+  t: FormsCopy;
+  onClear: (name: string) => void;
+  className?: string;
+  defaultValue?: string;
+}) {
+  const error = messageFor(errors[name], t);
+  return (
+    <fieldset
+      className={`m-0 flex min-w-0 flex-col gap-2 border-0 p-0 ${className}`}
+      aria-required={required || undefined}
+      aria-invalid={error ? true : undefined}
+      aria-describedby={error ? `${id}-error` : undefined}
+    >
+      <legend className="mb-2 flex w-full items-baseline justify-between gap-4">
+        <span className="text-[0.9375rem] text-ink">{label}</span>
+        <span className="font-mono text-[0.625rem] uppercase tracking-[0.14em] text-ink-3" aria-hidden="true">
+          {required ? t.required : t.optional}
+        </span>
+      </legend>
+      <div className="flex flex-wrap gap-2.5">
+        {options.map((o, i) => (
+          <label
+            key={o.value}
+            htmlFor={`${id}-${i}`}
+            className="inline-flex min-h-[44px] cursor-pointer items-center gap-2.5 rounded-[14px] border border-line bg-bg-2 px-4 text-[0.9375rem] text-ink transition-colors hover:border-line-strong has-[:checked]:border-accent/70 has-[:focus-visible]:shadow-[0_0_0_3px_rgba(183,212,247,0.16)]"
+          >
+            <input
+              id={`${id}-${i}`}
+              type={type}
+              name={name}
+              value={o.value}
+              defaultChecked={defaultValue === o.value}
+              className="h-[20px] w-[20px] md:h-[16px] md:w-[16px] shrink-0 cursor-pointer accent-accent [color-scheme:dark]"
+              onChange={() => onClear(name)}
+            />
+            {o.label}
+          </label>
+        ))}
+      </div>
+      {error ? (
+        <p id={`${id}-error`} className="flex items-start gap-1.5 text-[0.8125rem] leading-snug text-danger">
+          <AlertCircle size={14} strokeWidth={1.8} className="mt-[2px] shrink-0" aria-hidden />
+          <span>{error}</span>
+        </p>
+      ) : null}
+    </fieldset>
+  );
+}
+
 /* ───────────────────────── Consent ───────────────────────── */
+
+/** Policy name as it appears inside each locale's consent sentence. */
+const POLICY_NAMES = ["Privacy Policy", "Politicii de confidențialitate", "Política de privacidad"];
 
 export function ConsentField({
   id,
@@ -161,8 +228,9 @@ export function ConsentField({
   className?: string;
 }) {
   const error = messageFor(errors.consent, t);
-  // Approved sentence verbatim; "Privacy Policy" becomes the link.
-  const [before, after] = t.consent.split("Privacy Policy");
+  // Approved sentence verbatim; the policy name (per locale) becomes the link.
+  const policy = POLICY_NAMES.find((p) => t.consent.includes(p));
+  const [before, after] = policy ? t.consent.split(policy) : [t.consent, ""];
   return (
     <div className={`flex flex-col gap-2 ${className}`}>
       <div className="flex items-start gap-3.5">
@@ -178,9 +246,11 @@ export function ConsentField({
         />
         <label htmlFor={id} className="cursor-pointer text-[0.9375rem] leading-[1.6] text-ink-2">
           {before}
-          <Link href={privacyHref} className="text-ink underline decoration-line-strong underline-offset-4 hover:decoration-ink">
-            Privacy Policy
-          </Link>
+          {policy ? (
+            <Link href={privacyHref} className="text-ink underline decoration-line-strong underline-offset-4 hover:decoration-ink">
+              {policy}
+            </Link>
+          ) : null}
           {after}
         </label>
       </div>

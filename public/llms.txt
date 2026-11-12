@@ -1,21 +1,27 @@
 # AXEL SAFE TRANSPORTING
 
-> AXEL SAFE TRANSPORTING S.R.L. is a Romanian B2B road freight coordination company, established in 2018 and based in Reghin, Mureș County. It organises road freight transport across Europe for business customers through a network of independent carrier partners.
+> AXEL SAFE TRANSPORTING S.R.L. is a Romanian B2B road freight coordination company, established in 2018 and based in Reghin, Mureș County. It organises road freight transport across Europe and the United Kingdom for business customers through a network of independent carrier partners.
 
 Important: AXEL SAFE TRANSPORTING does not own or operate a truck fleet. It arranges and coordinates transport; independent transport companies perform the carriage. It works with businesses only (B2B).
 
 ## Key facts
 
-- Coverage: road freight across Europe.
+- Coverage: road freight across Europe and the United Kingdom.
+- Scale: around 100 shipments a month, organised with more than 30 independent carriers.
+- Availability: dispatch answers 24/7; a quote reply usually takes under an hour.
+- Languages: Romanian, English, Spanish.
+- Insurance: carriers hold CMR insurance, and the cargo is insured (the insured amount is not published).
 - Trailer types arranged through partner carriers: curtainsider (tautliner), refrigerated, mega trailers. Other equipment is confirmed per enquiry.
 - Process: the customer shares shipment details → AXEL SAFE reviews the request and identifies suitable transport options through independent carriers → arrangements are agreed before the shipment is confirmed → AXEL SAFE coordinates with the selected carrier and remains the point of contact.
 - Information needed for a quote: cargo description, approximate weight, dimensions or loading units, pickup and delivery locations, preferred dates, special handling requirements.
-- Carrier partnerships: transport companies can send a partnership enquiry with their company details, operating regions, vehicle types and preferred routes.
+- Carrier checks: before an independent carrier gets a load, AXEL SAFE checks its registration and EU Community Licence, active CMR insurance (confirmed with the insurer), vehicle and trailer documents, and company status (no insolvency).
+- Carrier partnerships: transport companies can send a partnership enquiry with their company details, VAT number, operating regions, vehicle types, CMR insurance and licence details.
 
 ## Contact
 
-- Office: office@axelsafe-transporting.com · +40 759 419 010
+- Office: office@axelsafe-transporting.com · +40 759 419 010 (also WhatsApp / callback request on the contact page)
 - Transport desk: transport@axelsafe-transporting.com · +40 728 743 509
+- Business hours: 24/7
 - Registered office: Bld. Libertății, Bl. 14, Sc. 1, Ap. 14, 545300 Reghin, Mureș County, Romania
 - Company identifiers: Reg. No. J2018001382267 · VAT RO39875222 · CAEN 4941 (road freight transport)
 
@@ -25,5 +31,7 @@ Important: AXEL SAFE TRANSPORTING does not own or operate a truck fleet. It arra
 - [Services](https://axelsafe-transporting.com/en/services): road freight organisation, freight planning and coordination, independent carrier network, trailer types
 - [How We Work](https://axelsafe-transporting.com/en/how-we-work): the coordination model (shipper → AXEL SAFE → independent carrier) and the four-stage process
 - [About](https://axelsafe-transporting.com/en/about): company background and registered company details
-- [For Carriers](https://axelsafe-transporting.com/en/for-carriers): partnership enquiries from transport companies, carrier FAQ
-- [Contact](https://axelsafe-transporting.com/en/contact): transport quote request form and direct contact details
+- [How We Vet Carriers](https://axelsafe-transporting.com/en/how-we-vet-carriers): the four checks made on every independent carrier before loading
+- [Guides](https://axelsafe-transporting.com/en/guides): CMR consignment note, how road freight prices are set, freight forwarder vs carrier vs freight exchange
+- [For Carriers](https://axelsafe-transporting.com/en/for-carriers): partnership enquiries from transport companies, what carriers get, requirements, carrier FAQ
+- [Contact](https://axelsafe-transporting.com/en/contact): full and quick transport quote request, callback request and direct contact details

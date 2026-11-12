@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-import { ArrowRight, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, Phone, X } from "lucide-react";
 import { Logo } from "@/components/ui/Logo";
 import { setScrollLocked } from "@/lib/lenis";
 import { LanguageSwitcher, type LanguageOption } from "./LanguageSwitcher";
@@ -17,6 +17,7 @@ export function SiteHeader({
   labels,
   locale,
   languages,
+  phone,
 }: {
   homeHref: string;
   items: NavItem[];
@@ -24,6 +25,8 @@ export function SiteHeader({
   labels: { menu: string; close: string; language: string };
   locale: string;
   languages: LanguageOption[];
+  /** Click-to-call (companyData.phone). `label` = accessible name, e.g. "Call us". */
+  phone: { href: string; display: string; label: string };
 }) {
   const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
@@ -105,6 +108,14 @@ export function SiteHeader({
 
         <div className="relative z-10 flex items-center gap-2">
           <LanguageSwitcher current={locale} options={languages} label={labels.language} className="hidden md:block" />
+          <a
+            href={phone.href}
+            aria-label={`${phone.label}: ${phone.display}`}
+            title={phone.display}
+            className="grid h-11 w-11 place-items-center rounded-full border border-line-strong bg-bg-2/80 text-ink transition-colors hover:border-ink/40"
+          >
+            <Phone size={16} strokeWidth={1.6} aria-hidden />
+          </a>
           <Link href={cta.href} className="pill pill-primary pill-sm hidden sm:inline-flex">
             <span>{cta.label}</span>
             <span className="pill-icon">
@@ -149,6 +160,15 @@ export function SiteHeader({
               </li>
             ))}
           </ul>
+          <a href={phone.href} className="mt-8 flex min-h-11 items-center gap-3 self-start text-[1.25rem] font-light tracking-[-0.01em] text-ink tabular-nums">
+            <span className="grid h-11 w-11 place-items-center rounded-full border border-line-strong">
+              <Phone size={17} strokeWidth={1.6} aria-hidden />
+            </span>
+            <span>
+              <span className="sr-only">{phone.label}: </span>
+              {phone.display}
+            </span>
+          </a>
           <LanguageSwitcher current={locale} options={languages} label={labels.language} className="mt-8 self-start" />
         </nav>
       </div>

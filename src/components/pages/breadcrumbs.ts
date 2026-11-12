@@ -2,9 +2,11 @@ import type { Locale } from "@/lib/i18n";
 import { href, type RouteKey } from "@/lib/routes";
 import { siteUrl } from "@/lib/site";
 
-/** BreadcrumbList JSON-LD for inner pages: Home › Page. */
-export function breadcrumbJsonLd(locale: Locale, trail: { key: RouteKey; name: string }[]) {
-  const items = [{ key: "home" as RouteKey, name: "Home" }, ...trail];
+type Crumb = { key: RouteKey; name: string } | { path: string; name: string };
+
+/** BreadcrumbList JSON-LD for inner pages: Home › Page (› Sub-page, via an explicit path). */
+export function breadcrumbJsonLd(locale: Locale, trail: Crumb[]) {
+  const items: Crumb[] = [{ key: "home", name: "Home" }, ...trail];
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -12,7 +14,7 @@ export function breadcrumbJsonLd(locale: Locale, trail: { key: RouteKey; name: s
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: `${siteUrl}${href(locale, item.key)}`,
+      item: `${siteUrl}${"path" in item ? item.path : href(locale, item.key)}`,
     })),
   };
 }

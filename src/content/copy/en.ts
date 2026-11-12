@@ -36,6 +36,16 @@ export const en = {
       description:
         "Contact AXEL SAFE TRANSPORTING to request road freight arrangements or discuss your company's shipping requirements.",
     },
+    vetting: {
+      title: "How We Vet Carriers | AXEL SAFE TRANSPORTING",
+      description:
+        "Before a carrier loads your goods, we check its EU Community Licence, CMR insurance, vehicle documents and company status. What each check covers.",
+    },
+    guides: {
+      title: "Road Freight Guides | AXEL SAFE TRANSPORTING",
+      description:
+        "Plain guides for shippers: the CMR consignment note, how a road freight price is formed, and how forwarders, carriers and freight exchanges differ.",
+    },
   },
 
   nav: {
@@ -61,6 +71,8 @@ export const en = {
       { key: "about", label: "About Us" },
       { key: "forCarriers", label: "For Carriers" },
       { key: "contact", label: "Contact" },
+      { key: "vetting", label: "How We Vet Carriers" },
+      { key: "guides", label: "Guides" },
     ],
     contact: "Contact",
     legal: "Legal",
@@ -96,7 +108,7 @@ export const en = {
     hero: {
       eyebrow: "AXEL SAFE TRANSPORTING / ROAD FREIGHT COORDINATION",
       titleLines: ["Moving goods.", "Connecting business."],
-      text: "We organise road freight transport through a network of independent carriers, connecting shipping requirements with suitable transport solutions.",
+      text: "We organise road freight across Europe and the United Kingdom, most often on the Romania–Spain route. Our dispatch team answers around the clock.",
       primary: "Request a Quote",
       secondary: "Explore Our Services",
       micro: ["Road Freight", "Transport Coordination", "Business Logistics"],
@@ -169,7 +181,7 @@ export const en = {
           title: "Confirm the transport",
           text: "Once the details are agreed, we coordinate the arrangements with the selected transport provider.",
         },
-        { title: "Stay connected", text: "We remain your point of contact for transport coordination and relevant updates." },
+        { title: "Stay connected", text: "We remain your point of contact for transport coordination. Dispatch is available 24/7." },
       ],
       cta: "Discover Our Process",
     },
@@ -195,7 +207,7 @@ export const en = {
       origin: "Reghin, Romania",
       coverageLabel: "Coverage",
       equipmentLabel: "Equipment",
-      baseLabel: "Coordinated from",
+      baseLabel: "Registered office",
       baseValue: "Reghin, Romania · since 2018",
     },
   },
@@ -307,6 +319,7 @@ export const en = {
       ],
       diagram: ["Shipper", "AXEL SAFE TRANSPORTING", "Independent Carrier"],
       diagramNotes: ["Has goods to move", "Coordinates the transport", "Performs the transport"],
+      vettingLink: "How we vet carriers",
     },
     stages: {
       eyebrow: "02 / STEP BY STEP",
@@ -456,11 +469,54 @@ export const en = {
       requirementsTitle: "Before we work together.",
       conditionsEyebrow: "04 / HOW WE COOPERATE",
       conditionsTitle: "Clear conditions on every shipment.",
+      requirementsLink: "Why we check these four things",
+      benefitsEyebrow: "05 / WHAT YOU GET",
+      benefitsTitle: "What you can count on.",
     },
     enquiry: {
       title: "Interested in working with AXEL SAFE?",
       text: "Introduce your company and tell us about your transport capabilities.",
       cta: "Send a Partnership Enquiry",
+    },
+  },
+
+  /** [PLACEHOLDER] DRAFT written by EDH from facts confirmed on the 10.11.2026 call; needs client approval before launch. */
+  vetting: {
+    hero: {
+      eyebrow: "AXEL SAFE / CARRIER CHECKS",
+      titleLines: ["Who carries your goods,", "and how we check them."],
+      text: "Your shipment is carried by an independent carrier from our network. Before we give it the load, we check four things.",
+    },
+    why: {
+      title: "Why the check matters.",
+      paragraphs: [
+        "When you hand over goods for transport, they travel on another company's truck, with another company's driver. If that carrier has no valid licence or its insurance has lapsed, the problem lands on your cargo.",
+        "Many of the risks in road freight are visible before loading: an expired policy, a company in insolvency, a trailer that does not suit the load. We look for them before a carrier gets a shipment, not after something has gone wrong.",
+        "We work with more than 30 independent carriers. Each of them goes through the same four checks.",
+      ],
+    },
+    checks: {
+      title: "Four checks before loading.",
+      notes: [
+        "International road haulage for hire within the EU requires an EU Community Licence. We check that the carrier is a registered company and that its licence is valid.",
+        "CMR insurance covers the carrier's liability for loss of or damage to goods during international carriage. A copy of the policy is not enough for us: we call the insurer and confirm that the policy is active and paid.",
+        "We check the truck and trailer documents, and that the equipment suits your goods: a refrigerated trailer for cargo that needs a set temperature, a mega trailer for high-volume loads.",
+        "We check that the company is not in insolvency. A carrier in financial difficulty can cancel at short notice or leave a shipment unfinished.",
+      ],
+    },
+    roles: {
+      title: "Who does what.",
+      paragraphs: [
+        "The carriage itself is performed by the independent carrier, with its own truck, driver and CMR insurance.",
+        "AXEL SAFE TRANSPORTING organises the shipment: we choose the carrier, confirm the terms of the trip in writing and remain your point of contact until delivery. Our dispatch answers 24/7.",
+        "On top of the carrier's CMR insurance, the cargo is insured.",
+      ],
+      guideLink: "Guide: freight forwarder, carrier or freight exchange",
+    },
+    finalCta: {
+      title: "A shipment to arrange?",
+      text: "Send us the route, the cargo and the dates. We usually reply in under an hour.",
+      cta: "Request a Quote",
     },
   },
 
@@ -475,9 +531,11 @@ export const en = {
       text: "Complete the form with the essential transport details so we can review your enquiry.",
     },
     direct: {
+      officeHeading: "Office",
+      transportHeading: "Transport desk",
       eyebrow: "PREFER TO CONTACT US DIRECTLY?",
       title: "Let's talk.",
-      labels: { email: "Email", phone: "Phone", location: "Location", hours: "Business Hours" },
+      labels: { email: "Email", phone: "Phone", location: "Registered office", hours: "Business Hours" },
       location: "Reghin, Mureș County, Romania",
     },
     carriers: {
@@ -516,8 +574,33 @@ export const en = {
         vehicleTypes: "Vehicle Types",
         regions: "Operating Regions / Preferred Routes",
         message: "Additional Information",
+        vatNumber: "VAT / Company Registration Number (CUI)",
+        cmrInsurance: "Valid CMR insurance",
+        licenceNumber: "Transport Licence Number",
       },
+      vehicleOptions: { curtainsider: "Curtainsider (tautliner)", reefer: "Refrigerated", mega: "Mega", other: "Other" },
+      cmrOptions: { yes: "Yes", no: "No" },
       submit: "Send a Partnership Enquiry",
+    },
+    /** "Quick request": route + phone only. */
+    quick: {
+      fields: { contactPerson: "Name", phone: "Phone Number", pickupLocation: "From", deliveryLocation: "To", note: "Note" },
+      submit: "Send Quick Request",
+    },
+    /** "We'll call you" request. */
+    callback: {
+      fields: { contactPerson: "Name", phone: "Phone Number", preferredTime: "When should we call?" },
+      timeOptions: { any: "Any time", morning: "Morning", afternoon: "Afternoon", evening: "Evening" },
+      submit: "Call Me Back",
+    },
+    /** Contact page form blocks (tabs + callback box). */
+    contactBlocks: {
+      tabsLabel: "Request type",
+      tabFull: "Full request",
+      tabQuick: "Quick request",
+      quickText: "Just the route and a phone number. We go through the details with you by phone.",
+      callbackTitle: "We'll call you.",
+      callbackText: "Leave your number and tell us when it suits you to talk.",
     },
     consent:
       "I agree that AXEL SAFE TRANSPORTING may process the information submitted through this form to respond to my enquiry, as described in the Privacy Policy.",
@@ -536,6 +619,8 @@ export const en = {
       notConfigured:
         "Online enquiries are not connected yet, so your message was not sent. Please contact us directly by email or phone.",
       rateLimited: "Too many attempts in a short time. Please wait a minute and try again.",
+      invalid: "Please check the format of this field.",
+      tooLong: "Please shorten this field.",
     },
   },
 
@@ -581,11 +666,27 @@ export const en = {
       },
       {
         q: "Which countries do you organise road freight for?",
-        a: "We organise road freight across Europe. Share the collection and delivery locations, and we will review the available transport options for that route.",
+        a: "We organise road freight across Europe and the United Kingdom, most often on the Romania–Spain route. We do not arrange transport to or from Switzerland. Share the collection and delivery locations, and we will review the available transport options for that route.",
       },
       {
         q: "Which trailer types can you arrange?",
         a: "Through our carrier partners we arrange curtainsider (tautliner), refrigerated and mega trailers. For shipments that need other equipment or particular transport conditions, availability is confirmed for each enquiry.",
+      },
+      {
+        q: "How quickly will I receive a quote?",
+        a: "Usually in under an hour once we have the details. Our dispatch team works 24/7.",
+      },
+      {
+        q: "Is the cargo insured?",
+        a: "Yes. In addition, every carrier partner holds valid CMR insurance, which we check before the transport.",
+      },
+      {
+        q: "What transport do you not arrange?",
+        a: "Oversized loads and live animals. ADR goods are arranged only with an ADR-equipped truck and a certified driver.",
+      },
+      {
+        q: "Which languages do you speak?",
+        a: "Romanian, English and Spanish.",
       },
       {
         q: "What information do you need to prepare a quote?",
@@ -628,6 +729,11 @@ export const en = {
   common: {
     skip: "Skip to content",
     language: "Language",
+    call: "Call us",
+    whatsapp: {
+      label: "Message us on WhatsApp",
+      message: "Hello, I would like a quote for a road transport. Loading place: … Delivery place: … Cargo: … Date: …",
+    },
   },
 } as const;
 

@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { AlertTriangle, ArrowRight, Database, FileText, Inbox, Truck } from "lucide-react";
+import { AlertTriangle, ArrowRight, Clock, Database, FileText, Inbox, PhoneCall, Truck } from "lucide-react";
 import type { ButtonHTMLAttributes, CSSProperties, ReactNode } from "react";
-import type { LeadStatus, LeadType } from "@/lib/leads/schema";
+import type { LeadStatus, LeadType, SourceChannel } from "@/lib/leads/schema";
+import { CHANNEL_LABEL, STATUS_LABEL, TYPE_LABEL, TYPE_SHORT } from "@/lib/leads/labels";
 import type { LeadStoreStatus } from "@/lib/leads/repository";
 
 /* ───────────────────────── Shared class strings (public-site language) ───────────────────────── */
@@ -42,22 +43,9 @@ export function PillButton({
   );
 }
 
-/* ───────────────────────── Labels (Romanian) ───────────────────────── */
+/* ───────────────────────── Labels: single source in @/lib/leads/labels (also drivers + e-mail) ───────────────────────── */
 
-export const TYPE_LABEL: Record<LeadType, string> = { quote: "Cerere de ofertă", carrier: "Cerere transportator" };
-export const TYPE_SHORT: Record<LeadType, string> = { quote: "Ofertă", carrier: "Transportator" };
-export const TYPE_PLURAL: Record<LeadType, string> = { quote: "Cereri ofertă", carrier: "Transportatori" };
-
-export const STATUS_LABEL: Record<LeadStatus, string> = {
-  new: "Nouă",
-  reviewing: "În analiză",
-  quoted: "Ofertă trimisă",
-  won: "Câștigată",
-  lost: "Pierdută",
-  approved: "Aprobat",
-  rejected: "Respins",
-  spam: "Spam",
-};
+export { CHANNEL_LABEL, STATUS_LABEL, TYPE_LABEL, TYPE_PLURAL, TYPE_SHORT } from "@/lib/leads/labels";
 
 /** Restrained palette derived from the brand: accent blue for "new", soft desaturated hues only as dots / faint tints. */
 export const STATUS_HEX: Record<LeadStatus, string> = {
@@ -92,8 +80,10 @@ export function StatusBadge({ status, className = "" }: { status: LeadStatus; cl
   );
 }
 
+const TYPE_ICON = { quote: FileText, carrier: Truck, callback: PhoneCall } as const;
+
 export function TypeBadge({ type, iconOnly = false }: { type: LeadType; iconOnly?: boolean }) {
-  const Icon = type === "quote" ? FileText : Truck;
+  const Icon = TYPE_ICON[type];
   return (
     <span
       title={TYPE_LABEL[type]}
@@ -101,6 +91,35 @@ export function TypeBadge({ type, iconOnly = false }: { type: LeadType; iconOnly
     >
       <Icon size={13} strokeWidth={1.6} aria-hidden className="text-accent" />
       {iconOnly ? <span className="sr-only">{TYPE_SHORT[type]}</span> : TYPE_SHORT[type]}
+    </span>
+  );
+}
+
+/** Where a lead came from; nothing for website leads (the default). */
+export function ChannelBadge({ channel }: { channel: SourceChannel }) {
+  if (channel === "site") return null;
+  return (
+    <span className="inline-flex h-7 items-center whitespace-nowrap rounded-full border border-line bg-ink/[0.03] px-2.5 text-[0.8125rem] text-ink-2">
+      {CHANNEL_LABEL[channel]}
+    </span>
+  );
+}
+
+/** Muted red used for the response-time promise and overdue follow-ups (no saturated colours). */
+export const ALERT_HEX = "#e3a9a9";
+
+/** Still "new" after the 60-minute first-reply promise. */
+export function SlaBadge({ minutes }: { minutes: number }) {
+  const text = minutes >= 48 * 60 ? `${Math.floor(minutes / 1440)} zile` : minutes >= 120 ? `${Math.floor(minutes / 60)} h` : `${minutes} min`;
+  return (
+    <span
+      title="Cerere nouă fără răspuns de peste 60 de minute"
+      style={{ borderColor: `color-mix(in srgb, ${ALERT_HEX} 45%, transparent)`, background: `color-mix(in srgb, ${ALERT_HEX} 12%, transparent)`, color: ALERT_HEX }}
+      className="tabular inline-flex h-7 items-center gap-1.5 whitespace-nowrap rounded-full border px-2.5 text-[0.8125rem]"
+    >
+      <Clock size={12} strokeWidth={1.8} aria-hidden />
+      <span className="sr-only">Fără răspuns de</span>
+      {text}
     </span>
   );
 }
@@ -196,5 +215,44 @@ export function Kbd({ children }: { children: ReactNode }) {
     <kbd className="inline-grid h-5 min-w-5 place-items-center rounded-md border border-line-strong px-1 font-mono text-[0.6875rem] text-ink-2">
       {children}
     </kbd>
+  );
+}
+
+/* ───────────────────────── Bars (dashboard, no chart library) ───────────────────────── */
+
+/**
+ * Thin horizontal bars in the brand's muted hues. Each row is plain text (label + number), so
+ * screen readers get the data; the bar itself is decorative.
+ */
+export function Bars({ rows, empty = "Nu există date încă.", hex = "#b7d4f7" }: { rows: { label: string; value: number; href?: string; hex?: string }[]; empty?: string; hex?: string }) {
+  const max = Math.max(0, ...rows.map((r) => r.value));
+  if (!rows.length || max === 0) return <p className="text-[0.875rem] text-ink-3">{empty}</p>;
+  return (
+    <ul className="flex flex-col gap-3">
+      {rows.map((r) => {
+        const content = (
+          <>
+            <span className="flex items-baseline justify-between gap-3 text-[0.875rem]">
+              <span className="truncate text-ink-2">{r.label}</span>
+              <span className="tabular font-mono text-[0.8125rem] text-ink">{r.value}</span>
+            </span>
+            <span aria-hidden className="block h-1 overflow-hidden rounded-full bg-ink/[0.06]">
+              <span className="block h-full rounded-full opacity-70" style={{ width: `${Math.max(2, (r.value / max) * 100)}%`, background: r.hex ?? hex }} />
+            </span>
+          </>
+        );
+        return (
+          <li key={r.label}>
+            {r.href ? (
+              <Link href={r.href} className="flex flex-col gap-1.5 rounded-md transition-opacity hover:opacity-80">
+                {content}
+              </Link>
+            ) : (
+              <div className="flex flex-col gap-1.5">{content}</div>
+            )}
+          </li>
+        );
+      })}
+    </ul>
   );
 }

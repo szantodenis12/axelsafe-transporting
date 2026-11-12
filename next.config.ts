@@ -1,4 +1,7 @@
 import type { NextConfig } from "next";
+import { localisedRewrites } from "./src/lib/routes";
+
+const localised = localisedRewrites();
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
@@ -18,7 +21,11 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     // EN is the default locale. Root → /en (308). Update when RO/ES go live.
-    return [{ source: "/", destination: "/en", permanent: true }];
+    return [{ source: "/", destination: "/en", permanent: true }, ...localised.redirects];
+  },
+  async rewrites() {
+    // localised slugs (e.g. /ro/ghiduri) → the app/ folder named after the EN slug
+    return { beforeFiles: localised.rewrites, afterFiles: [], fallback: [] };
   },
   async headers() {
     return [

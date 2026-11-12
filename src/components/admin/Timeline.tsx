@@ -1,26 +1,33 @@
-import { ArrowRight, CircleDot, MessageSquare, Sparkles, UserRound } from "lucide-react";
-import type { LeadEvent } from "@/lib/leads/types";
+import { ArrowRight, BadgeCheck, CalendarClock, CircleDot, Coins, Landmark, MessageSquare, Sparkles, UserRound } from "lucide-react";
+import type { LeadEvent, LeadEventKind } from "@/lib/leads/types";
 import { formatAge, formatDateTime } from "@/lib/admin/format";
 import { StatusBadge } from "./ui";
 
-const ICON = {
+const ICON: Record<LeadEventKind, typeof CircleDot> = {
   created: Sparkles,
   status_changed: CircleDot,
   note: MessageSquare,
   assigned: UserRound,
-} as const;
+  follow_up: CalendarClock,
+  economics: Coins,
+  verification: BadgeCheck,
+  anaf_lookup: Landmark,
+};
 
-/** Stored event text is English ("Assigned to X" / "Unassigned"); shown in Romanian. */
+/** Event kinds whose note IS the title (Romanian text written by the drivers). */
+const NOTE_AS_TITLE = new Set<LeadEventKind>(["assigned", "follow_up", "economics", "verification", "anaf_lookup"]);
+
+/** v1 events stored English text ("Assigned to X" / "Unassigned"); v2 writes Romanian. */
 function assignedText(note?: string) {
   if (!note) return "Responsabil modificat";
   const m = /^Assigned to (.+)$/.exec(note);
-  if (m) return `Atribuită lui ${m[1]}`;
-  if (note === "Unassigned") return "Atribuire eliminată";
+  if (m) return `Alocat lui ${m[1]}`;
+  if (note === "Unassigned") return "Nealocat";
   return note;
 }
 
 function Title({ e }: { e: LeadEvent }) {
-  if (e.kind === "created") return <span className="text-ink">Cerere primită</span>;
+  if (e.kind === "created") return <span className="text-ink">{e.note ?? "Cerere primită"}</span>;
   if (e.kind === "status_changed")
     return (
       <span className="inline-flex flex-wrap items-center gap-1.5">
@@ -30,6 +37,7 @@ function Title({ e }: { e: LeadEvent }) {
       </span>
     );
   if (e.kind === "assigned") return <span className="text-ink">{assignedText(e.note)}</span>;
+  if (NOTE_AS_TITLE.has(e.kind)) return <span className="text-ink">{e.note ?? "Actualizare"}</span>;
   return <span className="text-ink">Notă</span>;
 }
 
@@ -40,8 +48,8 @@ export function Timeline({ events }: { events: LeadEvent[] }) {
   return (
     <ol className="relative flex flex-col">
       {ordered.map((e, i) => {
-        const Icon = ICON[e.kind];
-        const showNote = e.note && e.kind !== "assigned";
+        const Icon = ICON[e.kind] ?? CircleDot;
+        const showNote = e.note && e.kind !== "created" && !NOTE_AS_TITLE.has(e.kind);
         return (
           <li key={e.id} className="relative flex gap-3 pb-4 last:pb-0">
             {i < ordered.length - 1 ? <span aria-hidden className="absolute left-[11px] top-6 h-[calc(100%-1.25rem)] w-px bg-line" /> : null}

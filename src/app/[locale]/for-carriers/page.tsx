@@ -10,6 +10,7 @@ import { CarrierForm } from "@/components/forms/CarrierForm";
 import { Reveal } from "@/components/ui/Reveal";
 import { Ph } from "@/components/ui/Ph";
 import { Rail } from "@/components/ui/Rail";
+import { ArrowLink } from "@/components/ui/Pill";
 import { fact } from "@/content/companyData";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 import { anchors, href } from "@/lib/routes";
@@ -29,6 +30,8 @@ export default async function ForCarriersPage({ params }: PageProps<"/[locale]/f
   const verification = factL("carrierVerification", locale);
   const conditions = factL("carrierConditions", locale);
   const carrierEmail = fact("carrierEmail");
+  const benefits = factL("carrierBenefits", locale);
+  const offer = factL("carrierOffer", locale);
 
   return (
     <>
@@ -94,6 +97,9 @@ export default async function ForCarriersPage({ params }: PageProps<"/[locale]/f
             <Ph k="carrierVerification">
               <HairlineList items={verification} rowClassName="py-5" />
             </Ph>
+            <ArrowLink href={href(locale, "vetting")} className="mt-8">
+              {t.extras.requirementsLink}
+            </ArrowLink>
           </Reveal>
         </div>
       </section>
@@ -115,6 +121,42 @@ export default async function ForCarriersPage({ params }: PageProps<"/[locale]/f
             ))}
             </Rail>
           </Ph>
+        </div>
+      </section>
+
+      {/* 05 — What you get: verified items + one [PLACEHOLDER] item (carrierOffer) */}
+      <section className="section-y band-soft">
+        <div className="wrap grid-12 gap-y-10">
+          <div className="col-span-12 lg:col-span-5">
+            <SectionHead eyebrow={t.extras.benefitsEyebrow} title={t.extras.benefitsTitle} titleClassName="t-h2 max-w-[11ch]" />
+          </div>
+          <Reveal delay={120} data-speed="0.04" className="col-span-12 lg:col-span-6 lg:col-start-7">
+            <ul className="border-t border-line">
+              {[
+                ...benefits.map((b) => ({ ...b, ph: false })),
+                ...offer.map((b) => ({ ...b, ph: true })),
+              ].map((b, i) => {
+                const row = (
+                  <>
+                    <span className="t-label w-6 shrink-0 !text-ink-3">{String(i + 1).padStart(2, "0")}</span>
+                    <span>
+                      <span className="t-body block !text-ink">{b.title}</span>
+                      <span className="t-small mt-1.5 block">{b.text}</span>
+                    </span>
+                  </>
+                );
+                return b.ph ? (
+                  <Ph key={b.title} k="carrierOffer" as="li" className="flex items-baseline gap-5 border-b border-line py-5">
+                    {row}
+                  </Ph>
+                ) : (
+                  <li key={b.title} className="flex items-baseline gap-5 border-b border-line py-5">
+                    {row}
+                  </li>
+                );
+              })}
+            </ul>
+          </Reveal>
         </div>
       </section>
 
