@@ -109,6 +109,7 @@ export function TrailerExplorer({ types, specs, t }: Props) {
             src={stage.src}
             alt={current.title}
             fill
+            quality={85}
             sizes="(min-width: 1440px) 1300px, 92vw"
             className="truck-in object-contain"
           />

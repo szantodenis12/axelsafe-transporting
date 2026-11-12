@@ -18,8 +18,9 @@ export function CarrierBand({
           src="/media/viaduct-dawn.jpg"
           alt="A single articulated truck crossing a motorway viaduct above a misty alpine valley at blue hour."
           fill
-          quality={80}
-          sizes="100vw"
+          quality={90}
+          /* oversized parallax layer + object-cover: drawn ~1.3-1.5x the viewport width; the source is 2560 */
+          sizes="2560px"
           className="object-cover object-[50%_60%]"
         />
       </ParallaxLayer>

@@ -238,10 +238,15 @@ export function HeroStage({ hero, intro, originLabel, networkPanel }: Props) {
       const REVEAL_MIN = 0.08;
       const REVEAL_MAX = 1.3;
       const reveal = { v: 0 };
+      let revealDone = false;
       const applyReveal = () => {
         const sc = REVEAL_MIN + (REVEAL_MAX - REVEAL_MIN) * reveal.v;
         // scale about the box centre (Reghin) with transform-origin 0 0:  x = C·(1−s)   (inner: about Reghin, 1/s)
         gsap.set(net, { x: cn * (1 - sc), y: cn * (1 - sc), scale: sc, opacity: Math.min(1, reveal.v * 6) });
+        // fully revealed: the soft disc's black core covers the whole frame, so the mask is a visual no-op — drop it (a masked
+        // render surface over the photo + roads + flow costs GPU time on every frame of the rest of the pin). Toggled on change only.
+        const done = reveal.v >= 0.999;
+        if (done !== revealDone) net.classList.toggle("net-revealed", (revealDone = done));
         gsap.set(netInner, { x: ox * (1 - 1 / sc), y: oy * (1 - 1 / sc), scale: 1 / sc });
       };
       gsap.set([net, netInner], { transformOrigin: "0 0" });
@@ -464,9 +469,14 @@ export function HeroStage({ hero, intro, originLabel, networkPanel }: Props) {
       geometry();
 
       const reveal = { v: 0 };
+      let revealDone = false;
       const applyReveal = () => {
         const sc = REVEAL_MIN + (revealMax - REVEAL_MIN) * reveal.v;
         gsap.set(net, { x: cn * (1 - sc), y: cn * (1 - sc), scale: sc, opacity: Math.min(1, reveal.v * 6) });
+        // fully revealed: the soft disc's black core covers the whole frame, so the mask is a visual no-op — drop it (a masked
+        // render surface over the photo + roads + flow costs GPU time on every frame of the rest of the pin). Toggled on change only.
+        const done = reveal.v >= 0.999;
+        if (done !== revealDone) net.classList.toggle("net-revealed", (revealDone = done));
         gsap.set(netInner, { x: ox * (1 - 1 / sc), y: oy * (1 - 1 / sc), scale: 1 / sc });
       };
       gsap.set([net, netInner], { transformOrigin: "0 0" });

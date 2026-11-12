@@ -27,7 +27,7 @@ export function EarthBackdrop({ objectPosition = "object-[50%_35%]" }: { objectP
         {/* own eased top feather: this box starts at 16%, so its straight top edge (and the image's bluer sky against the
             page navy) used to show as a lighter rectangle with a hard bottom/top line partway up the section */}
         <div className="absolute inset-x-0 top-[16%] -bottom-[6%]" style={{ maskImage: IMAGE_FEATHER, WebkitMaskImage: IMAGE_FEATHER }}>
-          <Image src="/media/earth-curvature.jpg" alt="" fill quality={80} sizes="100vw" className={`object-cover ${objectPosition}`} />
+          <Image src="/media/earth-curvature.jpg" alt="" fill quality={85} sizes="(min-width: 768px) 112vw, 2560px" className={`object-cover ${objectPosition}`} />
         </div>
       </ParallaxLayer>
       {/* legibility veil: zero at both ends (a non-zero end here was a hard-edged band against the footer), eased in between */}

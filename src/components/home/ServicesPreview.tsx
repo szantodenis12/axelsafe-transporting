@@ -44,8 +44,9 @@ export function ServicesPreview({
                       src={card.image}
                       alt={card.alt}
                       fill
-                      quality={80}
-                      sizes="(min-width: 768px) 32vw, 100vw"
+                      quality={85}
+                      /* 4:5 card + oversized parallax layer, object-cover of a 16:9 photo: drawn ~2.5x the card width */
+                      sizes="(min-width: 768px) 76vw, 640px"
                       className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-out-expo)] group-hover:scale-[1.045]"
                     />
                   </ParallaxLayer>

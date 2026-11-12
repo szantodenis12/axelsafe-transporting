@@ -151,7 +151,7 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
                     src={equipmentImages[i].src}
                     alt={equipmentImages[i].alt}
                     fill
-                    quality={80}
+                    quality={85}
                     sizes="(min-width: 768px) 33vw, 100vw"
                     className="object-cover transition-transform duration-[1.4s] ease-[var(--ease-out-expo)] group-hover:scale-[1.04]"
                   />

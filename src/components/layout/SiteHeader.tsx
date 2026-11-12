@@ -84,7 +84,7 @@ export function SiteHeader({
         <nav aria-label="Main" className="absolute left-1/2 hidden -translate-x-1/2 xl:block">
           <ul
             className={`flex items-center gap-1 rounded-full border p-1.5 transition-colors duration-500 ${
-              scrolled ? "border-line-strong bg-bg-2/70 backdrop-blur-md" : "border-line bg-bg-2/30 backdrop-blur-[2px]"
+              scrolled ? "border-line-strong bg-bg-2/90" : "border-line bg-bg-2/30"
             }`}
           >
             {items.map((item) => {
@@ -127,7 +127,7 @@ export function SiteHeader({
             onClick={() => setOpen((v) => !v)}
             aria-expanded={open}
             aria-controls="mobile-menu"
-            className="grid h-11 w-11 place-items-center rounded-full border border-line-strong bg-bg-2/60 text-ink backdrop-blur xl:hidden"
+            className="grid h-11 w-11 place-items-center rounded-full border border-line-strong bg-bg-2/85 text-ink xl:hidden"
           >
             {open ? <X size={18} strokeWidth={1.6} /> : <Menu size={18} strokeWidth={1.6} />}
             <span className="sr-only">{open ? labels.close : labels.menu}</span>

@@ -16,7 +16,9 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ["image/avif", "image/webp"],
-    qualities: [70, 80, 90],
+    // 85 = full-bleed photography / zoomed parallax crops; 90 = hero stills; 70-80 = small cards. Every photo source is 2560 px wide, so 2560 is
+    // the top of the ladder (the optimizer never upscales: a 3840 step would only duplicate the 2560 file).
+    qualities: [70, 80, 85, 90],
     deviceSizes: [640, 828, 1080, 1440, 1920, 2560],
   },
   async redirects() {

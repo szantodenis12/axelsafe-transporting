@@ -36,8 +36,9 @@ export function SplitSection({ id, label, title, paragraphs, listTitle, list, ct
                   src={image.src}
                   alt={image.alt}
                   fill
-                  quality={80}
-                  sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
+                  quality={85}
+                  /* portrait frame + zoomed parallax layer, object-cover of a 16:9 photo: the image is drawn ~2.7x the frame width */
+                  sizes="(min-width: 1024px) 100vw, (min-width: 768px) 150vw, 640px"
                   className={`object-cover ${image.position ?? "object-center"}`}
                 />
               </ParallaxLayer>

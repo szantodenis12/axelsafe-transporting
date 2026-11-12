@@ -23,7 +23,7 @@ export function LanguageSwitcher({
 
   return (
     <nav aria-label={label} className={className}>
-      <ul className="flex items-center rounded-full border border-line-strong bg-bg-2/50 p-1 backdrop-blur-md">
+      <ul className="flex items-center rounded-full border border-line-strong bg-bg-2/80 p-1">
         {options.map((o) => {
           const active = o.code === current;
           const cls = `block rounded-full px-4 py-3 font-mono md:pointer-fine:px-2.5 md:pointer-fine:py-1.5 text-[0.6875rem] tracking-[0.08em] transition-colors duration-300 ${

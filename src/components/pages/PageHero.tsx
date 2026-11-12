@@ -48,8 +48,10 @@ export function PageHero({ pageName, titleLines, text, paragraphs, primary, seco
               fill
               loading="eager"
               fetchPriority="high"
-              quality={80}
-              sizes="100vw"
+              quality={90}
+              /* the layer is ~1.3x the hero height and the photo is object-cover: on a 16:9 screen the image is drawn ~1.5x the viewport
+                 width (far wider on phones), so ask for the top of the ladder (the source is 2560) instead of 100vw */
+              sizes="2560px"
               className={`object-cover ${image.position ?? "object-center"}`}
             />
           </ParallaxLayer>
