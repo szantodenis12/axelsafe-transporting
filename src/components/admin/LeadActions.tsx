@@ -94,6 +94,8 @@ export function StatusForm({ leadId, type, current, canApprove }: { leadId: stri
   return (
     <form action={action} className={`${panel} flex flex-col gap-4 p-5`} aria-busy={pending || undefined}>
       <input type="hidden" name="id" value={leadId} />
+      {/* React resets the form after every action; the radios are not submitted, this carries the selection. */}
+      <input type="hidden" name="status" value={selected} />
       <fieldset className="flex flex-col gap-3">
         <legend className={`${labelClass} mb-3`}>Stare</legend>
         <div className="flex flex-wrap gap-2">
@@ -103,7 +105,7 @@ export function StatusForm({ leadId, type, current, canApprove }: { leadId: stri
               <label key={s} className={locked ? "cursor-not-allowed" : "cursor-pointer"} title={locked ? "Bifează întâi cele 4 verificări" : undefined}>
                 <input
                   type="radio"
-                  name="status"
+                  name="status-choice"
                   value={s}
                   checked={selected === s}
                   disabled={locked}
@@ -153,10 +155,10 @@ export function CardStatusForm({ leadId, type, current, canApprove }: { leadId: 
         <label htmlFor={selectId} className="sr-only">
           Mută în
         </label>
+        <input type="hidden" name="status" value={selected} />
         <select
           id={selectId}
-          name="status"
-          defaultValue={current}
+          value={selected}
           key={`${current}-${state.at ?? 0}`}
           onChange={(e) => setSelected(e.target.value as LeadStatus)}
           className={`${adminSelect} !h-9 !rounded-full !pl-3.5 !text-[0.8125rem]`}
