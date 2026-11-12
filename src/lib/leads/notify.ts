@@ -4,6 +4,7 @@
  * e-mail must not fail the lead write. Written in Romanian for the dispatch team.
  */
 import { companyData } from "@/content/companyData";
+import { siteUrl } from "@/lib/site";
 import { CALLBACK_TIME_LABEL, CHANNEL_LABEL, TYPE_LABEL } from "./labels";
 import { leadSummary, vehicleLabels } from "./summary";
 import { leadTitle, type Lead } from "./types";
@@ -82,7 +83,7 @@ export async function notifyNewLead(lead: Lead): Promise<void> {
   if (!apiKey || !to) return;
 
   const from = process.env.LEADS_NOTIFY_FROM?.trim() || `AXEL SAFE Website <no-reply@${companyData.domain.value}>`;
-  const base = (process.env.NEXT_PUBLIC_SITE_URL || companyData.siteUrl.value).replace(/\/$/, "");
+  const base = siteUrl;
   const adminUrl = `${base}/admin/leads/${lead.id}`;
   const subject = `[Site] ${typeLine(lead)}: ${leadTitle(lead)} · ${shortSummary(lead)}`.slice(0, 200);
 
