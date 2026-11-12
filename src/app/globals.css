@@ -393,6 +393,16 @@ video {
 .hero-stage[data-motion="on"] .intro-block {
   z-index: 10;
 }
+/* the stacked intro layer covers the whole pin: only its own (visible) content may take clicks,
+   otherwise it swallows the hero CTAs underneath while the intro is still hidden */
+.hero-stage[data-motion] .intro-block,
+.hero-stage[data-motion] .intro-block > .wrap {
+  pointer-events: none;
+}
+.hero-stage[data-motion] [data-intro],
+.hero-stage[data-motion] [data-panel] {
+  pointer-events: auto;
+}
 /* single static scrim: left reading gradient + bottom fade into the page colour (no backdrop-filter) */
 .hero-scrim {
   background-image:
