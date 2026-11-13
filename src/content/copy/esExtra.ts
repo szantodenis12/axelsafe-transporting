@@ -15,7 +15,7 @@ export const esExtra: PageExtras = {
     finalCta: {
       titleLines: ["¿Tienes un transporte que organizar?", "Envíanos los datos."],
       text: "Dinos qué mercancía hay que transportar, la ruta y las fechas en las que necesitas el camión. Comprobamos la disponibilidad de los transportistas de nuestra red y te enviamos una oferta.",
-      cta: "Pide presupuesto de transporte",
+      cta: "Solicita un presupuesto de transporte",
     },
   },
   about: {

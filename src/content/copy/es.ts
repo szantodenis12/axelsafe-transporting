@@ -12,7 +12,7 @@ export const es: Dictionary = {
     home: {
       title: "AXEL SAFE TRANSPORTING | Organización de transporte de mercancías por carretera",
       description:
-        "Organizamos transporte de mercancías por carretera en Europa y el Reino Unido con transportistas independientes. Tráfico 24/7. Pide presupuesto.",
+        "Organizamos transporte de mercancías por carretera en Europa y el Reino Unido con transportistas independientes. Tráfico 24/7. Solicita un presupuesto.",
     },
     services: {
       title: "Servicios de transporte de mercancías por carretera | AXEL SAFE TRANSPORTING",
@@ -35,7 +35,7 @@ export const es: Dictionary = {
         "¿Tienes una empresa de transporte y buscas cargas? Preséntanos tu empresa y vemos juntos si podemos trabajar.",
     },
     contact: {
-      title: "Pide un presupuesto de transporte | AXEL SAFE TRANSPORTING",
+      title: "Solicita un presupuesto de transporte | AXEL SAFE TRANSPORTING",
       description:
         "Escríbenos la ruta, la mercancía y la fecha. AXEL SAFE TRANSPORTING te envía una oferta para el transporte de mercancías por carretera.",
     },
@@ -59,7 +59,7 @@ export const es: Dictionary = {
       { key: "about", label: "Sobre nosotros" },
       { key: "forCarriers", label: "Para transportistas" },
     ],
-    cta: "Pide presupuesto",
+    cta: "Solicita un presupuesto",
     menu: "Menú",
     close: "Cerrar",
   },
@@ -85,9 +85,9 @@ export const es: Dictionary = {
       { key: "terms", label: "Condiciones de uso" },
     ],
     rights: "AXEL SAFE TRANSPORTING. Todos los derechos reservados.",
-    credit: "Web realizada por",
+    credit: "Web desarrollada por",
     social: "También estamos en",
-    cta: "Pide presupuesto",
+    cta: "Solicita un presupuesto",
     nav: "Navegación del pie de página",
     legalNav: "Información legal",
     services: "Servicios",
@@ -112,7 +112,7 @@ export const es: Dictionary = {
       eyebrow: "AXEL SAFE TRANSPORTING / ORGANIZACIÓN DE TRANSPORTE POR CARRETERA",
       titleLines: ["Transporte por carretera en Europa,", "adaptado a tu negocio."],
       text: "Organizamos transporte de mercancías por carretera en Europa y el Reino Unido con una red de transportistas verificados. Desde encontrar el camión adecuado hasta la confirmación de la entrega, nos encargamos de organizar y coordinar cada porte.",
-      primary: "Pide presupuesto",
+      primary: "Solicita un presupuesto",
       secondary: "Ver nuestros servicios",
       micro: ["En el transporte desde 2018", "Unos 100 portes al mes", "Tráfico disponible 24/7"],
     },
@@ -207,7 +207,7 @@ export const es: Dictionary = {
       eyebrow: "TRÁFICO DISPONIBLE 24/7",
       titleLines: ["¿Tienes mercancía que transportar?", "Envíanos los datos."],
       text: "Dinos dónde hay que cargar la mercancía, adónde tiene que llegar y cuándo necesitas el transporte. Revisamos las opciones disponibles y te enviamos una oferta según tus requisitos.",
-      primary: "Pide presupuesto de transporte",
+      primary: "Solicita un presupuesto de transporte",
       secondary: "Contacta con nosotros",
     },
     /** [PLACEHOLDER] etiquetas solo para el prototipo, para el visual de la red. No es texto aprobado. */
@@ -226,7 +226,7 @@ export const es: Dictionary = {
       eyebrow: "SERVICIOS DE TRANSPORTE Y LOGÍSTICA",
       titleLines: ["Transporte por carretera en Europa,", "adaptado a lo que necesita tu negocio."],
       text: "Organizamos transporte de mercancías por carretera en Europa con una red de transportistas verificados. Gestionamos tanto portes puntuales como transportes recurrentes, según la mercancía, la ruta y los plazos de entrega.",
-      cta: "Pide presupuesto",
+      cta: "Solicita un presupuesto",
     },
     intro: {
       eyebrow: "01 / NUESTRO ENFOQUE",
@@ -256,7 +256,7 @@ export const es: Dictionary = {
           "Confirmación de las tarifas y de los detalles del porte.",
           "Coordinación del transporte hasta la entrega.",
         ],
-        cta: "Pide presupuesto de transporte",
+        cta: "Solicita un presupuesto de transporte",
         ctaTarget: "contact",
       },
       {
@@ -302,7 +302,7 @@ export const es: Dictionary = {
       listTitle: "Nos ayuda saber:",
       list: "Qué mercancía es, cuánto pesa aproximadamente, las dimensiones o el número de palés, dónde se carga y dónde se entrega, qué fechas prefieres y si la mercancía necesita una manipulación especial.",
       note: "Si la mercancía necesita un equipo o condiciones especiales, primero comprobamos la disponibilidad y después te enviamos la oferta.",
-      cta: "Pide presupuesto",
+      cta: "Solicita un presupuesto",
     },
     /** [PLACEHOLDER] títulos solo para el prototipo, para los tipos de transporte / sectores de companyData. */
     extras: {
@@ -314,7 +314,7 @@ export const es: Dictionary = {
     finalCta: {
       title: "¿Necesitas un transporte por carretera en Europa?",
       text: "Envíanos los datos de la mercancía, la ruta y la fecha de carga. Comprobamos la disponibilidad de transportistas y te enviamos una oferta para ese porte.",
-      cta: "Pide presupuesto de transporte",
+      cta: "Solicita un presupuesto de transporte",
     },
   },
 
@@ -392,7 +392,7 @@ export const es: Dictionary = {
         "Si hay cambios, hablamos con el transportista y te informamos de la situación.",
         "Buscamos colaboraciones en las que cada parte sabe lo que tiene que hacer y la información importante llega a tiempo.",
       ],
-      cta: "Pide presupuesto de transporte",
+      cta: "Solicita un presupuesto de transporte",
     },
   },
 
@@ -522,14 +522,14 @@ export const es: Dictionary = {
     finalCta: {
       title: "Organiza el transporte de tu mercancía con colaboradores verificados.",
       text: "Envíanos los requisitos del transporte y estudiaremos las opciones disponibles.",
-      cta: "Pide presupuesto",
+      cta: "Solicita un presupuesto",
     },
   },
 
   contact: {
     hero: {
       eyebrow: "CONTACTO AXEL SAFE TRANSPORTING",
-      title: "Pide un presupuesto para el transporte de tu mercancía.",
+      title: "Solicita un presupuesto para el transporte de tu mercancía.",
       text: "Envíanos los datos del transporte y nuestro equipo revisará la ruta, los requisitos y la capacidad disponible en la red de transportistas. Normalmente respondemos en menos de una hora.",
     },
     quote: {
@@ -539,7 +539,7 @@ export const es: Dictionary = {
     direct: {
       eyebrow: "CONTACTO DIRECTO",
       title: "Contacta con el equipo de AXEL SAFE TRANSPORTING.",
-      labels: { email: "Correo electrónico", phone: "Teléfono", location: "Domicilio social", hours: "Disponibilidad de tráfico" },
+      labels: { email: "Correo electrónico", phone: "Teléfono", location: "Domicilio social", hours: "Disponibilidad del departamento de tráfico" },
       location: "Reghin, distrito de Mureș, Rumanía",
     },
     carriers: {
@@ -559,9 +559,9 @@ export const es: Dictionary = {
         pickupLocation: "Lugar de carga",
         deliveryLocation: "Lugar de entrega",
         cargoDescription: "Descripción de la mercancía",
-        weight: "Peso y dimensiones aproximados",
-        pickupDate: "Fecha de carga deseada",
-        deliveryDate: "Fecha de entrega deseada",
+        weight: "Peso y dimensiones aproximadas",
+        pickupDate: "Fecha de carga prevista",
+        deliveryDate: "Fecha de entrega prevista",
         additional: "Otros requisitos",
       },
       submit: "Enviar solicitud de transporte",
@@ -593,8 +593,8 @@ export const es: Dictionary = {
     },
     /** Te llamamos nosotros. */
     callback: {
-      fields: { contactPerson: "Nombre", phone: "Teléfono", preferredTime: "Franja horaria preferida" },
-      timeOptions: { any: "Cuando sea", morning: "Por la mañana", afternoon: "Por la tarde", evening: "Por la noche" },
+      fields: { contactPerson: "Nombre", phone: "Teléfono", preferredTime: "Horario de contacto preferido" },
+      timeOptions: { any: "En cualquier momento", morning: "Por la mañana", afternoon: "Por la tarde", evening: "Por la noche" },
       submit: "Pide que te llamemos",
     },
     /** Bloques de formulario de la página de contacto (pestañas + recuadro de llamada). */
@@ -604,7 +604,7 @@ export const es: Dictionary = {
       tabQuick: "Solicitud rápida",
       quickText: "¿No tienes todos los datos a mano? Envíanos la ruta y tu número de teléfono. El resto lo vemos juntos.",
       callbackTitle: "¿Prefieres hablarlo por teléfono?",
-      callbackText: "Déjanos tus datos de contacto y la franja horaria que prefieras. Una persona de AXEL SAFE TRANSPORTING te llamará para hablar de tu solicitud.",
+      callbackText: "Déjanos tus datos de contacto y la franja horaria que prefieras. Una persona del equipo de AXEL SAFE TRANSPORTING te llamará para hablar sobre tu solicitud.",
     },
     consent:
       "Acepto que AXEL SAFE TRANSPORTING utilice los datos enviados a través de este formulario para responderme, conforme a la Política de privacidad.",

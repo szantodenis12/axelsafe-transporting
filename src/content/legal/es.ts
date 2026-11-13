@@ -52,7 +52,7 @@ export const privacyPolicy: LegalDoc = {
         {
           type: "list",
           items: [
-            "Solicitud completa de transporte: nombre de la empresa, persona de contacto, correo electrónico, número de teléfono, lugar de carga y de entrega, descripción de la mercancía, peso y dimensiones aproximados, fechas deseadas y otros requisitos.",
+            "Solicitud completa de transporte: nombre de la empresa, persona de contacto, correo electrónico, número de teléfono, lugar de carga y de entrega, descripción de la mercancía, peso y dimensiones aproximadas, fechas deseadas y otros requisitos.",
             "Solicitud rápida: nombre, teléfono, lugar de carga, destino e información adicional.",
             "Solicitud de llamada: nombre, teléfono y franja horaria en la que prefieres que te llamemos.",
             "Formulario para transportistas: nombre de la empresa, código fiscal, persona de contacto, correo electrónico, teléfono, país de registro, número y tipos de vehículos, zonas y rutas en las que trabajas, número de licencia de transporte, si tienes seguro CMR en vigor y cualquier otra información que decidas darnos.",

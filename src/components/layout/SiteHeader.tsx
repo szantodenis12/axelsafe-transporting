@@ -76,12 +76,14 @@ export function SiteHeader({
         aria-hidden
         className={`pointer-events-none absolute inset-0 -bottom-10 bg-gradient-to-b from-bg via-bg/80 max-md:via-bg/95 max-md:via-[62%] to-transparent transition-opacity duration-500 ${scrolled ? "opacity-100" : "opacity-0"}`}
       />
-      <div className="wrap relative flex h-[var(--header-h)] items-center justify-between gap-6">
-        <Link href={homeHref} aria-label="AXEL SAFE TRANSPORTING — Home" className="relative z-10 rounded-md">
+      {/* xl: three columns, so the nav stays centred while there is room and only shifts left
+          (instead of sliding under the buttons) when a long CTA label leaves too little space. */}
+      <div className="wrap relative flex h-[var(--header-h)] items-center justify-between gap-6 xl:grid xl:grid-cols-[minmax(max-content,1fr)_auto_minmax(max-content,1fr)] xl:gap-4">
+        <Link href={homeHref} aria-label="AXEL SAFE TRANSPORTING — Home" className="relative z-10 rounded-md xl:justify-self-start">
           <Logo />
         </Link>
 
-        <nav aria-label="Main" className="absolute left-1/2 hidden -translate-x-1/2 xl:block">
+        <nav aria-label="Main" className="hidden xl:block">
           <ul
             className={`flex items-center gap-1 rounded-full border p-1.5 transition-colors duration-500 ${
               scrolled ? "border-line-strong bg-bg-2/90" : "border-line bg-bg-2/30"
@@ -94,7 +96,7 @@ export function SiteHeader({
                   <Link
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={`block rounded-full px-4 py-2 text-[0.875rem] font-medium tracking-[-0.005em] transition-colors duration-300 ${
+                    className={`block rounded-full px-3 py-2 text-[0.875rem] min-[1366px]:px-4 font-medium tracking-[-0.005em] transition-colors duration-300 ${
                       active ? "bg-ink/[0.09] text-ink" : "text-ink-2 hover:text-ink"
                     }`}
                   >
@@ -106,7 +108,7 @@ export function SiteHeader({
           </ul>
         </nav>
 
-        <div className="relative z-10 flex items-center gap-2">
+        <div className="relative z-10 flex items-center gap-2 xl:justify-self-end">
           <LanguageSwitcher current={locale} options={languages} label={labels.language} className="hidden md:block" />
           <a
             href={phone.href}
