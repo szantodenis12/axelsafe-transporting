@@ -44,7 +44,7 @@ export function ProcessTimeline({
             <MobileEyebrow>{t.eyebrow}</MobileEyebrow>
             <h2 className="t-h2">{t.title}</h2>
           </div>
-          <p className="t-lead col-span-12 lg:col-span-4 lg:col-start-9" data-speed="0.03">{t.text}</p>
+          {t.text ? <p className="t-lead col-span-12 lg:col-span-4 lg:col-start-9" data-speed="0.03">{t.text}</p> : null}
         </div>
 
         <div ref={ref} className="timeline group/tl relative m-block mt-16 md:mt-14">

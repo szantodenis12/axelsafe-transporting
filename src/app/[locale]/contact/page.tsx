@@ -9,6 +9,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Pill } from "@/components/ui/Pill";
 import { Ph } from "@/components/ui/Ph";
 import { fact } from "@/content/companyData";
+import { getExtras } from "@/content/copy/extras";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 import { anchors, href } from "@/lib/routes";
 import { JsonLd, pageMetadata } from "@/lib/seo";
@@ -58,7 +59,7 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
 
                 <dl className="mt-5 border-t border-line md:mt-7">
                   <ContactGroup
-                    heading={t.direct.officeHeading}
+                    heading={getExtras(locale).contact.officeHeading}
                     emailLabel={t.direct.labels.email}
                     phoneLabel={t.direct.labels.phone}
                     email={email}
@@ -67,7 +68,7 @@ export default async function ContactPage({ params }: PageProps<"/[locale]/conta
                     phoneKey="phone"
                   />
                   <ContactGroup
-                    heading={t.direct.transportHeading}
+                    heading={getExtras(locale).contact.transportHeading}
                     emailLabel={t.direct.labels.email}
                     phoneLabel={t.direct.labels.phone}
                     email={transportEmail}

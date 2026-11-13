@@ -8,6 +8,7 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { Reveal } from "@/components/ui/Reveal";
 import { MobileEyebrow } from "@/components/ui/MobileEyebrow";
 import { fact } from "@/content/companyData";
+import { getExtras } from "@/content/copy/extras";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 import { href } from "@/lib/routes";
 import { JsonLd, pageMetadata } from "@/lib/seo";
@@ -25,6 +26,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
   const t = dict.about;
   const office = factL("registeredOffice", locale);
   const domain = fact("domain");
+  const workStyle = getExtras(locale).about.workStyle;
 
   const details: { label: string; value: React.ReactNode }[] = [
     { label: t.details.labels.legalName, value: fact("legalName") },
@@ -76,6 +78,22 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
             <p className="t-lead !text-ink">{t.intro.paragraphs[0]}</p>
             <div className="mt-6 space-y-4 border-t border-line pt-6 md:mt-8 md:space-y-5 md:pt-8">
               {t.intro.paragraphs.slice(1).map((p) => (
+                <p key={p} className="t-body">
+                  {p}
+                </p>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* Working style (13.11 text update) */}
+      <section className="section-y">
+        <div className="wrap grid-12 gap-y-12">
+          <SectionHead eyebrow={workStyle.eyebrow} title={workStyle.title} className="col-span-12 lg:col-span-6" titleClassName="t-h2 max-w-[18ch]" />
+          <Reveal delay={120} data-speed="0.03" className="col-span-12 md:col-span-9 md:col-start-4 lg:col-span-5 lg:col-start-8">
+            <div className="space-y-4 md:space-y-5">
+              {workStyle.paragraphs.map((p) => (
                 <p key={p} className="t-body">
                   {p}
                 </p>

@@ -1,6 +1,7 @@
 /**
  * LEGAL PAGES — STRUCTURAL DRAFTS for professional legal review.
- * Not final legal text. Every unconfirmed item is marked "[to be confirmed]" in the visible copy.
+ * Privacy and cookie policies translated from the RO source (legal/ro.ts, 13.11.2026).
+ * Terms of use: unconfirmed items are marked "[to be confirmed]" in the visible copy.
  * Verified identifiers come from companyData; nothing here asserts facts that are not in that file.
  */
 import { companyData, fact } from "@/content/companyData";
@@ -26,21 +27,22 @@ const office = fact("registeredOffice");
 const legalName = fact("legalName");
 const addressLine = `${office.street}, ${office.postalCode} ${office.city}, ${office.county}, ${office.country}`;
 const TBC = "[to be confirmed]";
+const UPDATED = "13.11.2026";
 
 const controllerTable = [
   ["Controller", legalName],
   ["Registered office", addressLine],
   ["Trade register no.", fact("registrationNumber")],
   ["VAT / fiscal number", fact("vatNumber")],
-  ["Contact for data matters", companyData.email.value],
+  ["Email for personal data", companyData.email.value],
 ] as const;
 
 export const privacyPolicy: LegalDoc = {
   key: "privacy",
   eyebrow: "LEGAL / PRIVACY",
   title: "Privacy Policy",
-  description: `How ${legalName} processes personal data collected through this website, in line with Regulation (EU) 2016/679 (GDPR).`,
-  status: `Version: draft for legal review · Last updated: ${TBC}`,
+  description: `What personal data ${legalName} collects through this website, why, how long it keeps it and what rights you have under Regulation (EU) 2016/679 (GDPR).`,
+  status: `Last updated: ${UPDATED}`,
   sections: [
     {
       id: "controller",
@@ -48,66 +50,78 @@ export const privacyPolicy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: `${legalName} ("AXEL SAFE TRANSPORTING", "we") is the controller of the personal data processed through this website. We are a Romanian company that organises road freight transport through independent carriers.`,
+          text: `${legalName} ("AXEL SAFE TRANSPORTING", "we") is the controller of the personal data you send us through this website. We organise road freight through independent carriers.`,
         },
         { type: "table", rows: controllerTable },
         {
           type: "p",
-          text: `A data protection officer has not been appointed ${TBC}. Questions about this policy can be sent to the contact address above.`,
+          text: "We have not appointed a data protection officer (DPO). For any question about your data, write to us at the email address above.",
         },
       ],
     },
     {
       id: "data-we-collect",
-      title: "What personal data we collect",
+      title: "What data we collect",
       blocks: [
-        { type: "p", text: "We collect personal data only when you provide it to us, mainly through the two enquiry forms on this website." },
+        { type: "p", text: "We only collect the data you send us yourself: through the forms on this website, by email, by phone or on WhatsApp." },
         {
           type: "list",
           items: [
-            "Transport quote form: company name, contact person, business email, phone number, pickup and delivery locations, cargo description, approximate weight or loading units, preferred dates and any additional requirements you enter.",
-            "Carrier partnership form: company name, contact person, business email, phone number, country of registration, number of vehicles, vehicle types, operating regions or preferred routes and any additional information you enter.",
-            "Direct correspondence: data you include when you email or call us.",
-            `Technical data: server logs (IP address, browser type, time of request) kept by our hosting provider for security and operation ${TBC}.`,
+            "Full transport request: company name, contact person, email address, phone number, loading and delivery locations, cargo description, approximate weight and dimensions, preferred dates and other requirements.",
+            "Quick request: name, phone number, loading location, destination and any additional information.",
+            "Callback request: name, phone number and the time of day you would like us to call.",
+            "Carrier form: company name, VAT / company registration number (CUI), contact person, email address, phone number, country of registration, number and types of vehicles, the regions and routes you operate on, transport licence number, whether you hold valid CMR insurance and any other information you choose to give us.",
+            "Technical data sent with the form: the page you sent the request from, campaign parameters in the link (UTM), the site language, your browser type, the date and time you gave your consent and an encrypted fingerprint (hash) of your IP address. We do not store your IP address in plain form.",
+            "Server logs: the company that hosts the website may record your IP address and the time of access, for security and operation.",
           ],
         },
-        { type: "p", text: "Please do not include special categories of personal data (such as health data) in free-text fields; the forms are intended for business transport enquiries." },
+        {
+          type: "p",
+          text: "If you are a carrier, we also check public information about your company (for example in the ANAF database), and before the first shipment we confirm your CMR insurance directly with the insurer.",
+        },
+        { type: "p", text: "Please do not send us sensitive data through the forms, for example about health. The forms are for business-to-business transport requests." },
       ],
     },
     {
       id: "purposes",
-      title: "Why we process it and on what legal basis",
+      title: "Why we use the data and on what legal basis",
       blocks: [
         {
           type: "table",
           rows: [
-            ["Responding to a transport enquiry and preparing an offer", "Steps prior to entering into a contract (Art. 6(1)(b) GDPR) and our legitimate interest in handling business enquiries (Art. 6(1)(f))"],
-            ["Assessing a potential carrier partnership", "Steps prior to entering into a contract (Art. 6(1)(b)) and legitimate interest (Art. 6(1)(f))"],
-            ["Coordinating a confirmed transport with the parties involved", "Performance of a contract (Art. 6(1)(b))"],
-            ["Keeping accounting and tax records", "Legal obligation (Art. 6(1)(c)) under Romanian accounting and fiscal law"],
-            ["Security, abuse prevention and rate limiting on the forms", "Legitimate interest (Art. 6(1)(f))"],
-            ["Analytics cookies, if and when configured", "Consent (Art. 6(1)(a)) — see the Cookie Policy"],
+            ["To answer your request and send you a quote", "Steps taken at your request before entering into a contract (Art. 6(1)(b) GDPR) and our legitimate interest in answering requests from businesses (Art. 6(1)(f))"],
+            ["To call you, if you asked for a call", "Steps taken at your request before entering into a contract (Art. 6(1)(b))"],
+            ["To assess and check a possible cooperation with your transport company", "Steps before entering into a contract (Art. 6(1)(b)) and our legitimate interest in working only with checked carriers (Art. 6(1)(f))"],
+            ["To organise and coordinate a confirmed shipment", "Performance of the contract (Art. 6(1)(b))"],
+            ["To keep accounting and tax records", "Legal obligation (Art. 6(1)(c)), under Romanian law"],
+            ["To see which pages and campaigns requests come from", "Legitimate interest (Art. 6(1)(f))"],
+            ["To protect the website from abuse and automated submissions", "Legitimate interest (Art. 6(1)(f))"],
           ],
         },
-        { type: "p", text: "We do not use the data from the forms for marketing emails or newsletters, and we do not make automated decisions that produce legal effects concerning you." },
+        {
+          type: "p",
+          text: "We do not send you newsletters or marketing emails based on form data. We do not make automated decisions that have legal effects on you.",
+        },
       ],
     },
     {
       id: "recipients",
-      title: "Who receives the data",
+      title: "Who else sees the data",
       blocks: [
-        { type: "p", text: "Personal data is shared only to the extent needed for the purposes above." },
+        { type: "p", text: "Your requests are seen by the people in the AXEL SAFE TRANSPORTING team who handle them. Beyond that, we pass them on only as far as needed:" },
         {
           type: "list",
           items: [
-            "Independent transport providers: the contact and shipment details required to arrange a confirmed transport.",
-            `Website hosting and infrastructure provider: ${TBC}`,
-            `Form and database service used to store enquiries: ${TBC}`,
-            `Email service used to notify our team of new enquiries: ${TBC}`,
-            "Professional advisers (accountants, lawyers) and public authorities where required by law.",
+            "To the carrier performing the shipment: only the contact details and the information needed for loading and delivery, after you have confirmed the transport.",
+            "To our technical providers: the company that hosts the website, the provider of the database where requests are saved and the email service that notifies the team of a new request. They act only on our instructions, under a contract.",
+            "To our accountant, lawyer or public authorities, where the law requires it.",
           ],
         },
-        { type: "p", text: "Service providers act as processors under written agreements and may process data only on our instructions." },
+        {
+          type: "p",
+          text: "If you write to us on WhatsApp, your messages pass through the WhatsApp service (Meta Platforms), under its own privacy rules.",
+        },
+        { type: "p", text: "We do not sell or rent your data to anyone." },
       ],
     },
     {
@@ -116,21 +130,21 @@ export const privacyPolicy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: `Our service providers may store or access data outside the European Economic Area ${TBC}. Where this happens, we rely on an adequacy decision of the European Commission or on Standard Contractual Clauses, and you can request a copy of the relevant safeguards.`,
+          text: "Some technical providers may have servers or staff outside the European Economic Area. In that case, the transfer takes place only on the basis of an adequacy decision by the European Commission (for example the EU-US Data Privacy Framework) or standard contractual clauses approved by the Commission. You can ask us for a copy of the safeguards that apply.",
         },
       ],
     },
     {
       id: "retention",
-      title: "How long we keep it",
+      title: "How long we keep the data",
       blocks: [
         {
           type: "list",
           items: [
-            `Enquiries that do not lead to a contract: ${TBC} (proposed: 12 months from the last contact).`,
-            `Enquiries that lead to a transport or partnership: for the duration of the business relationship and thereafter as required for legal claims ${TBC}.`,
-            "Accounting documents: 10 years, as required by Romanian law.",
-            `Server logs: ${TBC} (set by the hosting provider).`,
+            "Requests that do not lead to a shipment or a cooperation: 12 months from the last contact, after which we delete them.",
+            "Requests that lead to a shipment or a cooperation: for as long as the cooperation lasts and for 3 years afterwards, the general limitation period for possible claims.",
+            "Accounting and tax documents: as long as Romanian accounting and tax law requires.",
+            "Server logs: a short period, set by the hosting provider.",
           ],
         },
       ],
@@ -139,44 +153,53 @@ export const privacyPolicy: LegalDoc = {
       id: "rights",
       title: "Your rights",
       blocks: [
-        { type: "p", text: "Under the GDPR you have the right to:" },
+        { type: "p", text: "Under the GDPR, you have the right:" },
         {
           type: "list",
           items: [
-            "access the personal data we hold about you;",
-            "have inaccurate data corrected and incomplete data completed;",
-            "request erasure, where there is no legal ground for continued processing;",
-            "request restriction of processing in the situations set out in Art. 18 GDPR;",
-            "receive the data you provided in a portable format, where processing is based on contract or consent;",
-            "object to processing based on our legitimate interests;",
-            "withdraw consent at any time, where processing is based on consent, without affecting the lawfulness of prior processing.",
+            "to find out what data we hold about you and to receive a copy of it;",
+            "to ask us to correct inaccurate data or to complete it;",
+            "to ask us to delete the data when we no longer have a legal reason to keep it;",
+            "to ask us to restrict its use, in the situations set out in Art. 18 GDPR;",
+            "to receive the data you gave us in an easily transferable format, when we use it on the basis of a contract or your consent;",
+            "to object at any time to the use of your data on the basis of our legitimate interest;",
+            "to withdraw your consent at any time, when the use of your data is based on consent, without affecting what was done before.",
           ],
         },
         {
           type: "p",
-          text: "To exercise these rights, contact us using the details in section 1. We respond within one month, extendable by two further months for complex requests, and we may ask you to confirm your identity.",
+          text: "To exercise these rights, write to us at the email address in section 1. The reply is free and you will receive it within one month at most. For complex requests, this period can be extended by two further months, and we will let you know. We may ask you to confirm your identity.",
         },
         {
           type: "p",
-          text: "You also have the right to lodge a complaint with the Romanian supervisory authority: Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP), B-dul G-ral. Gheorghe Magheru 28–30, Sector 1, 010336 Bucharest, Romania — www.dataprotection.ro.",
+          text: "If you are not satisfied with how we use your data, you can lodge a complaint with the Romanian data protection authority, Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP), B-dul G-ral. Gheorghe Magheru 28-30, Sector 1, 010336 București, www.dataprotection.ro.",
         },
       ],
     },
     {
       id: "security",
-      title: "Security",
+      title: "How we protect the data",
       blocks: [
         {
-          type: "p",
-          text: "We apply technical and organisational measures appropriate to the risk, including encrypted connections (HTTPS), access limited to the people who handle enquiries, and rate limiting on the forms. No method of transmission over the internet is completely secure.",
+          type: "list",
+          items: [
+            "The website uses an encrypted connection (HTTPS).",
+            "Your IP address is not stored in plain form, only as an encrypted fingerprint.",
+            "Requests can be accessed only by the team members who handle them, each with their own account and password.",
+            "We limit the number of form submissions to stop abuse.",
+          ],
         },
+        { type: "p", text: "No transmission over the internet is 100% secure, but we take measures that match the real risks." },
       ],
     },
     {
       id: "changes",
-      title: "Changes to this policy",
+      title: "Changes",
       blocks: [
-        { type: "p", text: "We may update this policy to reflect changes in our processing or in the law. The current version is always published on this page together with its date of last update." },
+        {
+          type: "p",
+          text: "We may update this policy when we change how we use data or when the law changes. The version in force is always on this page, with the date of the last update at the top.",
+        },
       ],
     },
   ],
@@ -186,8 +209,8 @@ export const cookiePolicy: LegalDoc = {
   key: "cookies",
   eyebrow: "LEGAL / COOKIES",
   title: "Cookie Policy",
-  description: `Which cookies and similar technologies this website uses, and how ${legalName} asks for consent.`,
-  status: `Version: draft for legal review · Last updated: ${TBC}`,
+  description: `Which cookies the ${legalName} website uses and why we do not show you a cookie banner.`,
+  status: `Last updated: ${UPDATED}`,
   sections: [
     {
       id: "what-are-cookies",
@@ -195,45 +218,58 @@ export const cookiePolicy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "Cookies are small text files stored on your device by a website. Similar technologies (such as local storage) can serve the same purpose. This policy covers both.",
+          text: "Cookies are small files that a website saves in your browser. Similar technologies, such as local storage, do much the same thing. This page covers all of them.",
         },
       ],
     },
     {
       id: "cookies-we-use",
-      title: "Cookies currently used on this website",
+      title: "Which cookies this website uses",
       blocks: [
         {
           type: "p",
-          text: "At present this website sets only strictly necessary cookies and storage, which are required for the site to work and do not need your consent under Article 4(5) of Romanian Law 506/2004 and the ePrivacy Directive.",
+          text: "In short: none for visitors. The public pages of this website do not save cookies and do not use local storage in your browser. That is why we do not show you a cookie banner.",
         },
+        { type: "p", text: "We do not use analytics, advertising or social media cookies, and we do not track you from one website to another." },
         {
           type: "table",
           rows: [
-            ["Form protection", `Technical values used to prevent automated submissions and to rate-limit the enquiry forms. Session only. ${TBC}`],
-            ["Preferences", `Your choice regarding optional cookies, once a consent banner is in place. 12 months ${TBC}`],
+            [
+              "axel_admin_session (team only)",
+              "Saved only when an AXEL SAFE TRANSPORTING team member logs in to the internal admin area. It keeps the session open for 12 hours at most and is deleted on logout. It is strictly necessary, so it does not require consent (Art. 4(5) of Romanian Law no. 506/2004). Website visitors do not receive it.",
+            ],
+            ["Form protection", "Handled on the server, with no cookies in your browser."],
+            ["Fonts", "Loaded from our own server, not from Google, so opening a page does not send any data to Google Fonts."],
+            ["WhatsApp button", "It is only a link. WhatsApp may set cookies only after you click and reach its website or app, under WhatsApp's own rules."],
           ],
         },
-        { type: "p", text: "No advertising, social media or cross-site tracking cookies are used." },
       ],
     },
     {
       id: "analytics",
-      title: "Analytics cookies (only after consent)",
+      title: "If we add optional cookies",
       blocks: [
         {
           type: "p",
-          text: `We may introduce privacy-respecting analytics to understand how the website is used. Analytics cookies will be set only after you give consent through the cookie banner, and you will be able to withdraw that consent at any time from the same banner. Tool and retention period: ${TBC}.`,
+          text: "In future we may use analytics or advertising tools, for example to see which campaigns bring in requests. Before we switch them on:",
+        },
+        {
+          type: "list",
+          items: [
+            "we will ask for your consent through a banner, and optional cookies will start only if you accept;",
+            "you will be able to refuse as easily as you accept, and to withdraw your consent at any time;",
+            "we will update this page with the exact list of cookies, what each one does and how long it stays in your browser.",
+          ],
         },
       ],
     },
     {
       id: "managing",
-      title: "Managing cookies",
+      title: "How to control cookies",
       blocks: [
         {
           type: "p",
-          text: "You can delete or block cookies through your browser settings. Blocking strictly necessary cookies may prevent the enquiry forms from working. Instructions for common browsers are available on their support pages.",
+          text: "You can view, block or delete cookies in your browser settings. Chrome, Firefox, Safari and Edge have help pages that show exactly how. On this website, blocking cookies changes nothing for you, because the public pages do not use them.",
         },
       ],
     },
@@ -241,8 +277,8 @@ export const cookiePolicy: LegalDoc = {
       id: "contact",
       title: "Contact",
       blocks: [
-        { type: "p", text: `Questions about cookies can be sent to ${legalName}, ${addressLine}, or by email to ${companyData.email.value}.` },
-        { type: "p", text: "For how we process personal data more generally, see the Privacy Policy." },
+        { type: "p", text: `For questions about cookies, write to us at ${companyData.email.value} or by post to ${legalName}, ${addressLine}.` },
+        { type: "p", text: "For how we use personal data in general, see the Privacy Policy." },
       ],
     },
   ],

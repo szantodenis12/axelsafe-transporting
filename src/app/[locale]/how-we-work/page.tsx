@@ -8,6 +8,7 @@ import { breadcrumbJsonLd } from "@/components/pages/breadcrumbs";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowLink, Pill } from "@/components/ui/Pill";
 import { EarthBackdrop } from "@/components/sections/EarthBackdrop";
+import { getExtras } from "@/content/copy/extras";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 import { anchors, href } from "@/lib/routes";
 import { JsonLd, pageMetadata } from "@/lib/seo";
@@ -29,6 +30,7 @@ export default async function HowWeWorkPage({ params }: PageProps<"/[locale]/how
   if (!hasLocale(locale)) notFound();
   const dict = getDictionary(locale);
   const t = dict.howWeWork;
+  const finalCta = getExtras(locale).howWeWork.finalCta;
   const [fleetSentence, networkSentence] = splitFirstSentence(t.why.paragraphs[0]);
   const whyRest = t.why.paragraphs.slice(1);
 
@@ -116,13 +118,17 @@ export default async function HowWeWorkPage({ params }: PageProps<"/[locale]/how
                 </p>
               ))}
             </div>
-            <div className="mt-7 md:mt-10">
+            <div className="mt-7 space-y-3 md:mt-10">
+              <p className="t-lead !text-ink">{finalCta.titleLines.join(" ")}</p>
+              <p className="t-lead">{finalCta.text}</p>
+            </div>
+            <div className="mt-7 md:mt-8">
               {/* long label: let it wrap on very narrow screens instead of clipping */}
               <Pill
                 href={href(locale, "contact", anchors.quote)}
                 className="max-xs:!h-auto max-xs:!whitespace-normal max-xs:!py-2.5 max-xs:[&>span:first-child]:text-left max-xs:[&_.pill-icon]:shrink-0"
               >
-                {t.transparency.cta}
+                {finalCta.cta}
               </Pill>
             </div>
           </Reveal>

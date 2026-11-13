@@ -1,7 +1,8 @@
 /**
- * LEGAL PAGES (ES) — STRUCTURAL DRAFTS for professional legal review, translated from ./en.ts.
+ * LEGAL PAGES (ES): privacy + cookies translated from ./ro.ts (13.11.2026); terms are still the earlier structural draft.
  * Not final legal text. Every unconfirmed item is marked "[por confirmar]" in the visible copy.
  * Verified identifiers come from companyData; nothing here asserts facts that are not in that file.
+ * Section `id`s are identical to en.ts / ro.ts.
  */
 import { factL } from "@/content/facts";
 import { companyData, fact } from "@/content/companyData";
@@ -11,21 +12,22 @@ const office = factL("registeredOffice", "es");
 const legalName = fact("legalName");
 const addressLine = `${office.street}, ${office.postalCode} ${office.city}, ${office.county}, ${office.country}`;
 const TBC = "[por confirmar]";
+const UPDATED = "13.11.2026";
 
 const controllerTable = [
   ["Responsable del tratamiento", legalName],
   ["Domicilio social", addressLine],
   ["N.º de registro mercantil", fact("registrationNumber")],
-  ["N.º de IVA / Código fiscal", fact("vatNumber")],
-  ["Contacto para protección de datos", companyData.email.value],
+  ["Código fiscal / IVA", fact("vatNumber")],
+  ["Correo electrónico para datos personales", companyData.email.value],
 ] as const;
 
 export const privacyPolicy: LegalDoc = {
   key: "privacy",
   eyebrow: "LEGAL / PRIVACIDAD",
   title: "Política de privacidad",
-  description: `Cómo trata ${legalName} los datos personales recogidos a través de este sitio web, de conformidad con el Reglamento (UE) 2016/679 (RGPD).`,
-  status: `Versión: borrador para revisión jurídica · Última actualización: ${TBC}`,
+  description: `Qué datos personales recoge ${legalName} a través de esta web, para qué, cuánto tiempo los conserva y qué derechos tienes, conforme al Reglamento (UE) 2016/679 (RGPD).`,
+  status: `Última actualización: ${UPDATED}`,
   sections: [
     {
       id: "controller",
@@ -33,66 +35,78 @@ export const privacyPolicy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: `${legalName} («AXEL SAFE TRANSPORTING», «nosotros») es el responsable del tratamiento de los datos personales tratados a través de este sitio web. Somos una empresa rumana que organiza el transporte de mercancías por carretera a través de transportistas independientes.`,
+          text: `${legalName} («AXEL SAFE TRANSPORTING», «nosotros») es el responsable de los datos personales que nos envías a través de esta web. Organizamos transporte de mercancías por carretera con transportistas independientes.`,
         },
         { type: "table", rows: controllerTable },
         {
           type: "p",
-          text: `No se ha designado un delegado de protección de datos ${TBC}. Las preguntas sobre esta política pueden enviarse a la dirección de contacto indicada más arriba.`,
+          text: "No hemos designado un delegado de protección de datos (DPD). Para cualquier pregunta sobre tus datos, escríbenos a la dirección de correo electrónico indicada arriba.",
         },
       ],
     },
     {
       id: "data-we-collect",
-      title: "Qué datos personales recogemos",
+      title: "Qué datos recogemos",
       blocks: [
-        { type: "p", text: "Recogemos datos personales únicamente cuando usted nos los facilita, principalmente a través de los dos formularios de solicitud de este sitio web." },
+        { type: "p", text: "Solo recogemos los datos que nos envías tú: a través de los formularios de la web, por correo electrónico, por teléfono o por WhatsApp." },
         {
           type: "list",
           items: [
-            "Formulario de solicitud de presupuesto de transporte: nombre de la empresa, persona de contacto, correo electrónico de empresa, número de teléfono, lugares de recogida y entrega, descripción de la carga, peso aproximado o unidades de carga, fechas preferidas y cualquier requisito adicional que indique.",
-            "Formulario de colaboración para transportistas: nombre de la empresa, persona de contacto, correo electrónico de empresa, número de teléfono, país de registro, número de vehículos, tipos de vehículo, zonas de operación o rutas preferidas y cualquier información adicional que indique.",
-            "Correspondencia directa: los datos que incluya cuando nos escriba por correo electrónico o nos llame.",
-            `Datos técnicos: registros del servidor (dirección IP, tipo de navegador, hora de la solicitud) conservados por nuestro proveedor de alojamiento con fines de seguridad y funcionamiento ${TBC}.`,
+            "Solicitud completa de transporte: nombre de la empresa, persona de contacto, correo electrónico, número de teléfono, lugar de carga y de entrega, descripción de la mercancía, peso y dimensiones aproximados, fechas deseadas y otros requisitos.",
+            "Solicitud rápida: nombre, teléfono, lugar de carga, destino e información adicional.",
+            "Solicitud de llamada: nombre, teléfono y franja horaria en la que prefieres que te llamemos.",
+            "Formulario para transportistas: nombre de la empresa, código fiscal, persona de contacto, correo electrónico, teléfono, país de registro, número y tipos de vehículos, zonas y rutas en las que trabajas, número de licencia de transporte, si tienes seguro CMR en vigor y cualquier otra información que decidas darnos.",
+            "Datos técnicos enviados con el formulario: la página desde la que enviaste la solicitud, los parámetros de campaña del enlace (UTM), el idioma de la web, el tipo de navegador, la fecha y hora en que diste tu consentimiento y una huella cifrada (hash) de la dirección IP. No guardamos la dirección IP en claro.",
+            "Registros del servidor: el proveedor que aloja la web puede registrar, por seguridad y funcionamiento, la dirección IP y la hora de acceso.",
           ],
         },
-        { type: "p", text: "Le rogamos que no incluya categorías especiales de datos personales (como datos de salud) en los campos de texto libre; los formularios están destinados a solicitudes de transporte entre empresas." },
+        {
+          type: "p",
+          text: "Si eres transportista, también consultamos información pública sobre tu empresa (por ejemplo, en la base de datos de la administración tributaria rumana, ANAF) y, antes del primer porte, confirmamos el seguro CMR directamente con la aseguradora.",
+        },
+        { type: "p", text: "Te pedimos que no nos envíes datos sensibles por los formularios, por ejemplo datos de salud. Los formularios son para solicitudes de transporte entre empresas." },
       ],
     },
     {
       id: "purposes",
-      title: "Para qué los tratamos y con qué base jurídica",
+      title: "Para qué usamos los datos y con qué base jurídica",
       blocks: [
         {
           type: "table",
           rows: [
-            ["Responder a una solicitud de transporte y preparar una oferta", "Medidas precontractuales (art. 6.1.b RGPD) y nuestro interés legítimo en gestionar solicitudes comerciales (art. 6.1.f)"],
-            ["Evaluar una posible colaboración con un transportista", "Medidas precontractuales (art. 6.1.b) e interés legítimo (art. 6.1.f)"],
-            ["Coordinar un transporte confirmado con las partes implicadas", "Ejecución de un contrato (art. 6.1.b)"],
-            ["Llevar los registros contables y fiscales", "Obligación legal (art. 6.1.c) conforme a la legislación contable y fiscal rumana"],
-            ["Seguridad, prevención de abusos y limitación de envíos en los formularios", "Interés legítimo (art. 6.1.f)"],
-            ["Cookies analíticas, si se configuran y cuando se configuren", "Consentimiento (art. 6.1.a) — véase la Política de cookies"],
+            ["Responder a tu solicitud y enviarte una oferta", "Medidas precontractuales aplicadas a petición tuya (art. 6.1.b RGPD) y nuestro interés legítimo en responder a las solicitudes de empresas (art. 6.1.f)"],
+            ["Llamarte, si nos lo has pedido", "Medidas precontractuales aplicadas a petición tuya (art. 6.1.b)"],
+            ["Evaluar y verificar una colaboración con tu empresa de transporte", "Medidas precontractuales (art. 6.1.b) y nuestro interés legítimo en trabajar solo con transportistas verificados (art. 6.1.f)"],
+            ["Organizar y coordinar un porte confirmado", "Ejecución del contrato (art. 6.1.b)"],
+            ["Llevar la contabilidad y cumplir las obligaciones fiscales", "Obligación legal (art. 6.1.c), conforme a la legislación rumana"],
+            ["Saber desde qué páginas y campañas llegan las solicitudes", "Interés legítimo (art. 6.1.f)"],
+            ["Proteger la web frente a abusos y envíos automatizados", "Interés legítimo (art. 6.1.f)"],
           ],
         },
-        { type: "p", text: "No utilizamos los datos de los formularios para correos comerciales ni boletines, y no tomamos decisiones automatizadas que produzcan efectos jurídicos sobre usted." },
+        {
+          type: "p",
+          text: "No te enviamos boletines ni correos comerciales con los datos de los formularios. No tomamos decisiones automatizadas que produzcan efectos jurídicos sobre ti.",
+        },
       ],
     },
     {
       id: "recipients",
-      title: "Quién recibe los datos",
+      title: "Quién más ve los datos",
       blocks: [
-        { type: "p", text: "Los datos personales se comparten únicamente en la medida necesaria para los fines indicados más arriba." },
+        { type: "p", text: "Tus solicitudes las ven las personas del equipo de AXEL SAFE TRANSPORTING que se encargan de ellas. Fuera del equipo, solo las compartimos en la medida necesaria:" },
         {
           type: "list",
           items: [
-            "Transportistas independientes: los datos de contacto y del envío necesarios para organizar un transporte confirmado.",
-            `Proveedor de alojamiento e infraestructura del sitio web: ${TBC}`,
-            `Servicio de formularios y base de datos utilizado para almacenar las solicitudes: ${TBC}`,
-            `Servicio de correo electrónico utilizado para avisar a nuestro equipo de nuevas solicitudes: ${TBC}`,
-            "Asesores profesionales (contables, abogados) y autoridades públicas cuando la ley lo exija.",
+            "Con el transportista que hace el porte: solo los datos de contacto y los detalles necesarios para la carga y la entrega, después de que hayas confirmado el transporte.",
+            "Con nuestros proveedores técnicos: la empresa que aloja la web, el proveedor de la base de datos donde se guardan las solicitudes y el servicio de correo con el que avisamos al equipo de una nueva solicitud. Solo actúan siguiendo nuestras instrucciones y en virtud de un contrato.",
+            "Con el contable, el abogado o las autoridades públicas, cuando la ley nos obliga.",
           ],
         },
-        { type: "p", text: "Los proveedores de servicios actúan como encargados del tratamiento en virtud de contratos escritos y solo pueden tratar los datos siguiendo nuestras instrucciones." },
+        {
+          type: "p",
+          text: "Si nos escribes por WhatsApp, los mensajes pasan por el servicio de WhatsApp (Meta Platforms), conforme a sus propias normas de privacidad.",
+        },
+        { type: "p", text: "No vendemos ni alquilamos tus datos a nadie." },
       ],
     },
     {
@@ -101,67 +115,76 @@ export const privacyPolicy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: `Nuestros proveedores de servicios pueden almacenar los datos o acceder a ellos fuera del Espacio Económico Europeo ${TBC}. Cuando esto ocurre, nos basamos en una decisión de adecuación de la Comisión Europea o en cláusulas contractuales tipo, y usted puede solicitar una copia de las garantías correspondientes.`,
+          text: "Algunos proveedores técnicos pueden tener servidores o personal fuera del Espacio Económico Europeo. En ese caso, la transferencia solo se hace sobre la base de una decisión de adecuación de la Comisión Europea (por ejemplo, el Marco de Privacidad de Datos UE-EE. UU.) o de las cláusulas contractuales tipo aprobadas por la Comisión. Puedes pedirnos una copia de las garantías aplicables.",
         },
       ],
     },
     {
       id: "retention",
-      title: "Durante cuánto tiempo los conservamos",
+      title: "Cuánto tiempo conservamos los datos",
       blocks: [
         {
           type: "list",
           items: [
-            `Solicitudes que no dan lugar a un contrato: ${TBC} (propuesta: 12 meses desde el último contacto).`,
-            `Solicitudes que dan lugar a un transporte o a una colaboración: mientras dure la relación comercial y, después, durante el tiempo necesario para la defensa de reclamaciones legales ${TBC}.`,
-            "Documentos contables: 10 años, conforme a la legislación rumana.",
-            `Registros del servidor: ${TBC} (establecido por el proveedor de alojamiento).`,
+            "Solicitudes que no terminan en un porte ni en una colaboración: 12 meses desde el último contacto; después las borramos.",
+            "Solicitudes que terminan en un porte o en una colaboración: mientras dure la colaboración y 3 años más, que es el plazo general de prescripción para posibles reclamaciones.",
+            "Documentos contables y fiscales: el tiempo que exige la legislación contable y fiscal rumana.",
+            "Registros del servidor: un periodo corto, fijado por el proveedor de alojamiento.",
           ],
         },
       ],
     },
     {
       id: "rights",
-      title: "Sus derechos",
+      title: "Tus derechos",
       blocks: [
-        { type: "p", text: "En virtud del RGPD, como interesado tiene derecho a:" },
+        { type: "p", text: "Conforme al RGPD, tienes derecho a:" },
         {
           type: "list",
           items: [
-            "acceder a los datos personales que tratamos sobre usted;",
-            "obtener la rectificación de los datos inexactos y que se completen los datos incompletos;",
-            "solicitar la supresión, cuando no exista una base jurídica para seguir tratándolos;",
-            "solicitar la limitación del tratamiento en los supuestos previstos en el art. 18 RGPD;",
-            "recibir los datos que nos haya facilitado en un formato portable, cuando el tratamiento se base en un contrato o en el consentimiento;",
-            "oponerse al tratamiento basado en nuestros intereses legítimos;",
-            "retirar el consentimiento en cualquier momento, cuando el tratamiento se base en el consentimiento, sin que ello afecte a la licitud del tratamiento anterior.",
+            "saber qué datos tenemos sobre ti y recibir una copia;",
+            "pedirnos que corrijamos los datos incorrectos o que los completemos;",
+            "pedirnos que borremos los datos, cuando ya no tengamos un motivo legal para conservarlos;",
+            "pedirnos que limitemos su uso, en los casos del art. 18 RGPD;",
+            "recibir los datos que nos has dado en un formato fácil de transferir, cuando los usamos en base a un contrato o a tu consentimiento;",
+            "oponerte en cualquier momento al uso de los datos basado en nuestro interés legítimo;",
+            "retirar tu consentimiento en cualquier momento, cuando el uso de los datos se basa en el consentimiento, sin que afecte a lo hecho antes.",
           ],
         },
         {
           type: "p",
-          text: "Para ejercer estos derechos, contáctenos a través de los datos indicados en la sección 1. Respondemos en el plazo de un mes, prorrogable otros dos meses en el caso de solicitudes complejas, y podemos pedirle que acredite su identidad.",
+          text: "Para ejercer estos derechos, escríbenos a la dirección de correo electrónico de la sección 1. La respuesta es gratuita y la recibes en un plazo máximo de un mes. Para solicitudes complejas, el plazo puede ampliarse dos meses más, pero te avisaremos. Podemos pedirte que confirmes tu identidad.",
         },
         {
           type: "p",
-          text: "También tiene derecho a presentar una reclamación ante la autoridad de control rumana: Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP), B-dul G-ral. Gheorghe Magheru 28–30, Sector 1, 010336 Bucarest, Rumanía — www.dataprotection.ro.",
+          text: "Si no estás conforme con cómo usamos tus datos, puedes presentar una reclamación ante la autoridad de control rumana, Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP), B-dul G-ral. Gheorghe Magheru 28-30, Sector 1, 010336 Bucarest, Rumanía, www.dataprotection.ro. También puedes dirigirte a la autoridad de protección de datos del país de la UE en el que vives o trabajas (en España, la Agencia Española de Protección de Datos).",
         },
       ],
     },
     {
       id: "security",
-      title: "Seguridad",
+      title: "Cómo protegemos los datos",
       blocks: [
         {
-          type: "p",
-          text: "Aplicamos medidas técnicas y organizativas adecuadas al riesgo, entre ellas conexiones cifradas (HTTPS), acceso limitado a las personas que gestionan las solicitudes y limitación de envíos en los formularios. Ningún método de transmisión por internet es completamente seguro.",
+          type: "list",
+          items: [
+            "La web usa una conexión cifrada (HTTPS).",
+            "La dirección IP no se guarda en claro, solo como huella cifrada.",
+            "A las solicitudes solo acceden las personas que se encargan de ellas, cada una con su propio usuario y contraseña.",
+            "Limitamos el número de envíos por los formularios para frenar los abusos.",
+          ],
         },
+        { type: "p", text: "Ninguna transmisión por internet es 100 % segura, pero aplicamos las medidas adecuadas a los riesgos reales." },
       ],
     },
     {
       id: "changes",
-      title: "Cambios en esta política",
+      title: "Cambios",
       blocks: [
-        { type: "p", text: "Podemos actualizar esta política para reflejar cambios en nuestros tratamientos o en la legislación. La versión vigente se publica siempre en esta página junto con su fecha de última actualización." },
+        {
+          type: "p",
+          text: "Podemos actualizar esta política cuando cambiemos la forma en que usamos los datos o cuando cambie la ley. La versión vigente está siempre en esta página, con la fecha de la última actualización arriba.",
+        },
       ],
     },
   ],
@@ -171,8 +194,8 @@ export const cookiePolicy: LegalDoc = {
   key: "cookies",
   eyebrow: "LEGAL / COOKIES",
   title: "Política de cookies",
-  description: `Qué cookies y tecnologías similares utiliza este sitio web y cómo solicita ${legalName} el consentimiento.`,
-  status: `Versión: borrador para revisión jurídica · Última actualización: ${TBC}`,
+  description: `Qué cookies usa la web de ${legalName} y por qué no te mostramos un banner de cookies.`,
+  status: `Última actualización: ${UPDATED}`,
   sections: [
     {
       id: "what-are-cookies",
@@ -180,45 +203,58 @@ export const cookiePolicy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "Las cookies son pequeños archivos de texto que un sitio web almacena en su dispositivo. Otras tecnologías similares (como el almacenamiento local) pueden cumplir la misma función. Esta política abarca ambas.",
+          text: "Las cookies son pequeños archivos que una web guarda en tu navegador. Las tecnologías parecidas, como el almacenamiento local (local storage), hacen más o menos lo mismo. Esta página las cubre todas.",
         },
       ],
     },
     {
       id: "cookies-we-use",
-      title: "Cookies utilizadas actualmente en este sitio web",
+      title: "Qué cookies usa esta web",
       blocks: [
         {
           type: "p",
-          text: "En la actualidad este sitio web solo instala cookies y almacenamiento estrictamente necesarios, imprescindibles para su funcionamiento y que no requieren su consentimiento conforme al artículo 4, apartado 5, de la Ley rumana 506/2004 y a la Directiva sobre la privacidad y las comunicaciones electrónicas.",
+          text: "En resumen: ninguna para los visitantes. Las páginas públicas de la web no guardan cookies ni usan el almacenamiento local de tu navegador. Por eso no te mostramos un banner de cookies.",
         },
+        { type: "p", text: "No usamos cookies de analítica, de publicidad ni de redes sociales, y no te seguimos de una web a otra." },
         {
           type: "table",
           rows: [
-            ["Protección de formularios", `Valores técnicos utilizados para impedir envíos automatizados y limitar la frecuencia de envío de los formularios de solicitud. Solo durante la sesión. ${TBC}`],
-            ["Preferencias", `Su elección respecto a las cookies opcionales, una vez que exista un banner de consentimiento. 12 meses ${TBC}`],
+            [
+              "axel_admin_session (solo para el equipo)",
+              "Solo se guarda cuando una persona de AXEL SAFE TRANSPORTING entra en la zona interna de administración. Mantiene la sesión abierta un máximo de 12 horas y se borra al cerrar sesión. Es estrictamente necesaria, por lo que no requiere consentimiento (art. 4, apartado 5, de la Ley rumana n.º 506/2004). Los visitantes de la web no la reciben.",
+            ],
+            ["Protección de los formularios", "Se hace en el servidor, sin cookies en tu navegador."],
+            ["Fuentes tipográficas", "Las cargamos desde nuestro propio servidor, no desde Google, así que abrir la página no envía datos a Google Fonts."],
+            ["Botón de WhatsApp", "Es solo un enlace. WhatsApp puede instalar cookies solo después de que hagas clic y llegues a su web o a su aplicación, conforme a las normas de WhatsApp."],
           ],
         },
-        { type: "p", text: "No se utilizan cookies publicitarias, de redes sociales ni de seguimiento entre sitios." },
       ],
     },
     {
       id: "analytics",
-      title: "Cookies analíticas (solo tras su consentimiento)",
+      title: "Si añadimos cookies opcionales",
       blocks: [
         {
           type: "p",
-          text: `Podemos incorporar herramientas de analítica respetuosas con la privacidad para entender cómo se utiliza el sitio web. Las cookies analíticas solo se instalarán después de que usted dé su consentimiento a través del banner de cookies, y podrá retirarlo en cualquier momento desde ese mismo banner. Herramienta y plazo de conservación: ${TBC}.`,
+          text: "En el futuro podríamos usar herramientas de analítica o de publicidad, por ejemplo para ver qué campañas traen solicitudes. Antes de activarlas:",
+        },
+        {
+          type: "list",
+          items: [
+            "te pediremos el consentimiento mediante un banner, y las cookies opcionales solo se activarán si aceptas;",
+            "podrás rechazarlas con la misma facilidad con la que las aceptas y retirar el consentimiento en cualquier momento;",
+            "actualizaremos esta página con la lista exacta de cookies, su función y cuánto tiempo permanecen en el navegador.",
+          ],
         },
       ],
     },
     {
       id: "managing",
-      title: "Gestión de las cookies",
+      title: "Cómo controlar las cookies",
       blocks: [
         {
           type: "p",
-          text: "Puede eliminar o bloquear las cookies desde la configuración de su navegador. Bloquear las cookies estrictamente necesarias puede impedir el funcionamiento de los formularios de solicitud. Las páginas de soporte de los navegadores más habituales incluyen instrucciones para hacerlo.",
+          text: "Puedes ver, bloquear o borrar las cookies desde la configuración del navegador. Chrome, Firefox, Safari y Edge tienen páginas de ayuda que explican exactamente cómo. En esta web, bloquear las cookies no cambia nada para ti, porque las páginas públicas no las usan.",
         },
       ],
     },
@@ -226,8 +262,8 @@ export const cookiePolicy: LegalDoc = {
       id: "contact",
       title: "Contacto",
       blocks: [
-        { type: "p", text: `Las preguntas sobre cookies pueden dirigirse a ${legalName}, ${addressLine}, o por correo electrónico a ${companyData.email.value}.` },
-        { type: "p", text: "Para saber cómo tratamos los datos personales en general, consulte la Política de privacidad." },
+        { type: "p", text: `Para preguntas sobre cookies, escríbenos a ${companyData.email.value} o a la dirección de ${legalName}, ${addressLine}.` },
+        { type: "p", text: "Sobre cómo usamos los datos personales en general, tienes los detalles en la Política de privacidad." },
       ],
     },
   ],

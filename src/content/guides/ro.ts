@@ -8,7 +8,7 @@ export const guidesRo: GuidesContent = {
   index: {
     titleLines: ["Transportul rutier,", "explicat pe înțeles."],
     text: "Ghiduri scurte pentru firmele care trimit marfă pe șosea: documentele, prețul și cine ce face.",
-    read: "Citiți ghidul",
+    read: "Citește ghidul",
   },
   ui: { contents: "În acest ghid", allGuides: "Toate ghidurile", updated: "Actualizat" },
   published: "2026-11-10",
@@ -82,9 +82,9 @@ export const guidesRo: GuidesContent = {
         },
       ],
       cta: {
-        title: "Aveți marfă de trimis în Europa?",
-        text: "Organizăm transportul cu transportatori independenți a căror asigurare CMR o confirmăm la asigurator înainte de încărcare. Trimiteți-ne ruta și marfa.",
-        label: "Solicitați o ofertă",
+        title: "Ai marfă de trimis în Europa?",
+        text: "Organizăm transportul cu transportatori independenți a căror asigurare CMR o confirmăm la asigurator înainte de încărcare. Trimite-ne ruta și marfa.",
+        label: "Solicită o ofertă",
       },
     },
 
@@ -92,7 +92,7 @@ export const guidesRo: GuidesContent = {
       title: "Cum se formează prețul unui transport rutier",
       description:
         "Ce intră în prețul unui transport rutier: distanța, greutatea și metrii liniari, tipul semiremorcii, drumul de întoarcere gol, taxele de drum, combustibilul, datele și sezonul.",
-      lead: "Două transporturi cu aceeași greutate și pe aceeași distanță pot primi oferte foarte diferite. Prețul unui transport rutier nu depinde doar de kilometri. Acestea sunt elementele pe care o casă de expediții sau un transportator le cântărește înainte să vă dea o cifră.",
+      lead: "Două transporturi cu aceeași greutate și pe aceeași distanță pot primi oferte foarte diferite. Prețul unui transport rutier nu depinde doar de kilometri. Acestea sunt elementele pe care o casă de expediții sau un transportator le cântărește înainte să îți dea o cifră.",
       sections: [
         {
           heading: "Distanța și traseul",
@@ -105,7 +105,7 @@ export const guidesRo: GuidesContent = {
           heading: "Greutatea, volumul și metrii liniari",
           body: [
             "O semiremorcă europeană standard încarcă 33 de europaleți pe o platformă de 13,6 metri. Un camion complet se tarifează ca întreg, indiferent dacă semiremorca este plină sau nu.",
-            "La încărcăturile parțiale, prețul depinde de obicei de cât din semiremorcă folosiți, socotit în metri liniari sau locuri de palet, și de greutate. Marfa ușoară, dar voluminoasă, se tarifează după spațiul pe care îl ocupă. Marfa grea și compactă se tarifează după greutate.",
+            "La încărcăturile parțiale, prețul depinde de obicei de cât din semiremorcă folosești, socotit în metri liniari sau locuri de palet, și de greutate. Marfa ușoară, dar voluminoasă, se tarifează după spațiul pe care îl ocupă. Marfa grea și compactă se tarifează după greutate.",
           ],
         },
         {
@@ -135,7 +135,7 @@ export const guidesRo: GuidesContent = {
           ],
         },
         {
-          heading: "Ce să trimiteți pentru o ofertă corectă",
+          heading: "Ce să trimiți pentru o ofertă corectă",
           body: [
             {
               list: [
@@ -152,30 +152,30 @@ export const guidesRo: GuidesContent = {
         },
       ],
       cta: {
-        title: "Aveți nevoie de un preț pentru o rută?",
-        text: "Trimiteți-ne ruta, marfa și datele. După ce avem detaliile, de obicei răspundem în mai puțin de o oră.",
-        label: "Solicitați o ofertă",
+        title: "Ai nevoie de un preț pentru o rută?",
+        text: "Trimite-ne ruta, marfa și datele. După ce avem detaliile, de obicei răspundem în mai puțin de o oră.",
+        label: "Solicită o ofertă",
       },
     },
 
     roles: {
       title: "Casă de expediții, transportator, bursă de transport: cine ce face",
       description:
-        "Trei moduri de a vă transporta marfa pe șosea: ce face o casă de expediții, ce face un transportator și ce este o bursă de transport, plus ce înseamnă fiecare pentru expeditor.",
-      lead: "Dacă aveți marfă de transportat pe șosea, puteți lucra direct cu un transportator, printr-o casă de expediții sau puteți publica încărcătura pe o bursă de transport. Cele trei se confundă des și fiecare vă lasă altă parte din muncă.",
+        "Trei moduri de a-ți transporta marfa pe șosea: ce face o casă de expediții, ce face un transportator și ce este o bursă de transport, plus ce înseamnă fiecare pentru expeditor.",
+      lead: "Dacă ai marfă de transportat pe șosea, poți lucra direct cu un transportator, printr-o casă de expediții sau poți publica încărcătura pe o bursă de transport. Cele trei se confundă des și fiecare îți lasă altă parte din muncă.",
       sections: [
         {
           heading: "Transportatorul",
           body: [
             "Transportatorul deține sau operează camioanele și are șoferii angajați. El efectuează transportul și, pe rutele internaționale, are asigurare CMR pentru răspunderea față de marfă. Transportatorii pot fi de la un singur proprietar care își conduce camionul până la firme cu sute de vehicule.",
-            "Când lucrați direct cu un transportator, lanțul are o verigă mai puțin. Limitele sunt capacitatea și acoperirea: transportatorul vă poate oferi doar camioanele pe care le are, pe rutele pe care se află în acel moment. Dacă nu are camion liber la data dumneavoastră, trebuie să căutați în altă parte.",
+            "Când lucrezi direct cu un transportator, lanțul are o verigă mai puțin. Limitele sunt capacitatea și acoperirea: transportatorul îți poate oferi doar camioanele pe care le are, pe rutele pe care se află în acel moment. Dacă nu are camion liber la data ta, trebuie să cauți în altă parte.",
           ],
         },
         {
           heading: "Casa de expediții",
           body: [
             "Casa de expediții organizează transportul în numele expeditorului și nu trebuie să dețină vehicule. Treaba ei este să înțeleagă transportul, să găsească un transportator potrivit, să stabilească prețul și condițiile și să coordoneze transportul până la livrare.",
-            "Pentru expeditor, asta înseamnă o singură solicitare și o singură persoană de contact, în loc de telefoane la mai mulți transportatori. O casă de expediții ar trebui să își verifice transportatorii, pentru că răspunde față de dumneavoastră pentru alegerea făcută. Marja ei este inclusă în prețul pe care îl plătiți.",
+            "Pentru expeditor, asta înseamnă o singură solicitare și o singură persoană de contact, în loc de telefoane la mai mulți transportatori. O casă de expediții ar trebui să își verifice transportatorii, pentru că răspunde față de tine pentru alegerea făcută. Marja ei este inclusă în prețul pe care îl plătești.",
           ],
         },
         {
@@ -195,14 +195,14 @@ export const guidesRo: GuidesContent = {
           heading: "Cum lucrează AXEL SAFE TRANSPORTING",
           body: [
             "Suntem o casă de expediții. Nu avem camioane proprii: transportul îl efectuează cei peste 30 de transportatori independenți cu care lucrăm, în toată Europa și în Marea Britanie, cel mai des între România și Spania. Organizăm aproximativ 100 de curse pe lună.",
-            "Înainte ca un transportator să primească una dintre curse, îi verificăm licența comunitară, îi confirmăm asigurarea CMR la asigurator, verificăm documentele vehiculului și ne asigurăm că firma nu este în insolvență. Aveți un coordonator pentru fiecare transport și un dispecerat care răspunde non-stop. Marfa este asigurată.",
+            "Înainte ca un transportator să primească una dintre curse, îi verificăm licența comunitară, îi confirmăm asigurarea CMR la asigurator, verificăm documentele vehiculului și ne asigurăm că firma nu este în insolvență. Ai un coordonator pentru fiecare transport și un dispecerat care răspunde 24/7. Marfa este asigurată.",
           ],
         },
       ],
       cta: {
-        title: "Vreți o singură persoană de contact pentru transporturi?",
-        text: "Spuneți-ne ce marfă trebuie transportată, de unde și când. De obicei răspundem în mai puțin de o oră.",
-        label: "Solicitați o ofertă",
+        title: "Vrei o singură persoană de contact pentru transporturi?",
+        text: "Spune-ne ce marfă trebuie transportată, de unde și când. De obicei răspundem în mai puțin de o oră.",
+        label: "Solicită o ofertă",
       },
     },
   },

@@ -1,52 +1,53 @@
 /**
- * SPANISH COPY — translated from the approved English version in ./en.ts.
- * Neutral European Spanish, formal "usted" register. Same keys, structure and array lengths as `en`.
+ * SPANISH COPY (Spain): translated from the approved Romanian version in ./ro.ts (13.11.2026).
+ * Register: "tú", as in the Romanian. Same keys, structure and array lengths as `ro`.
+ * Keys, `key`, `anchor`, `id` and `ctaTarget` values are NOT translated.
  * Business facts (phone, email, hours…) come from companyData.ts.
- * Blocks marked as placeholder in comments mirror the prototype-only additions in en.ts, not approved copy.
+ * Blocks marked as placeholder in comments mirror the prototype-only additions in ro.ts, not approved copy.
  */
 import type { Dictionary } from "./en";
 
 export const es: Dictionary = {
   meta: {
     home: {
-      title: "AXEL SAFE TRANSPORTING | Coordinación de transporte",
+      title: "AXEL SAFE TRANSPORTING | Organización de transporte de mercancías por carretera",
       description:
-        "AXEL SAFE TRANSPORTING organiza transporte de mercancías por carretera con transportistas independientes. Hable con nosotros sobre sus envíos.",
+        "Organizamos transporte de mercancías por carretera en Europa y el Reino Unido con transportistas independientes. Tráfico 24/7. Pide presupuesto.",
     },
     services: {
-      title: "Coordinación de transporte por carretera | AXEL SAFE",
+      title: "Servicios de transporte de mercancías por carretera | AXEL SAFE TRANSPORTING",
       description:
-        "Organización de transporte por carretera, planificación y coordinación de transportistas: los servicios de AXEL SAFE TRANSPORTING.",
+        "Organización del transporte, planificación del porte y coordinación de transportistas. Qué hace AXEL SAFE TRANSPORTING por las empresas.",
     },
     howWeWork: {
       title: "Cómo organizamos el transporte | AXEL SAFE TRANSPORTING",
       description:
-        "Así coordina AXEL SAFE TRANSPORTING el transporte por carretera con transportistas independientes, desde la solicitud hasta la confirmación.",
+        "Cómo trabaja AXEL SAFE TRANSPORTING, desde tu solicitud hasta la confirmación del porte con un transportista independiente.",
     },
     about: {
-      title: "Sobre AXEL SAFE TRANSPORTING | Transporte por carretera",
+      title: "Sobre AXEL SAFE TRANSPORTING | Transporte de mercancías por carretera",
       description:
-        "Conozca AXEL SAFE TRANSPORTING, empresa rumana fundada en 2018 que organiza transporte de mercancías por carretera con transportistas independientes.",
+        "AXEL SAFE TRANSPORTING es una empresa rumana fundada en 2018 que organiza transporte de mercancías por carretera con transportistas independientes.",
     },
     forCarriers: {
       title: "Colaboración con transportistas | AXEL SAFE TRANSPORTING",
       description:
-        "¿Le interesa colaborar con AXEL SAFE TRANSPORTING? Presente su empresa de transporte y hablemos de una posible colaboración.",
+        "¿Tienes una empresa de transporte y buscas cargas? Preséntanos tu empresa y vemos juntos si podemos trabajar.",
     },
     contact: {
-      title: "Solicitar presupuesto de transporte | AXEL SAFE",
+      title: "Pide un presupuesto de transporte | AXEL SAFE TRANSPORTING",
       description:
-        "Contacte con AXEL SAFE TRANSPORTING para solicitar la organización de un transporte por carretera o tratar las necesidades de envío de su empresa.",
+        "Escríbenos la ruta, la mercancía y la fecha. AXEL SAFE TRANSPORTING te envía una oferta para el transporte de mercancías por carretera.",
     },
     vetting: {
-      title: "Cómo verificamos a los transportistas | AXEL SAFE",
+      title: "Cómo verificamos a los transportistas | AXEL SAFE TRANSPORTING",
       description:
-        "Antes de que un transportista cargue su mercancía, comprobamos su licencia comunitaria, el seguro CMR, la documentación del vehículo y la situación de la empresa.",
+        "Antes de que un transportista cargue tu mercancía, comprobamos su licencia comunitaria, el seguro CMR, la documentación del camión y la situación de la empresa.",
     },
     guides: {
-      title: "Guías de transporte por carretera | AXEL SAFE",
+      title: "Guías sobre el transporte por carretera | AXEL SAFE TRANSPORTING",
       description:
-        "Guías para cargadores: la carta de porte CMR, cómo se forma el precio de un transporte por carretera y en qué se diferencian transitario, transportista y bolsa de cargas.",
+        "Guías para cargadores: la carta de porte CMR, cómo se calcula el precio de un porte y qué diferencia hay entre transitario, transportista y bolsa de cargas.",
     },
   },
 
@@ -55,17 +56,17 @@ export const es: Dictionary = {
       { key: "home", label: "Inicio" },
       { key: "services", label: "Servicios" },
       { key: "howWeWork", label: "Cómo trabajamos" },
-      { key: "about", label: "Nosotros" },
+      { key: "about", label: "Sobre nosotros" },
       { key: "forCarriers", label: "Para transportistas" },
     ],
-    cta: "Solicitar presupuesto",
+    cta: "Pide presupuesto",
     menu: "Menú",
     close: "Cerrar",
   },
 
   footer: {
-    statement: "Coordinación de transporte de mercancías por carretera a través de transportistas independientes.",
-    explore: "Explorar",
+    statement: "Organizamos transporte de mercancías por carretera con transportistas independientes.",
+    explore: "Páginas",
     exploreItems: [
       { key: "home", label: "Inicio" },
       { key: "services", label: "Servicios" },
@@ -77,15 +78,15 @@ export const es: Dictionary = {
       { key: "guides", label: "Guías" },
     ],
     contact: "Contacto",
-    legal: "Información legal",
+    legal: "Legal",
     legalItems: [
       { key: "privacy", label: "Política de privacidad" },
       { key: "cookies", label: "Política de cookies" },
       { key: "terms", label: "Condiciones de uso" },
     ],
     rights: "AXEL SAFE TRANSPORTING. Todos los derechos reservados.",
-    credit: "Sitio web realizado por",
-    social: "Síganos",
+    credit: "Web realizada por",
+    social: "También estamos en",
     cta: "Solicitar presupuesto",
     nav: "Navegación del pie de página",
     legalNav: "Información legal",
@@ -108,104 +109,110 @@ export const es: Dictionary = {
 
   home: {
     hero: {
-      eyebrow: "AXEL SAFE TRANSPORTING / COORDINACIÓN DE TRANSPORTE POR CARRETERA",
-      titleLines: ["Mercancías en movimiento.", "Empresas conectadas."],
-      text: "Organizamos transporte de mercancías por carretera en toda Europa y el Reino Unido, sobre todo en la ruta Rumanía–España. Nuestro equipo de tráfico atiende las 24 horas.",
-      primary: "Solicitar presupuesto",
+      eyebrow: "AXEL SAFE TRANSPORTING / ORGANIZACIÓN DE TRANSPORTE POR CARRETERA",
+      titleLines: ["Transporte por carretera en Europa,", "adaptado a tu negocio."],
+      text: "Organizamos transporte de mercancías por carretera en Europa y el Reino Unido con una red de transportistas verificados. Desde encontrar el camión adecuado hasta la confirmación de la entrega, nos encargamos de organizar y coordinar cada porte.",
+      primary: "Pide presupuesto",
       secondary: "Ver nuestros servicios",
-      micro: ["Transporte por carretera", "Coordinación de transportes", "Logística empresarial"],
+      micro: ["En el transporte desde 2018", "Unos 100 portes al mes", "Tráfico disponible 24/7"],
     },
     intro: {
-      eyebrow: "01 / LA EMPRESA",
-      title: "Cada envío empieza con la conexión adecuada.",
+      eyebrow: "02 / ORGANIZACIÓN Y COORDINACIÓN DEL TRANSPORTE",
+      title: "Un socio de confianza para los transportes de tu empresa.",
       paragraphs: [
-        "Mover mercancías exige algo más que encontrar un camión disponible. Hace falta planificación, comunicación y la capacidad de reunir a las personas adecuadas.",
-        "En AXEL SAFE TRANSPORTING coordinamos el transporte por carretera conectando a las empresas con transportistas independientes.",
+        "Sabemos lo importante que es que un transporte esté bien organizado. El camión tiene que ser el adecuado para la mercancía, la carga tiene que cumplir el horario acordado y la información tiene que llegar a tiempo a todos los implicados.",
+        "En AXEL SAFE TRANSPORTING nos ocupamos de esos detalles. Trabajamos con transportistas independientes, revisamos las opciones disponibles y organizamos los portes según lo que necesita cada cliente.",
       ],
-      emphasis: "Un único interlocutor. Un proceso organizado en torno a sus necesidades de transporte.",
-      cta: "Cómo trabajamos",
+      emphasis: "Tanto si tienes que enviar una sola carga como si tienes transportes regulares, cuentas con un equipo que conoce cada fase del proceso y está en contacto con el transportista durante todo el porte.",
+      cta: "Conoce más sobre nosotros",
     },
     approach: {
-      eyebrow: "02 / QUÉ HACEMOS",
-      titleLines: ["El transporte adecuado.", "La coordinación adecuada."],
-      text: "Trabajamos entre las empresas que necesitan transportar mercancías y los transportistas que las mueven.",
+      eyebrow: "03 / POR QUÉ TRABAJAR CON NOSOTROS",
+      titleLines: ["Transportes bien organizados,", "con menos preocupaciones para ti."],
+      text: "",
       cards: [
         {
-          title: "Planificación del transporte",
-          text: "Entender el envío, el destino, los plazos y los requisitos específicos del transporte antes de organizar los siguientes pasos.",
+          title: "Más de 30 transportistas en nuestra red",
+          text: "Trabajamos con transportistas independientes cuyos documentos, licencias y seguros están verificados. Elegimos a cada colaborador según el tipo de mercancía, la ruta y las condiciones del transporte.",
         },
         {
-          title: "Coordinación de transportistas",
-          text: "Identificar opciones de transporte adecuadas entre transportistas independientes y coordinar los detalles de cada envío.",
+          title: "Encontramos el camión adecuado para tu mercancía",
+          text: "Cada carga tiene sus particularidades. Tenemos en cuenta el peso, el volumen, el destino y el tipo de semirremolque necesario antes de proponerte una opción de transporte.",
         },
         {
-          title: "Comunicación",
-          text: "Mantener organizada la información relativa al transporte y ofrecer un interlocutor claro durante todo el proceso de coordinación.",
+          title: "Un único interlocutor",
+          text: "No tienes que hablar por separado con cada parte implicada. Centralizamos la comunicación con el transportista y te pasamos la información que necesitas durante el porte.",
         },
         {
-          title: "Soluciones flexibles",
-          text: "Tratar cada solicitud de transporte de forma individual, en lugar de limitar las opciones a una flota propia fija.",
+          title: "Tráfico 24/7",
+          text: "Estamos disponibles para comunicación y coordinación también fuera del horario habitual de trabajo.",
+        },
+        {
+          title: "Más opciones de transporte",
+          text: "No dependemos de la disponibilidad de una sola flota. Nuestra red de colaboradores nos permite buscar opciones según la ruta y las fechas en las que necesitas el transporte.",
+        },
+        {
+          title: "Respondemos rápido",
+          text: "Cuando tenemos todos los datos necesarios, normalmente te respondemos en menos de una hora.",
         },
       ],
       cta: "Ver nuestros servicios",
     },
     services: {
-      eyebrow: "03 / NUESTROS SERVICIOS",
-      title: "Soluciones de transporte organizadas en torno a sus necesidades.",
-      text: "No hay dos envíos con exactamente los mismos requisitos. Analizamos cada solicitud teniendo en cuenta la carga, el destino, las opciones de transporte disponibles y las gestiones necesarias.",
+      eyebrow: "04 / NUESTROS SERVICIOS",
+      title: "Organizamos los transportes que necesita tu negocio.",
+      text: "Desde un único porte hasta transportes recurrentes, nos encargamos de encontrar al transportista, acordar los detalles y coordinar la entrega.",
       cards: [
         {
-          title: "Coordinación de transporte por carretera",
-          text: "Organización del transporte de mercancías por carretera a través de transportistas independientes, buscando para cada envío la solución apropiada.",
+          title: "Transporte por carretera en Europa",
+          text: "Organizamos transporte de mercancías en rutas de Europa y el Reino Unido, según el destino, las características de la carga y el plazo de entrega. Trabajamos con transportistas que disponen de distintos tipos de semirremolque, para poder encontrar una opción adecuada para cada transporte.",
           anchor: "road-freight-organisation",
         },
         {
-          title: "Planificación del transporte",
-          text: "Coordinación de los datos esenciales del envío, las condiciones de recogida y los detalles de entrega antes de que comience el transporte.",
+          title: "Planificación y coordinación logística",
+          text: "Nos ocupamos de organizar el porte, desde fijar las condiciones de carga y descarga hasta la comunicación con el transportista. Seguimos el transporte y mantenemos el contacto con las partes implicadas, para que cualquier cambio se comunique a tiempo.",
           anchor: "freight-planning",
         },
         {
-          title: "Red de transportistas",
-          text: "Colaboración con transportistas asociados para identificar capacidad disponible y responder a distintas necesidades de carga.",
+          title: "Red de transportistas independientes",
+          text: "Trabajamos con empresas de transporte verificadas, con experiencia en distintas rutas europeas. Según la solicitud, comprobamos la disponibilidad de camiones y elegimos al transportista que puede cumplir las condiciones del porte.",
           anchor: "carrier-network",
         },
       ],
-      cardCta: "Ver servicio",
+      cardCta: "Detalles",
     },
     process: {
-      eyebrow: "04 / EL PROCESO",
-      title: "De la solicitud a la entrega.",
-      text: "Un enfoque estructurado para cada solicitud de transporte.",
+      eyebrow: "07 / CÓMO TRABAJAMOS",
+      title: "De la solicitud a la entrega, en cuatro pasos.",
+      text: "",
       steps: [
-        { title: "Envíenos los datos", text: "Indíquenos qué hay que transportar, adónde debe llegar y cuándo." },
-        { title: "Revisamos las opciones", text: "Evaluamos su solicitud e identificamos las opciones de transporte adecuadas." },
-        {
-          title: "Confirmación del transporte",
-          text: "Una vez acordados los detalles, coordinamos la operación con el transportista seleccionado.",
-        },
-        { title: "Seguimos en contacto", text: "Seguimos siendo su interlocutor para la coordinación del transporte. El equipo de tráfico está disponible 24/7." },
+        { title: "Nos dices qué tienes que transportar", text: "Necesitamos el lugar de carga, el destino, el tipo de mercancía, el peso, el volumen y las fechas en las que hay que hacer el transporte." },
+        { title: "Buscamos una opción adecuada", text: "Comprobamos la disponibilidad de los transportistas de nuestra red y elegimos las opciones que cumplen tus requisitos." },
+        { title: "Cerramos todos los detalles", text: "Te comunicamos la tarifa y las condiciones del transporte. Una vez confirmado, fijamos el horario de carga y descarga con el transportista." },
+        { title: "Seguimos en contacto hasta la entrega", text: "Coordinamos la comunicación durante el porte y te pasamos las novedades necesarias hasta la confirmación de la entrega." },
       ],
-      cta: "Conozca nuestro proceso",
+      cta: "Solicita un transporte",
     },
     carriers: {
-      eyebrow: "05 / NUESTRA RED",
-      title: "Una buena logística empieza por buenos socios.",
+      eyebrow: "08 / COLABORA CON NOSOTROS",
+      title: "¿Tienes una empresa de transporte? Hablemos.",
       paragraphs: [
-        "Una coordinación de transporte fiable depende de relaciones productivas entre cargadores, organizadores y transportistas.",
-        "Atendemos con interés las solicitudes de empresas de transporte que deseen estudiar una colaboración con AXEL SAFE TRANSPORTING.",
+        "Nos interesa colaborar con transportistas serios, que cumplen lo que acuerdan y se comunican con claridad.",
+        "Si tienes camiones disponibles y trabajas en rutas europeas, envíanos algunos datos sobre tu empresa, los tipos de semirremolque y las rutas que cubres.",
+        "Estudiaremos las posibilidades de colaborar.",
       ],
-      cta: "Conviértase en transportista colaborador",
+      cta: "Hazte colaborador de AXEL SAFE",
     },
     finalCta: {
-      eyebrow: "HABLEMOS DE LOGÍSTICA",
-      titleLines: ["¿Tiene mercancías que transportar?", "Hablemos de la ruta."],
-      text: "Cuéntenos sus necesidades de transporte y póngase en contacto con nuestro equipo.",
-      primary: "Solicitar presupuesto de transporte",
-      secondary: "Contacto",
+      eyebrow: "TRÁFICO DISPONIBLE 24/7",
+      titleLines: ["¿Tienes mercancía que transportar?", "Envíanos los datos."],
+      text: "Dinos dónde hay que cargar la mercancía, adónde tiene que llegar y cuándo necesitas el transporte. Revisamos las opciones disponibles y te enviamos una oferta según tus requisitos.",
+      primary: "Pide presupuesto de transporte",
+      secondary: "Contacta con nosotros",
     },
-    /** [PLACEHOLDER] prototype-only labels for the network visual — not approved copy. */
+    /** [PLACEHOLDER] etiquetas solo para el prototipo, para el visual de la red. No es texto aprobado. */
     network: {
-      caption: "Principales ejes viarios europeos · ilustrativo, no son las rutas propias de AXEL SAFE.",
+      caption: "Principales carreteras europeas. Mapa ilustrativo, no son las rutas de AXEL SAFE.",
       origin: "Reghin, Rumanía",
       coverageLabel: "Cobertura",
       equipmentLabel: "Equipos",
@@ -216,268 +223,265 @@ export const es: Dictionary = {
 
   services: {
     hero: {
-      eyebrow: "AXEL SAFE / SERVICIOS",
-      titleLines: ["Transporte por carretera.", "Organizado en torno a su empresa."],
-      text: "Las necesidades de transporte cambian de un envío a otro. Nuestra función es ayudar a las empresas a organizar el transporte por carretera con los transportistas adecuados.",
-      cta: "Solicitar presupuesto",
+      eyebrow: "SERVICIOS DE TRANSPORTE Y LOGÍSTICA",
+      titleLines: ["Transporte por carretera en Europa,", "adaptado a lo que necesita tu negocio."],
+      text: "Organizamos transporte de mercancías por carretera en Europa con una red de transportistas verificados. Gestionamos tanto portes puntuales como transportes recurrentes, según la mercancía, la ruta y los plazos de entrega.",
+      cta: "Pide presupuesto",
     },
     intro: {
-      eyebrow: "01 / COORDINACIÓN DE TRANSPORTES",
-      title: "Un enfoque práctico del transporte de mercancías.",
+      eyebrow: "01 / NUESTRO ENFOQUE",
+      title: "Organizamos el transporte según lo que pide cada porte.",
       paragraphs: [
-        "Tanto si necesita organizar un único envío como tratar necesidades de transporte recurrentes, el proceso empieza por entender los detalles.",
-        "Evaluamos el movimiento de mercancías solicitado y buscamos la opción adecuada dentro de nuestra red de transportistas.",
-        "El objetivo es sencillo: comunicación clara, opciones de transporte apropiadas y una ejecución coordinada.",
+        "Cada transporte tiene condiciones distintas. El tipo de mercancía, la ruta, el plazo de entrega y el equipo necesario influyen en cómo se organiza el porte.",
+        "En AXEL SAFE TRANSPORTING analizamos esa información, comprobamos la disponibilidad de los transportistas y fijamos las condiciones del transporte junto con el cliente.",
+        "Nos encargamos de organizar el porte y de la comunicación con el transportista hasta la entrega.",
       ],
     },
     core: [
       {
         id: "road-freight-organisation",
-        label: "01 / Organización del transporte por carretera",
-        title: "Organizar un transporte no tiene por qué ser complicado.",
+        label: "Servicio 01 / Organización del transporte por carretera",
+        title: "Transporte de mercancías entre destinos europeos.",
         paragraphs: [
-          "Coordinamos las necesidades de transporte por carretera entre los clientes y transportistas independientes.",
-          "Desde la solicitud inicial hasta las condiciones acordadas, ayudamos a reunir la información, las partes y los detalles prácticos que implica organizar un envío.",
+          "Organizamos transporte por carretera para empresas que necesitan enviar mercancía por Europa.",
+          "Trabajamos con transportistas independientes y elegimos entre las opciones disponibles según la carga, la ruta y las fechas solicitadas.",
+          "Gestionamos tanto solicitudes puntuales como transportes regulares.",
         ],
-        listTitle: "Qué incluye:",
+        listTitle: "Qué incluye el servicio:",
         list: [
-          "Revisión de la carga y de los requisitos del envío.",
-          "Identificación de las opciones de transporte adecuadas.",
-          "Coordinación de los detalles de recogida y entrega.",
-          "Facilitación de la comunicación entre las partes implicadas.",
+          "Análisis de los requisitos del transporte.",
+          "Búsqueda de transportistas disponibles.",
+          "Elección del tipo de semirremolque.",
+          "Fijación de las condiciones de carga y descarga.",
+          "Confirmación de las tarifas y de los detalles del porte.",
+          "Coordinación del transporte hasta la entrega.",
         ],
-        cta: "Hablemos de su envío",
+        cta: "Pide presupuesto de transporte",
         ctaTarget: "contact",
       },
       {
         id: "freight-planning",
-        label: "02 / Planificación y coordinación de cargas",
-        title: "Los detalles importan antes de que empiece el viaje.",
+        label: "Servicio 02 / Planificación y coordinación",
+        title: "Planificamos cada porte antes de la carga.",
         paragraphs: [
-          "Cada solicitud de transporte implica decisiones sobre plazos, características de la carga, condiciones de carga y expectativas de entrega.",
-          "Repasamos la información esencial antes de confirmar el transporte, para reducir incertidumbres evitables.",
+          "Para organizar un transporte necesitamos información clara sobre la mercancía, el destino y las condiciones de entrega.",
+          "Reunimos esos datos y se los pasamos al transportista antes de confirmar el porte. Durante el transporte, mantenemos la comunicación con las partes implicadas y transmitimos las novedades importantes.",
         ],
-        listTitle: "Aspectos clave:",
+        listTitle: "Qué gestionamos:",
         list: [
-          "Tipo y cantidad de la carga.",
-          "Lugares de recogida y entrega.",
-          "Fechas solicitadas de carga y entrega.",
-          "Requisitos de carga y descarga.",
-          "Instrucciones específicas del envío.",
+          "Tipo, cantidad y dimensiones de la mercancía.",
+          "Direcciones de carga y descarga.",
+          "Fechas y franjas horarias acordadas.",
+          "Tipo de equipo necesario.",
+          "Instrucciones especiales de transporte.",
+          "Comunicación entre el cliente y el transportista.",
         ],
-        cta: "Enviar los datos del transporte",
+        cta: "Habla con nuestro equipo",
         ctaTarget: "contact",
       },
       {
         id: "carrier-network",
-        label: "03 / Red de transportistas independientes",
-        title: "Más opciones gracias a socios conectados.",
+        label: "Servicio 03 / Red de transportistas",
+        title: "Una red de más de 30 transportistas colaboradores.",
         paragraphs: [
-          "Nuestro modelo de negocio se basa en trabajar con empresas de transporte independientes, en lugar de operar una flota propia fija.",
-          "Esto nos permite estudiar las opciones de transporte según los requisitos de cada solicitud y la capacidad disponible en nuestra red.",
+          "Trabajamos con más de 30 transportistas independientes para organizar portes en Europa.",
+          "Según la solicitud, comprobamos la disponibilidad de los colaboradores y buscamos las opciones adecuadas para la ruta y el tipo de mercancía.",
+          "Antes de empezar a colaborar, verificamos los documentos necesarios para hacer el transporte, entre ellos la licencia de transporte, el seguro CMR y la documentación del vehículo.",
+          "Con esta red podemos organizar transportes con distintos tipos de semirremolque, según la capacidad disponible.",
         ],
         listTitle: "",
         list: [] as string[],
-        cta: "Vea cómo trabajamos",
-        ctaTarget: "howWeWork",
+        cta: "Conoce mejor nuestra red",
+        ctaTarget: "vetting",
       },
     ],
     requirements: {
-      eyebrow: "02 / SU ENVÍO",
-      title: "Díganos qué hay que transportar.",
-      text: "Cuanto más precisa sea la descripción del envío, más fácil resulta evaluar el transporte necesario.",
-      listTitle: "Información que podemos necesitar:",
-      list: "Descripción de la carga, peso aproximado, dimensiones o unidades de carga, lugares de recogida y entrega, fechas preferidas y cualquier requisito especial de manipulación.",
-      note: "Para envíos que requieran equipos o condiciones de transporte particulares, la disponibilidad debe confirmarse antes de poder presentar una oferta.",
-      cta: "Solicitar presupuesto",
+      eyebrow: "04 / QUÉ NOS ENVÍAS",
+      title: "Dinos qué hay que transportar.",
+      text: "Cuantos más detalles nos des, antes te enviamos una oferta ajustada.",
+      listTitle: "Nos ayuda saber:",
+      list: "Qué mercancía es, cuánto pesa aproximadamente, las dimensiones o el número de palés, dónde se carga y dónde se entrega, qué fechas prefieres y si la mercancía necesita una manipulación especial.",
+      note: "Si la mercancía necesita un equipo o condiciones especiales, primero comprobamos la disponibilidad y después te enviamos la oferta.",
+      cta: "Pide presupuesto",
     },
-    /** [PLACEHOLDER] prototype-only section headings for companyData transport types / industries. */
+    /** [PLACEHOLDER] títulos solo para el prototipo, para los tipos de transporte / sectores de companyData. */
     extras: {
-      typesEyebrow: "03 / TIPOS DE TRANSPORTE",
-      typesTitle: "Equipos que podemos organizar a través de nuestros socios.",
-      industriesEyebrow: "04 / SECTORES",
+      typesEyebrow: "05 / TIPOS DE EQUIPO",
+      typesTitle: "Semirremolques para distintos tipos de mercancía.",
+      industriesEyebrow: "06 / SECTORES",
       industriesTitle: "Empresas para las que organizamos transporte.",
     },
     finalCta: {
-      title: "¿Tiene un transporte pendiente sobre la mesa?",
-      text: "Envíenos los datos esenciales. Revisaremos su solicitud y le indicaremos los siguientes pasos posibles.",
-      cta: "Contactar",
+      title: "¿Necesitas un transporte por carretera en Europa?",
+      text: "Envíanos los datos de la mercancía, la ruta y la fecha de carga. Comprobamos la disponibilidad de transportistas y te enviamos una oferta para ese porte.",
+      cta: "Pide presupuesto de transporte",
     },
   },
 
   howWeWork: {
     hero: {
-      eyebrow: "AXEL SAFE / NUESTRO PROCESO",
-      titleLines: ["Detrás de cada envío,", "un proceso coordinado."],
-      text: "El transporte por carretera reúne varias piezas en movimiento. Nuestro trabajo es conectarlas en una operación de transporte clara.",
+      eyebrow: "NUESTRO PROCESO",
+      titleLines: ["Desde la solicitud de transporte", "hasta la confirmación de la entrega."],
+      text: "Nos encargamos de organizar cada porte, desde elegir al transportista adecuado hasta coordinar la entrega. Tienes un único interlocutor y sabes con quién hablar durante todo el transporte.",
     },
     model: {
-      eyebrow: "01 / NUESTRA FUNCIÓN",
-      titleLines: ["Nosotros organizamos el transporte.", "Nuestros transportistas colaboradores mueven la mercancía."],
+      eyebrow: "01 / CÓMO FUNCIONAMOS",
+      titleLines: ["Nosotros organizamos el transporte.", "Nuestros colaboradores lo realizan."],
       paragraphs: [
-        "AXEL SAFE TRANSPORTING opera a través de una red de transportistas independientes.",
-        "En lugar de depender de una flota propia, nos centramos en organizar el transporte de mercancías y coordinar a las partes implicadas.",
-        "Esta distinción define nuestra forma de trabajar: entender los requisitos, identificar las opciones adecuadas y mantener una comunicación clara.",
+        "En AXEL SAFE TRANSPORTING trabajamos con empresas de transporte independientes, elegidas según la ruta, el tipo de mercancía y las condiciones de cada porte.",
+        "No tenemos flota propia, y eso nos permite buscar camiones disponibles en nuestra red de transportistas sin depender de un número fijo de vehículos.",
+        "Nosotros nos ocupamos de la organización, de cerrar los detalles y de la comunicación con el transportista, para que tú tengas un solo interlocutor.",
+        "El cliente nos envía los datos de la mercancía y las condiciones de entrega.",
+        "AXEL SAFE TRANSPORTING revisa las opciones disponibles, organiza el porte y coordina la comunicación.",
+        "El transportista colaborador recoge la mercancía y hace el transporte según las condiciones acordadas.",
       ],
-      diagram: ["Cargador", "AXEL SAFE TRANSPORTING", "Transportista independiente"],
+      diagram: ["El cliente", "AXEL SAFE TRANSPORTING", "El transportista colaborador"],
       diagramNotes: ["Tiene mercancía que transportar", "Coordina el transporte", "Realiza el transporte"],
       vettingLink: "Cómo verificamos a los transportistas",
     },
     stages: {
-      eyebrow: "02 / PASO A PASO",
-      title: "Un proceso claro desde la primera solicitud.",
+      eyebrow: "02 / FASES DE LA COLABORACIÓN",
+      title: "Cómo organizamos el transporte, paso a paso.",
       items: [
         {
-          title: "Entender el envío",
+          title: "Nos dices qué tienes que transportar",
           paragraphs: [
-            "Cada solicitud empieza con la información de transporte pertinente.",
-            "Revisamos los datos de la carga, el origen, el destino, los plazos solicitados y otros requisitos que puedan afectar a la operación de transporte.",
+            "Todo empieza con unos pocos datos: qué mercancía hay que transportar, dónde se carga, adónde tiene que llegar y cuándo necesitas el transporte.",
+            "Revisamos el peso, el volumen y cualquier condición especial, para saber exactamente qué tipo de camión hace falta.",
           ],
         },
         {
-          title: "Identificar opciones de transporte",
+          title: "Buscamos al transportista adecuado",
           paragraphs: [
-            "Con los requisitos definidos, buscamos opciones de transporte adecuadas entre nuestros transportistas colaboradores independientes.",
-            "La disponibilidad, los equipos necesarios y las condiciones específicas del envío se tienen en cuenta como parte de la solicitud.",
+            "Comprobamos la disponibilidad de camiones en nuestra red y buscamos a los transportistas que pueden hacer el porte en las condiciones solicitadas.",
+            "Tenemos en cuenta la ruta, las fechas de carga, el tipo de semirremolque y las particularidades de la mercancía.",
           ],
         },
         {
-          title: "Confirmar las condiciones",
+          title: "Te enviamos la oferta y cerramos los detalles",
           paragraphs: [
-            "Los detalles del transporte propuesto se revisan y se acuerdan antes de organizar el envío.",
-            "La información pertinente se coordina con el transportista para respaldar el proceso de recogida y entrega acordado.",
+            "Cuando encontramos una opción de transporte, te comunicamos la tarifa y las condiciones del porte.",
+            "Una vez aceptada la oferta, confirmamos los detalles por escrito y fijamos el horario de carga y descarga con el transportista.",
           ],
         },
         {
-          title: "Coordinar la comunicación",
+          title: "Seguimos en contacto hasta la entrega",
           paragraphs: [
-            "Una vez organizado el transporte, seguimos siendo un interlocutor para las cuestiones de coordinación y las novedades pertinentes, dentro de las condiciones de servicio acordadas.",
+            "Durante el transporte, hablamos con el transportista y te pasamos las novedades necesarias.",
+            "Si hay cambios de horario u otras situaciones que requieren coordinación, intervenimos para aclarar los detalles con las partes implicadas.",
+            "Nuestro departamento de tráfico está disponible 24/7, y el proceso termina con la confirmación de la entrega.",
           ],
         },
       ],
     },
     why: {
-      eyebrow: "03 / NUESTRO ENFOQUE",
-      title: "Un enfoque en red para el transporte por carretera.",
+      eyebrow: "03 / FLEXIBILIDAD",
+      title: "Más opciones de transporte, sin depender de una sola flota.",
       paragraphs: [
-        "Una flota fija ofrece un conjunto definido de vehículos y de capacidad. Una red de transportistas independientes es otra forma de organizar el transporte.",
-        "Nuestro modelo nos permite evaluar cada solicitud frente a las opciones de transportistas disponibles, en lugar de limitar el transporte a los vehículos propiedad de la empresa.",
-        "Para el cliente, la ventaja es contar con una única organización con la que tratar sus necesidades de transporte y la organización de cada envío.",
+        "Cada empresa tiene necesidades de transporte distintas. Algunos portes se planifican con antelación; otros surgen según los pedidos, la producción o los plazos de entrega.",
+        "Por eso trabajamos con una red de transportistas independientes, que nos permite comprobar la disponibilidad de más camiones y tipos de semirremolque.",
+        "Para ti, todo sigue siendo sencillo: nos envías la solicitud, nosotros buscamos una opción adecuada y nos encargamos de organizar el transporte.",
       ],
     },
     transparency: {
-      eyebrow: "04 / TRABAJAR JUNTOS",
-      titleLines: ["Condiciones claras.", "Comunicación clara."],
+      eyebrow: "04 / COMUNICACIÓN Y RESPONSABILIDAD",
+      titleLines: ["Sabes qué se ha acordado", "y con quién hablar."],
       paragraphs: [
-        "Antes de confirmar un envío, las partes implicadas deben conocer las condiciones, la organización del transporte y las responsabilidades correspondientes.",
-        "Creemos que la información precisa y la comunicación clara son esenciales en una relación de transporte profesional.",
+        "Un transporte bien organizado empieza con información correcta y condiciones fijadas antes de la carga.",
+        "Verificamos los documentos de los transportistas con los que trabajamos, confirmamos por escrito los detalles del porte y mantenemos el contacto con los implicados durante el transporte.",
+        "Si hay cambios, hablamos con el transportista y te informamos de la situación.",
+        "Buscamos colaboraciones en las que cada parte sabe lo que tiene que hacer y la información importante llega a tiempo.",
       ],
-      cta: "Hablemos de sus necesidades de transporte",
+      cta: "Pide presupuesto de transporte",
     },
   },
 
   about: {
     hero: {
-      eyebrow: "AXEL SAFE / SOBRE LA EMPRESA",
-      titleLines: ["Construida sobre conexiones.", "Centrada en el transporte."],
-      text: "AXEL SAFE TRANSPORTING es una empresa con sede en Rumanía que organiza el transporte de mercancías por carretera a través de transportistas independientes.",
+      eyebrow: "SOBRE AXEL SAFE TRANSPORTING",
+      titleLines: ["Organizamos transporte de mercancías", "por carretera en Europa desde 2018."],
+      text: "Somos una empresa rumana de Reghin, especializada en organizar y coordinar transporte de mercancías por carretera. Trabajamos con transportistas independientes para atender a las empresas que necesitan transporte en Europa.",
     },
     intro: {
       eyebrow: "01 / QUIÉNES SOMOS",
-      title: "La logística es cuestión de personas, decisiones y plazos.",
+      title: "Experiencia en el transporte por carretera en Europa.",
       paragraphs: [
-        "Detrás de cada movimiento de mercancías hay empresas con plazos, transportistas con capacidad disponible y numerosos detalles que deben encajar.",
-        "AXEL SAFE TRANSPORTING trabaja entre esos elementos.",
-        "Fundada en 2018 y con sede en Reghin, Rumanía, la empresa opera en el sector del transporte de mercancías por carretera, organizando transportes a través de transportistas independientes.",
-        "Nuestra actividad se basa en el trabajo práctico de conectar necesidades de carga con operaciones de transporte.",
+        "AXEL SAFE TRANSPORTING empezó su actividad en 2018, en Reghin, distrito de Mureș.",
+        "Organizamos transporte de mercancías para empresas de distintos sectores. Trabajamos con una red de transportistas independientes y gestionamos cada porte desde que recibimos la solicitud hasta la confirmación de la entrega.",
+        "Comprobamos la disponibilidad de los transportistas, fijamos las condiciones del porte y coordinamos la comunicación entre el cliente y el transportista.",
+        "Hoy gestionamos unos 100 portes al mes, en rutas de Europa y el Reino Unido. Una de nuestras rutas principales es Rumanía–España.",
       ],
     },
     philosophy: {
-      eyebrow: "02 / QUÉ GUÍA NUESTRO TRABAJO",
-      title: "Una buena coordinación empieza por entender los detalles.",
+      eyebrow: "03 / NUESTROS PRINCIPIOS",
+      title: "Los principios con los que trabajamos.",
       items: [
-        { title: "Claridad", text: "Las necesidades de transporte deben tratarse con claridad antes de confirmar la operación." },
-        { title: "Comunicación", text: "Las partes implicadas necesitan información pertinente y precisa durante todo el proceso." },
-        {
-          title: "Adaptabilidad",
-          text: "Envíos distintos requieren soluciones distintas. Tratamos cada solicitud según sus requisitos particulares.",
-        },
-        {
-          title: "Relaciones profesionales",
-          text: "La colaboración a largo plazo depende de una comunicación constante y de expectativas claramente acordadas.",
-        },
+        { title: "Profesionalidad", text: "Tratamos cada solicitud con atención a los detalles del transporte y a las condiciones acordadas con el cliente." },
+        { title: "Transparencia", text: "Comunicamos las tarifas, las condiciones y los detalles del porte antes de confirmar el transporte." },
+        { title: "Flexibilidad", text: "Buscamos opciones de transporte según la ruta, el tipo de mercancía y la disponibilidad de los transportistas." },
+        { title: "Responsabilidad", text: "Verificamos los documentos de los transportistas colaboradores y seguimos los portes hasta la confirmación de la entrega." },
       ],
     },
     details: {
-      eyebrow: "03 / DATOS DE LA EMPRESA",
+      eyebrow: "04 / DATOS DE LA EMPRESA",
       labels: {
         legalName: "Razón social",
         established: "Año de constitución",
         office: "Domicilio social",
-        registration: "Número de registro mercantil",
-        vat: "N.º de IVA / Código fiscal",
-        activity: "Actividad principal",
-        website: "Sitio web",
+        registration: "N.º de registro mercantil",
+        vat: "CIF (CUI)",
+        activity: "CAEN",
+        website: "Web",
       },
     },
     finalCta: {
-      title: "¿Busca un socio para coordinar sus transportes?",
-      text: "Háblenos de su empresa y de las necesidades de transporte que debe gestionar.",
-      cta: "Contactar con AXEL SAFE",
+      title: "¿Necesitas un socio para los transportes de tu empresa?",
+      text: "Dinos en qué rutas necesitas transporte y qué tipo de mercancía envías. Hablamos de tus requisitos y de cómo podemos colaborar.",
+      cta: "Contacta con nosotros",
     },
   },
 
   forCarriers: {
     hero: {
-      eyebrow: "AXEL SAFE / COLABORACIÓN CON TRANSPORTISTAS",
-      titleLines: ["Su flota.", "Nuevas conexiones."],
+      eyebrow: "COLABORACIÓN CON TRANSPORTISTAS",
+      titleLines: ["Nuevas oportunidades de carga", "para tu empresa."],
       paragraphs: [
-        "Trabajamos con transportistas independientes para organizar envíos de mercancías por carretera para clientes empresariales.",
-        "Si dirige una empresa de transporte y le interesa estudiar una posible colaboración, nos gustaría conocerle.",
+        "Trabajamos con transportistas independientes de toda Europa: te damos acceso a solicitudes de transporte, condiciones comerciales fijadas por escrito y coordinación operativa durante los portes.",
       ],
-      cta: "Hágase colaborador",
+      cta: "Hazte transportista colaborador",
     },
     intro: {
-      eyebrow: "01 / TRABAJAR JUNTOS",
-      title: "El transporte profesional empieza por colaboraciones profesionales.",
+      eyebrow: "01 / COLABORACIÓN",
+      title: "Trabajamos con empresas de transporte profesionales.",
       paragraphs: [
-        "Nuestro modelo de negocio se basa en la cooperación con transportistas independientes.",
-        "Conectamos las necesidades de transporte de los clientes con las opciones disponibles y coordinamos las gestiones correspondientes.",
-        "Nos interesa construir relaciones con operadores de transporte que valoren la comunicación clara, las condiciones acordadas y la cooperación profesional.",
+        "AXEL SAFE TRANSPORTING colabora con operadores que tienen capacidad de transporte, documentación en vigor y experiencia en el transporte de mercancías por carretera.",
+        "Nos interesa colaborar con empresas que trabajan con semirremolques de lona, frigoríficos o megatráileres en rutas europeas.",
+        "Buscamos colaboraciones basadas en el cumplimiento de las condiciones acordadas, una comunicación ágil y la continuidad.",
       ],
     },
     process: {
-      eyebrow: "02 / PÓNGASE EN CONTACTO",
-      title: "Hablemos de cómo podemos trabajar juntos.",
+      eyebrow: "02 / CÓMO SER COLABORADOR",
+      title: "Cuatro pasos para empezar a colaborar.",
       steps: [
-        { title: "Presente su empresa", text: "Háblenos de su empresa de transporte, sus zonas de operación y sus tipos de vehículo." },
-        {
-          title: "Indíquenos su capacidad",
-          text: "Facilítenos información sobre los equipos disponibles, las rutas preferidas y los tipos de carga que transporta.",
-        },
-        {
-          title: "Hablemos de la colaboración",
-          text: "Nuestro equipo revisará sus datos y podrá tratar con usted posibles oportunidades de transporte y condiciones de colaboración.",
-        },
-        {
-          title: "Mantengamos el contacto",
-          text: "Cuando exista una base adecuada para colaborar, podemos mantener el contacto en relación con las solicitudes de transporte pertinentes.",
-        },
+        { title: "Preséntanos tu empresa", text: "Envíanos los datos de la empresa e información sobre tu actividad de transporte." },
+        { title: "Indícanos tu capacidad disponible", text: "Dinos qué tipos de vehículo tienes, tus rutas preferidas y las zonas en las que trabajas." },
+        { title: "Revisamos la información", text: "Verificamos los documentos necesarios y hablamos de las condiciones de una posible colaboración." },
+        { title: "Empezamos a colaborar", text: "Según las solicitudes que tengamos, podemos proponerte portes que encajen con la actividad de tu empresa." },
       ],
     },
-    /** [PLACEHOLDER] prototype-only headings for companyData carrier requirements / conditions. */
+    /** [PLACEHOLDER] títulos solo para el prototipo, para los requisitos / condiciones de colaboración de companyData. */
     extras: {
-      requirementsEyebrow: "03 / QUÉ PEDIMOS",
-      requirementsTitle: "Antes de trabajar juntos.",
-      conditionsEyebrow: "04 / CÓMO COLABORAMOS",
-      conditionsTitle: "Condiciones claras en cada envío.",
-      requirementsLink: "Por qué comprobamos estos cuatro puntos",
-      benefitsEyebrow: "05 / QUÉ OBTIENE",
-      benefitsTitle: "Con qué puede contar.",
+      requirementsEyebrow: "03 / CONDICIONES DE COLABORACIÓN",
+      requirementsTitle: "Qué comprobamos antes de empezar a colaborar.",
+      conditionsEyebrow: "",
+      conditionsTitle: "",
+      requirementsLink: "Estas comprobaciones forman parte de nuestro proceso de selección de transportistas",
+      benefitsEyebrow: "04 / VENTAJAS",
+      benefitsTitle: "Qué ofrecemos a los transportistas colaboradores.",
     },
     enquiry: {
-      title: "¿Le interesa trabajar con AXEL SAFE?",
-      text: "Presente su empresa y cuéntenos su capacidad de transporte.",
+      title: "Preséntanos tu empresa de transporte.",
+      text: "Rellena el formulario y envíanos los datos básicos sobre tu actividad.",
       cta: "Enviar solicitud de colaboración",
     },
   },
@@ -485,65 +489,63 @@ export const es: Dictionary = {
   /** [PLACEHOLDER] BORRADOR de EDH a partir de los datos confirmados en la llamada del 10.11.2026; requiere aprobación del cliente antes del lanzamiento. */
   vetting: {
     hero: {
-      eyebrow: "AXEL SAFE / VERIFICACIÓN DE TRANSPORTISTAS",
-      titleLines: ["Quién transporta su mercancía", "y cómo lo comprobamos."],
-      text: "Su envío lo realiza un transportista independiente de nuestra red. Antes de asignarle la carga, comprobamos cuatro cosas.",
+      eyebrow: "SEGURIDAD Y VERIFICACIÓN",
+      titleLines: ["Transportistas verificados", "antes de asignar cada porte."],
+      text: "Trabajamos con operadores de transporte independientes, de los que verificamos los documentos y las condiciones necesarias para hacer el transporte.",
     },
     why: {
-      title: "Por qué importa la verificación.",
+      title: "Elegir al transportista es una fase clave.",
       paragraphs: [
-        "Cuando entrega mercancía para transportar, viaja en el camión de otra empresa y con el conductor de otra empresa. Si ese transportista no tiene la licencia en vigor o su seguro ha caducado, el problema recae en su carga.",
-        "Muchos riesgos del transporte por carretera se ven antes de cargar: una póliza caducada, una empresa en concurso de acreedores, un semirremolque que no se ajusta a la carga. Los buscamos antes de que un transportista reciba un envío, no cuando ya ha surgido un problema.",
-        "Trabajamos con más de 30 transportistas independientes. Todos pasan las mismas cuatro comprobaciones.",
+        "En el transporte internacional por carretera, verificar al operador de transporte ayuda a reducir los riesgos administrativos, comerciales y operativos.",
+        "En AXEL SAFE TRANSPORTING, el proceso de selección incluye comprobar la situación legal del transportista, el seguro CMR y la documentación del equipo que utiliza.",
+        "Trabajamos con una red de más de 30 transportistas independientes, seleccionados con criterios fijados de antemano.",
       ],
     },
     checks: {
-      title: "Cuatro comprobaciones antes de cargar.",
+      title: "Cuatro comprobaciones clave.",
       notes: [
-        "El transporte internacional de mercancías por carretera por cuenta ajena dentro de la UE exige licencia comunitaria. Comprobamos que el transportista es una empresa registrada y que su licencia está en vigor.",
-        "El seguro CMR cubre la responsabilidad del transportista por pérdida o daño de la mercancía en el transporte internacional. No nos basta con una copia de la póliza: llamamos a la aseguradora y confirmamos que está en vigor y pagada.",
-        "Revisamos la documentación del camión y del semirremolque, y que el equipo se ajuste a su mercancía: frigorífico para la carga que necesita una temperatura determinada, megatráiler para cargas voluminosas.",
-        "Comprobamos que la empresa no está en concurso de acreedores. Un transportista con dificultades financieras puede cancelar a última hora o dejar un envío a medias.",
+        "Comprobamos que el operador existe legalmente y que tiene en vigor la licencia comunitaria necesaria para los transportes internacionales que correspondan.",
+        "Revisamos la póliza CMR del transportista y confirmamos con la aseguradora que está en vigor.",
+        "Revisamos la documentación del camión y del semirremolque, y que el equipo se ajuste a lo que necesita la mercancía.",
+        "Comprobamos la situación de la empresa, incluido si hay algún procedimiento de insolvencia.",
       ],
     },
     roles: {
-      title: "Quién hace qué.",
+      title: "Responsabilidades definidas en cada transporte.",
       paragraphs: [
-        "El transporte en sí lo realiza el transportista independiente, con su propio camión, su conductor y su seguro CMR.",
-        "AXEL SAFE TRANSPORTING organiza el envío: elegimos al transportista, confirmamos por escrito las condiciones del viaje y seguimos siendo su interlocutor hasta la entrega. Nuestro equipo de tráfico responde 24/7.",
-        "Además del seguro CMR del transportista, la mercancía está asegurada.",
+        "El transportista independiente hace el transporte con sus propios vehículos, su personal y su documentación.",
+        "AXEL SAFE TRANSPORTING se encarga de elegir al transportista, confirmar las condiciones de colaboración y coordinar la comunicación hasta la entrega.",
+        "Además del seguro CMR del transportista, la mercancía está asegurada, en las condiciones aplicables al transporte.",
       ],
       guideLink: "Guía: transitario, transportista o bolsa de cargas",
     },
     finalCta: {
-      title: "¿Tiene un envío que organizar?",
-      text: "Envíenos la ruta, la mercancía y las fechas. Normalmente respondemos en menos de una hora.",
-      cta: "Solicitar presupuesto",
+      title: "Organiza el transporte de tu mercancía con colaboradores verificados.",
+      text: "Envíanos los requisitos del transporte y estudiaremos las opciones disponibles.",
+      cta: "Pide presupuesto",
     },
   },
 
   contact: {
     hero: {
-      eyebrow: "AXEL SAFE / CONTACTO",
-      title: "Hablemos del siguiente paso.",
-      text: "Tanto si tiene una carga que organizar, una pregunta sobre nuestros servicios o interés en colaborar como transportista, puede contactarnos aquí.",
+      eyebrow: "CONTACTO AXEL SAFE TRANSPORTING",
+      title: "Pide un presupuesto para el transporte de tu mercancía.",
+      text: "Envíanos los datos del transporte y nuestro equipo revisará la ruta, los requisitos y la capacidad disponible en la red de transportistas. Normalmente respondemos en menos de una hora.",
     },
     quote: {
-      title: "Háblenos de su envío.",
-      text: "Rellene el formulario con los datos esenciales del transporte para que podamos revisar su solicitud.",
+      title: "Dinos qué transporte necesitas organizar.",
+      text: "Rellena los datos de abajo para recibir una oferta ajustada a tus requisitos.",
     },
     direct: {
-      officeHeading: "Oficina",
-      transportHeading: "Departamento de transporte",
-      eyebrow: "¿PREFIERE CONTACTARNOS DIRECTAMENTE?",
-      title: "Hablemos.",
-      labels: { email: "Correo electrónico", phone: "Teléfono", location: "Domicilio social", hours: "Horario de atención" },
+      eyebrow: "CONTACTO DIRECTO",
+      title: "Contacta con el equipo de AXEL SAFE TRANSPORTING.",
+      labels: { email: "Correo electrónico", phone: "Teléfono", location: "Domicilio social", hours: "Disponibilidad de tráfico" },
       location: "Reghin, distrito de Mureș, Rumanía",
     },
     carriers: {
-      title: "¿Quiere colaborar como transportista?",
-      text: "Utilice nuestro formulario específico de solicitud de colaboración para transportistas.",
-      cta: "Conviértase en transportista colaborador",
+      title: "¿Representas a una empresa de transporte?",
+      text: "Si te interesa colaborar con AXEL SAFE TRANSPORTING, entra en la sección para transportistas y envíanos los datos de tu empresa.",
+      cta: "Hazte transportista colaborador",
     },
   },
 
@@ -552,93 +554,93 @@ export const es: Dictionary = {
       fields: {
         companyName: "Nombre de la empresa",
         contactPerson: "Persona de contacto",
-        email: "Correo electrónico de empresa",
+        email: "Correo electrónico",
         phone: "Número de teléfono",
-        pickupLocation: "Lugar de recogida",
+        pickupLocation: "Lugar de carga",
         deliveryLocation: "Lugar de entrega",
-        cargoDescription: "Descripción de la carga",
-        weight: "Peso aproximado / Unidades de carga",
-        pickupDate: "Fecha de recogida preferida",
-        deliveryDate: "Fecha de entrega preferida",
-        additional: "Requisitos adicionales",
+        cargoDescription: "Descripción de la mercancía",
+        weight: "Peso y dimensiones aproximados",
+        pickupDate: "Fecha de carga deseada",
+        deliveryDate: "Fecha de entrega deseada",
+        additional: "Otros requisitos",
       },
       submit: "Enviar solicitud de transporte",
     },
-    /** Carrier form labels — derived from the approved partnership process copy. */
+    /** Etiquetas del formulario para transportistas, derivadas del texto aprobado sobre el proceso de colaboración. */
     carrier: {
       fields: {
         companyName: "Nombre de la empresa",
         contactPerson: "Persona de contacto",
-        email: "Correo electrónico de empresa",
-        phone: "Número de teléfono",
+        email: "Correo electrónico",
+        phone: "Teléfono",
         country: "País de registro",
         fleetSize: "Número de vehículos",
         vehicleTypes: "Tipos de vehículo",
-        regions: "Zonas de operación / Rutas preferidas",
+        regions: "Zonas de operación y rutas preferidas",
         message: "Información adicional",
-        vatNumber: "NIF / número de IVA (CUI)",
-        cmrInsurance: "Seguro CMR vigente",
+        vatNumber: "CIF / NIF-IVA",
+        cmrInsurance: "Seguro CMR en vigor",
         licenceNumber: "Número de licencia de transporte",
       },
       vehicleOptions: { curtainsider: "Lona (tautliner)", reefer: "Frigorífico", mega: "Mega", other: "Otros" },
       cmrOptions: { yes: "Sí", no: "No" },
       submit: "Enviar solicitud de colaboración",
     },
-    /** Solicitud rápida: solo ruta y teléfono. */
+    /** Solicitud rápida: solo la ruta y el teléfono. */
     quick: {
-      fields: { contactPerson: "Nombre", phone: "Teléfono", pickupLocation: "Origen", deliveryLocation: "Destino", note: "Nota" },
+      fields: { contactPerson: "Nombre", phone: "Teléfono", pickupLocation: "Lugar de carga", deliveryLocation: "Destino", note: "Información adicional" },
       submit: "Enviar solicitud rápida",
     },
-    /** Le llamamos. */
+    /** Te llamamos nosotros. */
     callback: {
-      fields: { contactPerson: "Nombre", phone: "Teléfono", preferredTime: "¿Cuándo le llamamos?" },
-      timeOptions: { any: "En cualquier momento", morning: "Por la mañana", afternoon: "Por la tarde", evening: "Por la noche" },
-      submit: "Solicitar llamada",
+      fields: { contactPerson: "Nombre", phone: "Teléfono", preferredTime: "Franja horaria preferida" },
+      timeOptions: { any: "Cuando sea", morning: "Por la mañana", afternoon: "Por la tarde", evening: "Por la noche" },
+      submit: "Pide que te llamemos",
     },
-    /** Bloques de formulario de la página de contacto. */
+    /** Bloques de formulario de la página de contacto (pestañas + recuadro de llamada). */
     contactBlocks: {
       tabsLabel: "Tipo de solicitud",
       tabFull: "Solicitud completa",
       tabQuick: "Solicitud rápida",
-      quickText: "Solo la ruta y un teléfono. Los detalles los vemos con usted por teléfono.",
-      callbackTitle: "Le llamamos.",
-      callbackText: "Déjenos su número y díganos cuándo le viene bien hablar.",
+      quickText: "¿No tienes todos los datos a mano? Envíanos la ruta y tu número de teléfono. El resto lo vemos juntos.",
+      callbackTitle: "¿Prefieres hablarlo por teléfono?",
+      callbackText: "Déjanos tus datos de contacto y la franja horaria que prefieras. Una persona de AXEL SAFE TRANSPORTING te llamará para hablar de tu solicitud.",
     },
     consent:
-      "Acepto que AXEL SAFE TRANSPORTING trate los datos facilitados a través de este formulario para responder a mi solicitud, tal como se describe en la Política de privacidad.",
+      "Acepto que AXEL SAFE TRANSPORTING utilice los datos enviados a través de este formulario para responderme, conforme a la Política de privacidad.",
     success: {
-      title: "Hemos recibido su solicitud.",
-      text: "Gracias por contactar con AXEL SAFE TRANSPORTING. Nuestro equipo revisará la información facilitada y le responderá a través de sus datos de contacto.",
+      title: "Hemos recibido tu solicitud.",
+      text: "¡Gracias! Revisamos los datos y te contestamos por teléfono o por correo electrónico.",
     },
     required: "Obligatorio",
     optional: "Opcional",
     sending: "Enviando…",
     errors: {
-      required: "Rellene este campo.",
-      email: "Introduzca un correo electrónico de empresa válido.",
-      consent: "Confirme que podemos tratar su solicitud.",
-      generic: "Se ha producido un error y su solicitud no se ha enviado. Inténtelo de nuevo o contáctenos directamente.",
+      required: "Rellena este campo.",
+      email: "La dirección de correo electrónico no es correcta.",
+      consent: "Marca la casilla de consentimiento para que podamos responder a tu solicitud.",
+      generic: "La solicitud no se ha enviado por un error. Inténtalo de nuevo o llámanos directamente.",
       notConfigured:
-        "Las solicitudes en línea aún no están activas, por lo que su mensaje no se ha enviado. Contáctenos directamente por correo electrónico o teléfono.",
-      rateLimited: "Demasiados intentos en poco tiempo. Espere un minuto e inténtelo de nuevo.",
-      invalid: "Revise el formato de este campo.",
-      tooLong: "Acorte este campo, por favor.",
+        "El formulario todavía no funciona, así que el mensaje no se ha enviado. Escríbenos por correo electrónico o llámanos.",
+      rateLimited: "Demasiados intentos en poco tiempo. Espera un minuto e inténtalo de nuevo.",
+      invalid: "Revisa lo que has escrito en este campo.",
+      tooLong: "El texto es demasiado largo. Acórtalo, por favor.",
     },
   },
 
-  /** [PLACEHOLDER] prototype-only copy for the equipment explorer + example enquiry — needs client approval. */
+  /** [PLACEHOLDER] texto solo para el prototipo, para el explorador de equipos + el ejemplo de solicitud. Requiere aprobación del cliente. */
   showcase: {
     equipment: {
-      title: "Equipos de un vistazo.",
-      text: "Cifras habituales de los tipos de semirremolque que organizamos a través de nuestros transportistas colaboradores.",
-      note: "Cifras habituales de semirremolques europeos estándar. Las dimensiones y la capacidad exactas se confirman con el transportista para cada envío.",
+      title: "El semirremolque adecuado para cada tipo de mercancía.",
+      text: "Según la carga, podemos organizar el transporte con semirremolques de lona, frigoríficos o megatráileres, disponibles a través de las empresas de transporte con las que trabajamos.",
+      note: "El tipo de equipo y su disponibilidad se confirman en cada transporte. Las especificaciones son orientativas y pueden variar según la configuración del semirremolque asignado.",
       labels: {
-        length: "Longitud de carga",
+        length: "Longitud útil",
         pallets: "Palés EUR",
         payload: "Carga útil",
         height: "Altura interior",
         volume: "Volumen",
-        temperature: "Rango de temperatura",
+        temperature: "Temperatura",
       },
       units: { m: "m", t: "t", m3: "m³" },
       topView: "Vista superior · plataforma de 13,6 m",
@@ -646,95 +648,139 @@ export const es: Dictionary = {
     enquiry: {
       label: "Ejemplo de solicitud",
       route: { from: "Reghin, RO", to: "Múnich, DE", distance: "≈ 1.050 km" },
-      fields: { cargo: "Carga", trailer: "Semirremolque", dates: "Fechas" },
+      fields: { cargo: "Mercancía", trailer: "Semirremolque", dates: "Fechas" },
       cargo: "24 palés EUR · muebles",
       trailer: "Lona",
       dates: "03.11 → 05.11",
-      steps: ["Solicitud recibida", "Opciones revisadas", "Transporte confirmado", "En coordinación"],
+      steps: ["Solicitud recibida", "Camión encontrado", "Porte confirmado", "En ruta"],
     },
     watermark: "Precisión",
   },
 
   /**
-   * FAQ — [PLACEHOLDER] DRAFT translated from the EDH English draft (verified facts only); needs client approval before launch.
-   * Feeds the visible FAQ sections AND the FAQPage JSON-LD (same source).
+   * FAQ: [PLACEHOLDER] BORRADOR de EDH solo con datos verificados; requiere aprobación del cliente antes del lanzamiento.
+   * Alimenta las secciones FAQ visibles Y el JSON-LD FAQPage (misma fuente).
    */
   faq: {
-    title: "Preguntas que nos hacen con frecuencia.",
+    title: "Preguntas frecuentes sobre el transporte de mercancías por carretera.",
     shippers: [
       {
-        q: "¿AXEL SAFE TRANSPORTING tiene camiones propios?",
-        a: "No. Organizamos el transporte de mercancías por carretera a través de una red de transportistas colaboradores independientes. El transporte en sí lo realizan esas empresas de transporte; nosotros nos encargamos de la coordinación de cada envío.",
+        q: "¿En qué países organiza AXEL SAFE TRANSPORTING transporte por carretera?",
+        a: "AXEL SAFE TRANSPORTING organiza transporte de mercancías por carretera en Europa y el Reino Unido, con actividad frecuente en la ruta Rumanía–España. No organizamos transportes en Suiza. La disponibilidad se comprueba según la ruta y las fechas solicitadas.",
       },
       {
-        q: "¿Para qué países organizan transporte por carretera?",
-        a: "Organizamos transporte por carretera en toda Europa y el Reino Unido, sobre todo en la ruta Rumanía–España. No organizamos transportes con origen o destino en Suiza. Indíquenos los lugares de recogida y entrega y revisaremos las opciones de transporte disponibles para esa ruta.",
+        q: "¿AXEL SAFE TRANSPORTING es un transitario o una empresa de transporte?",
+        a: "AXEL SAFE TRANSPORTING es una empresa de Reghin, distrito de Mureș, especializada en organizar y coordinar transporte de mercancías por carretera. Trabajamos con transportistas independientes, que son quienes hacen los portes. No operamos una flota propia.",
       },
       {
-        q: "¿Qué tipos de semirremolque pueden organizar?",
-        a: "A través de nuestros transportistas colaboradores organizamos semirremolques de lona (tautliner), frigoríficos y mega. Para envíos que necesiten otros equipos o condiciones de transporte particulares, la disponibilidad se confirma en cada solicitud.",
+        q: "¿Qué tipos de mercancía podéis transportar en Europa?",
+        a: "Organizamos transporte de carga general, paletizada, voluminosa y de productos que necesitan temperatura controlada. Para mercancías con requisitos especiales, comprobamos la disponibilidad de transportistas y del equipo necesario.",
       },
       {
-        q: "¿En cuánto tiempo recibo un presupuesto?",
-        a: "Normalmente en menos de una hora desde que recibimos los datos. Nuestro equipo de tráfico trabaja 24/7.",
+        q: "¿Qué tipos de semirremolque hay disponibles?",
+        a: "A través de nuestra red de transportistas colaboradores podemos organizar portes con semirremolques de lona (tautliner), frigoríficos y megatráileres. El equipo se elige según las dimensiones, el peso y las características de la mercancía.",
       },
       {
-        q: "¿La mercancía está asegurada?",
-        a: "Sí. Además, cada transportista colaborador tiene un seguro CMR en vigor, que comprobamos antes del transporte.",
+        q: "¿Organizáis transporte de mercancías por carretera entre Rumanía y España?",
+        a: "Sí. La ruta Rumanía–España es una de nuestras rutas principales. Organizamos transportes en ambos sentidos, según la disponibilidad de los transportistas y los requisitos de cada porte.",
       },
       {
-        q: "¿Qué transportes no organizan?",
-        a: "Transporte especial (sobredimensionado) y animales vivos. La mercancía ADR solo se organiza con camión equipado ADR y conductor autorizado.",
+        q: "¿Cómo pido un presupuesto para un transporte internacional de mercancías?",
+        a: "Puedes contactarnos a través del formulario de la web o con los datos de la página de contacto. Para preparar la oferta necesitamos el lugar de carga, el destino, el tipo de mercancía, el peso, las dimensiones y la fecha solicitada.",
       },
       {
-        q: "¿En qué idiomas podemos hablar?",
-        a: "Rumano, inglés y español.",
+        q: "¿En cuánto tiempo recibo un presupuesto de transporte?",
+        a: "Normalmente respondemos en menos de una hora desde que recibimos los datos necesarios. Las solicitudes con equipos especiales o condiciones de transporte distintas pueden necesitar comprobaciones adicionales.",
       },
       {
-        q: "¿Qué información necesitan para preparar un presupuesto?",
-        a: "Una descripción de la carga, el peso aproximado, las dimensiones o unidades de carga, los lugares de recogida y entrega, las fechas preferidas y cualquier requisito especial de manipulación. Cuanto más precisos sean los datos, más fácil resulta evaluar la organización del transporte.",
+        q: "¿Cómo se calcula el precio de un transporte internacional por carretera?",
+        a: "La tarifa depende de la distancia, la ruta solicitada, el peso y el volumen de la mercancía, el tipo de semirremolque y la disponibilidad de transportistas. El precio se comunica después de evaluar los detalles del porte.",
       },
       {
-        q: "¿Cómo funciona el proceso?",
-        a: "Usted nos envía los datos del envío, nosotros revisamos la solicitud e identificamos opciones de transporte adecuadas, las condiciones se acuerdan antes de confirmar el envío y las coordinamos con el transportista seleccionado.",
+        q: "¿Organizáis cargas completas (FTL)?",
+        a: "Podemos estudiar solicitudes de carga completa, en las que toda la capacidad del camión se destina a un solo envío. La disponibilidad y las condiciones se confirman en cada porte.",
       },
       {
-        q: "¿Quién es mi interlocutor una vez organizado el transporte?",
-        a: "AXEL SAFE TRANSPORTING sigue siendo su interlocutor para las cuestiones de coordinación y las novedades pertinentes, dentro de las condiciones de servicio acordadas.",
+        q: "¿Puedo pedir el transporte de una cantidad más pequeña de mercancía (grupaje / LTL)?",
+        a: "Para cargas que no ocupan un camión completo, podemos revisar las opciones disponibles en la red de transportistas colaboradores. Que se pueda organizar depende de la ruta, el volumen y las fechas solicitadas.",
       },
       {
-        q: "¿Dónde tiene su sede la empresa?",
-        a: "AXEL SAFE TRANSPORTING S.R.L. se constituyó en 2018 y tiene su sede en Reghin, distrito de Mureș, Rumanía.",
+        q: "¿Organizáis transporte de mercancías a temperatura controlada?",
+        a: "Sí. Podemos organizar transporte frigorífico con colaboradores que tienen semirremolques equipados para temperatura controlada. El rango de temperatura y las condiciones de transporte se fijan antes de confirmar el porte.",
+      },
+      {
+        q: "¿Podéis organizar transporte ADR de mercancías peligrosas?",
+        a: "Sí, según la disponibilidad y la clase de mercancía. Trabajamos con transportistas que tienen equipo y personal autorizado para transporte ADR. No organizamos transportes especiales (sobredimensionados) ni de animales vivos.",
+      },
+      {
+        q: "¿Cómo verificáis a los transportistas con los que trabajáis?",
+        a: "Antes de empezar a colaborar, verificamos los documentos de la empresa, la licencia de transporte, el seguro CMR, la documentación del vehículo y la situación jurídica del operador.",
+      },
+      {
+        q: "¿La mercancía transportada está asegurada?",
+        a: "Sí, la mercancía está asegurada. Además, los transportistas colaboradores deben tener un seguro CMR en vigor, que cubre la responsabilidad del transportista en las condiciones de la póliza y de la legislación aplicable.",
+      },
+      {
+        q: "¿Puedo saber dónde está la mercancía durante el transporte?",
+        a: "Sí. AXEL SAFE TRANSPORTING está en contacto con el transportista y puede pedirle novedades sobre el porte. La información se comunica al cliente según esté disponible.",
+      },
+      {
+        q: "¿Qué pasa si hay retrasos durante el transporte?",
+        a: "Si cambia el horario del transporte, hablamos con el operador para conocer la situación y pasamos al cliente la información disponible. Los posibles cambios en la entrega se gestionan según las condiciones acordadas.",
+      },
+      {
+        q: "¿Puedo cambiar la dirección o la fecha de entrega después de confirmar el porte?",
+        a: "Los cambios se pueden estudiar con el transportista. Que se puedan hacer depende de en qué punto está el porte, de la disponibilidad y de las condiciones comerciales acordadas. En algunos casos puede haber costes adicionales.",
+      },
+      {
+        q: "¿Qué documentos hacen falta para un transporte internacional por carretera?",
+        a: "Los documentos dependen del tipo de mercancía y de los países implicados. Lo habitual es que hagan falta la carta de porte CMR, la factura comercial y los documentos de la carga. Para algunas mercancías o destinos se pueden pedir documentos adicionales.",
+      },
+      {
+        q: "¿Organizáis transportes regulares para empresas?",
+        a: "Sí. Podemos organizar tanto transportes puntuales como portes recurrentes. Para las colaboraciones regulares, analizamos las rutas, la frecuencia de los transportes, los volúmenes y la capacidad disponible.",
+      },
+      {
+        q: "¿Cómo puedo trabajar con AXEL SAFE TRANSPORTING a largo plazo?",
+        a: "Envíanos información sobre las rutas que usas, los tipos de mercancía y la frecuencia de los transportes. Con esos datos podemos hablar de las condiciones comerciales y de cómo organizar los portes.",
+      },
+      {
+        q: "¿Dónde tiene su sede AXEL SAFE TRANSPORTING?",
+        a: "AXEL SAFE TRANSPORTING S.R.L. tiene su domicilio social en Reghin, distrito de Mureș, Rumanía. La empresa se fundó en 2018 y organiza transporte de mercancías por carretera en rutas europeas.",
+      },
+      {
+        q: "¿En qué idiomas puedo hablar con el equipo de AXEL SAFE TRANSPORTING?",
+        a: "Puedes hablar con nuestro equipo en rumano, inglés y español. Esto nos permite atender solicitudes de empresas que trabajan en distintos mercados europeos.",
       },
     ],
     carriers: [
       {
-        q: "¿Qué empresas de transporte pueden ser colaboradoras?",
-        a: "Atendemos solicitudes de operadores de transporte interesados en colaborar que valoren la comunicación clara, las condiciones acordadas y la cooperación profesional.",
+        q: "¿Qué empresas de transporte pueden trabajar con vosotros?",
+        a: "Las empresas de transporte que buscan cargas y cumplen lo que acuerdan, con condiciones claras y una colaboración seria.",
       },
       {
-        q: "¿Qué debo incluir en una solicitud de colaboración?",
-        a: "Información sobre su empresa, zonas de operación, tipos de vehículo, equipos disponibles, rutas preferidas y los tipos de carga que transporta.",
+        q: "¿Qué pongo en la solicitud de colaboración?",
+        a: "Algunos datos de la empresa, las zonas en las que trabajas, qué camiones y equipos tienes, qué rutas haces normalmente y qué tipo de mercancía transportas.",
       },
       {
-        q: "¿Qué ocurre después de enviar una solicitud?",
-        a: "Nuestro equipo revisa sus datos y puede tratar con usted posibles oportunidades de transporte y condiciones de colaboración. Cuando existe una base adecuada para colaborar, mantenemos el contacto en relación con las solicitudes de transporte pertinentes.",
+        q: "¿Qué pasa después de enviar la solicitud?",
+        a: "Revisamos los datos y te contactamos para hablar de portes y condiciones. Si encajamos, te llamamos cuando tengamos carga en tus rutas.",
       },
     ],
   },
 
   legal: {
     reviewNote:
-      "Esta página es un borrador estructural preparado para su revisión jurídica profesional. No es un texto legal definitivo y debe revisarse antes de su publicación.",
+      "Esta página es un borrador preparado para revisión jurídica. No es el texto definitivo y debe revisarse antes de publicarse.",
   },
 
   common: {
     skip: "Saltar al contenido",
     language: "Idioma",
-    call: "Llámenos",
+    call: "Llámanos",
     whatsapp: {
-      label: "Escríbanos por WhatsApp",
-      message: "Hola, quisiera un presupuesto para un transporte por carretera. Carga: … Descarga: … Mercancía: … Fecha: …",
+      label: "Escríbenos por WhatsApp",
+      message: "Hola, quería un presupuesto para un transporte por carretera. Carga: … Descarga: … Mercancía: … Fecha: …",
     },
   },
 };

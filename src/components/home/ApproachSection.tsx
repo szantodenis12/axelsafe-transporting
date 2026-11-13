@@ -62,13 +62,13 @@ export function ApproachSection({
             </h2>
           </Reveal>
           <Reveal early className="col-span-12 lg:col-span-4 lg:col-start-9" delay={80}>
-            <p className="t-lead">{t.text}</p>
+            {t.text ? <p className="t-lead">{t.text}</p> : null}
           </Reveal>
         </div>
 
-        <Rail as="ol" className="m-block mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-14 lg:grid-cols-4 lg:gap-5">
+        <Rail as="ol" className={`m-block mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-14 ${t.cards.length > 4 ? "lg:grid-cols-3" : "lg:grid-cols-4"} lg:gap-5`}>
           {t.cards.map((card, i) => (
-            <Reveal as="li" key={card.title} delay={i * 90} data-speed={[0.03, 0.09, 0.05, 0.11][i]} className="card-glow m-card flex flex-col p-7 lg:p-8">
+            <Reveal as="li" key={card.title} delay={i * 90} data-speed={[0.03, 0.09, 0.05, 0.11][i % 4]} className="card-glow m-card flex flex-col p-7 lg:p-8">
               <div className="flex h-[180px] items-center justify-center max-md:h-[64px] max-md:justify-start lg:h-[220px]">
                 <svg
                   viewBox="0 0 64 64"
@@ -78,7 +78,7 @@ export function ApproachSection({
                   strokeWidth="0.9"
                   aria-hidden
                 >
-                  {glyphs[i]}
+                  {glyphs[i % glyphs.length]}
                 </svg>
               </div>
               <div>

@@ -8,7 +8,7 @@ import { FinalCta } from "@/components/sections/FinalCta";
 import { Reveal } from "@/components/ui/Reveal";
 import { ArrowLink } from "@/components/ui/Pill";
 import { Ph } from "@/components/ui/Ph";
-import { factL } from "@/content/facts";
+import { getExtras } from "@/content/copy/extras";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 import { anchors, guideHref, href } from "@/lib/routes";
 import { JsonLd, pageMetadata } from "@/lib/seo";
@@ -25,7 +25,7 @@ export default async function VettingPage({ params }: PageProps<"/[locale]/how-w
   if (!hasLocale(locale)) notFound();
   const dict = getDictionary(locale);
   const t = dict.vetting;
-  const checks = factL("carrierVerification", locale);
+  const checks: readonly string[] = getExtras(locale).vetting.checkTitles;
   const name = dict.footer.exploreItems.find((i) => i.key === "vetting")?.label ?? t.hero.titleLines[0];
 
   return (

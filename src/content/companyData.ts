@@ -33,7 +33,7 @@ export const companyData = {
   established: verified(2018, "ORC certificate"),
   registrationNumber: verified("J2018001382267", "ORC certificate"),
   vatNumber: verified("RO39875222", "ANAF — VAT payer"),
-  caen: verified("Road Freight Transport — CAEN 4941", "ORC certificate"),
+  caen: verified("4941, Road freight transport", "ORC certificate"),
   registeredOffice: verified(
     {
       street: "Bld. Libertății, Bl. 14, Sc. 1, Ap. 14",
@@ -62,8 +62,8 @@ export const companyData = {
     "office@axelsafe-transporting.com",
     "discovery call 10.11.2026 — all enquiries centralised via office@ (transport@ is being renamed)",
   ),
-  businessHours: verified("24/7 — dispatch answers round the clock", "discovery call 10.11.2026: „non-stop, 24 din 24, 7 din 7”"),
-  responseTime: verified("We usually reply in under an hour.", "discovery call 10.11.2026: quote in 2–3 minutes once details are in, „sub o oră”"),
+  businessHours: verified("24/7", "discovery call 10.11.2026: „non-stop, 24 din 24, 7 din 7”"),
+  responseTime: verified("We usually reply to requests in under an hour.", "discovery call 10.11.2026: quote in 2–3 minutes once details are in, „sub o oră”"),
   languages: verified(["Romanian", "English", "Spanish"], "discovery call 10.11.2026"),
   social: placeholder(
     [
@@ -78,9 +78,9 @@ export const companyData = {
   coverage: verified(["All of Europe", "United Kingdom"], "client 22.10.2026 + discovery call 10.11.2026 (UK added; Switzerland excluded)"),
   transportTypes: verified(
     [
-      { title: "Curtainsider trailers", short: "Curtainsider", text: "Tautliner equipment for palletised and general cargo, loadable from the side, rear or top." },
-      { title: "Refrigerated trailers", short: "Refrigerated", text: "Temperature-controlled transport for goods that must stay within a set temperature range." },
-      { title: "Mega trailers", short: "Mega", text: "Increased internal height for high-volume, lightweight cargo." },
+      { title: "Curtainsider semi-trailer (Tautliner)", short: "Curtainsider", text: "Used for general and palletised cargo. It can be loaded from the side, the rear or the top." },
+      { title: "Refrigerated semi-trailer", short: "Refrigerated", text: "Used for goods that need a controlled temperature. We check that the equipment and the requested temperature conditions are available before the shipment is confirmed." },
+      { title: "Mega semi-trailer", short: "Mega", text: "Used for goods that need more internal height than a standard semi-trailer. Dimensions and loading capacity are confirmed according to the vehicle available." },
     ],
     "client, 22.10.2026: „PRELATA, FRIG, MEGA” (descriptions = standard equipment definitions)",
   ),
@@ -110,10 +110,10 @@ export const companyData = {
   memberships: verified([] as string[], "discovery call 10.11.2026 — no memberships to show"),
   carrierVerification: verified(
     [
-      "Valid company registration and EU Community Licence",
-      "Active CMR insurance, confirmed with the insurer",
-      "Vehicle and trailer documents matching the requested equipment",
-      "A company status check (no insolvency)",
+      "Legal registration of the company and the EU Community Licence.",
+      "Valid CMR insurance, confirmed with the insurer.",
+      "Vehicle and semi-trailer documents.",
+      "The company's legal status, including an insolvency check.",
     ],
     "discovery call 10.11.2026",
   ),
@@ -128,16 +128,17 @@ export const companyData = {
   /** "What you get" block on the for-carriers page (verified items). */
   carrierBenefits: verified(
     [
-      { title: "Dispatch reachable 24/7", text: "Our dispatch team answers around the clock, every day of the week." },
-      { title: "Around 100 shipments a month", text: "Loads across Europe and the United Kingdom, most of them on the Romania–Spain route." },
-      { title: "Payment term in writing", text: "The payment term is agreed in writing before each transport." },
-      { title: "One coordinator per shipment", text: "One person follows the shipment from loading to proof of delivery." },
+      { title: "Access to transport requests", text: "We organise around 100 shipments a month, with regular work on the Romania–Spain route." },
+      { title: "Commercial terms confirmed in writing", text: "Rates, payment terms and operational requirements are set before each shipment is confirmed." },
+      { title: "Dedicated coordination", text: "You have one point of contact for the information needed to run the shipment, from loading to confirmation of delivery." },
+      { title: "24/7 dispatch", text: "Our team is always available for communication and coordination." },
+      { title: "Long-term cooperation", text: "We are looking for partners with whom we can build stable business relationships, depending on capacity, routes and the requests available." },
     ],
     "discovery call 10.11.2026 (24/7 dispatch, ~100 shipments/month, mostly RO–ES, payment term per transport, coordinator per shipment)",
   ),
-  carrierOffer: placeholder(
-    [{ title: "A written transport order", text: "Every shipment comes with a written transport order." }],
-    "confirm written orders per trip with client",
+  carrierOffer: verified(
+    [] as { title: string; text: string }[],
+    "Roland 13.11.2026 — removed from the carriers page copy",
   ),
   whatsapp: placeholder({ number: "40759419010" }, "confirm the WhatsApp number with the client"),
 } as const;

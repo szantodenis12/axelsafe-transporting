@@ -9,7 +9,6 @@ import { breadcrumbJsonLd } from "@/components/pages/breadcrumbs";
 import { CarrierForm } from "@/components/forms/CarrierForm";
 import { Reveal } from "@/components/ui/Reveal";
 import { Ph } from "@/components/ui/Ph";
-import { Rail } from "@/components/ui/Rail";
 import { ArrowLink } from "@/components/ui/Pill";
 import { fact } from "@/content/companyData";
 import { getDictionary, hasLocale } from "@/lib/i18n";
@@ -28,7 +27,6 @@ export default async function ForCarriersPage({ params }: PageProps<"/[locale]/f
   const dict = getDictionary(locale);
   const t = dict.forCarriers;
   const verification = factL("carrierVerification", locale);
-  const conditions = factL("carrierConditions", locale);
   const carrierEmail = fact("carrierEmail");
   const benefits = factL("carrierBenefits", locale);
   const offer = factL("carrierOffer", locale);
@@ -101,26 +99,6 @@ export default async function ForCarriersPage({ params }: PageProps<"/[locale]/f
               {t.extras.requirementsLink}
             </ArrowLink>
           </Reveal>
-        </div>
-      </section>
-
-      {/* 04 — How we cooperate [PLACEHOLDER data] */}
-      <section className="section-y-sm">
-        <div className="wrap">
-          <SectionHead eyebrow={t.extras.conditionsEyebrow} title={t.extras.conditionsTitle} titleClassName="t-h2 max-w-[14ch]" />
-          <Ph k="carrierConditions" as="div" className="m-block mt-14 block md:mt-14">
-            <Rail className="grid grid-cols-1 gap-5 md:grid-cols-3 md:gap-6">
-            {conditions.map((c, i) => (
-              <Reveal as="li" key={c.title} delay={i * 100} data-speed={[0.02, 0.08, 0.05][i]} className="card-glow m-card flex min-h-[240px] flex-col justify-between p-7 lg:p-8">
-                <span className="t-label">{String(i + 1).padStart(2, "0")}</span>
-                <div className="pt-12 max-md:pt-8">
-                  <h3 className="t-h3">{c.title}</h3>
-                  <p className="t-small mt-3">{c.text}</p>
-                </div>
-              </Reveal>
-            ))}
-            </Rail>
-          </Ph>
         </div>
       </section>
 

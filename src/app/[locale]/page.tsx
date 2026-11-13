@@ -49,7 +49,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           secondary: { href: href(locale, "services"), label: t.hero.secondary },
           phone: { ...fact("phone"), label: dict.common.call },
         }}
-        intro={{ ...t.intro, cta: { href: href(locale, "howWeWork"), label: t.intro.cta } }}
+        intro={{ ...t.intro, cta: { href: href(locale, "about"), label: t.intro.cta } }}
         originLabel={t.network.origin}
         networkPanel={
           <div className="rounded-[20px] border border-line-strong bg-bg/85 p-6 md:p-7">
@@ -98,12 +98,12 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
 
       <ProcessTimeline
         t={t.process}
-        cta={{ href: href(locale, "howWeWork"), label: t.process.cta }}
+        cta={{ href: href(locale, "contact", anchors.quote), label: t.process.cta }}
         aside={
           <ExampleEnquiry
             t={dict.showcase.enquiry}
             originLabel={t.network.origin}
-            cta={{ href: href(locale, "howWeWork"), label: t.process.cta }}
+            cta={{ href: href(locale, "contact", anchors.quote), label: t.process.cta }}
           />
         }
       />

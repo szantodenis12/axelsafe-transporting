@@ -12,21 +12,22 @@ const office = factL("registeredOffice", "ro");
 const legalName = fact("legalName");
 const addressLine = `${office.street}, ${office.postalCode} ${office.city}, ${office.county}, ${office.country}`;
 const TBC = "[de confirmat]";
+const UPDATED = "13.11.2026";
 
 const controllerTable = [
   ["Operator de date", legalName],
   ["Sediul social", addressLine],
   ["Nr. Registrul Comerțului", fact("registrationNumber")],
   ["Cod fiscal / TVA", fact("vatNumber")],
-  ["Contact pentru protecția datelor", companyData.email.value],
+  ["E-mail pentru date personale", companyData.email.value],
 ] as const;
 
 export const privacyPolicy: LegalDoc = {
   key: "privacy",
   eyebrow: "LEGAL / CONFIDENȚIALITATE",
   title: "Politica de confidențialitate",
-  description: `Cum prelucrează ${legalName} datele cu caracter personal colectate prin acest site, în conformitate cu Regulamentul (UE) 2016/679 (GDPR).`,
-  status: `Versiune: draft pentru revizuire juridică · Ultima actualizare: ${TBC}`,
+  description: `Ce date personale colectează ${legalName} prin acest site, de ce, cât timp le păstrează și ce drepturi ai, conform Regulamentului (UE) 2016/679 (GDPR).`,
+  status: `Ultima actualizare: ${UPDATED}`,
   sections: [
     {
       id: "controller",
@@ -34,66 +35,78 @@ export const privacyPolicy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: `${legalName} („AXEL SAFE TRANSPORTING”, „noi”) este operatorul datelor cu caracter personal prelucrate prin acest site. Suntem o companie românească ce organizează transportul rutier de marfă prin transportatori independenți.`,
+          text: `${legalName} („AXEL SAFE TRANSPORTING”, „noi”) este operatorul datelor personale pe care ni le trimiți prin acest site. Organizăm transport rutier de marfă prin transportatori independenți.`,
         },
         { type: "table", rows: controllerTable },
         {
           type: "p",
-          text: `Nu a fost desemnat un responsabil cu protecția datelor ${TBC}. Întrebările legate de această politică pot fi trimise la adresa de contact de mai sus.`,
+          text: "Nu am desemnat un responsabil cu protecția datelor (DPO). Pentru orice întrebare despre datele tale, scrie-ne la adresa de e-mail de mai sus.",
         },
       ],
     },
     {
       id: "data-we-collect",
-      title: "Ce date cu caracter personal colectăm",
+      title: "Ce date colectăm",
       blocks: [
-        { type: "p", text: "Colectăm date cu caracter personal numai atunci când ni le furnizați, în principal prin cele două formulare de pe acest site." },
+        { type: "p", text: "Colectăm doar datele pe care ni le trimiți tu: prin formularele de pe site, pe e-mail, la telefon sau pe WhatsApp." },
         {
           type: "list",
           items: [
-            "Formularul de ofertă de transport: denumirea companiei, persoana de contact, adresa de e-mail de serviciu, numărul de telefon, locurile de încărcare și de livrare, descrierea mărfii, greutatea aproximativă sau unitățile de încărcare, datele preferate și orice alte cerințe pe care le introduceți.",
-            "Formularul de parteneriat pentru transportatori: denumirea companiei, persoana de contact, adresa de e-mail de serviciu, numărul de telefon, țara de înregistrare, numărul de vehicule, tipurile de vehicule, zonele de operare sau rutele preferate și orice alte informații pe care le introduceți.",
-            "Corespondență directă: datele pe care le includeți atunci când ne scrieți pe e-mail sau ne sunați.",
-            `Date tehnice: jurnalele serverului (adresa IP, tipul browserului, ora cererii), păstrate de furnizorul nostru de găzduire pentru securitate și funcționare ${TBC}.`,
+            "Solicitarea completă de transport: numele firmei, persoana de contact, adresa de e-mail, numărul de telefon, locul de încărcare și de livrare, descrierea mărfii, greutatea și dimensiunile aproximative, datele dorite și alte cerințe.",
+            "Cererea rapidă: numele, telefonul, locul de încărcare, destinația și informațiile suplimentare.",
+            "Solicitarea de apel: numele, telefonul și intervalul în care preferi să te sunăm.",
+            "Formularul pentru transportatori: numele firmei, CUI-ul, persoana de contact, adresa de e-mail, telefonul, țara de înregistrare, numărul și tipurile de vehicule, zonele și rutele pe care lucrezi, numărul licenței de transport, dacă ai asigurare CMR valabilă și alte informații pe care alegi să ni le dai.",
+            "Date tehnice trimise odată cu formularul: pagina de pe care ai trimis cererea, parametrii de campanie din link (UTM), limba site-ului, tipul de browser, data și ora la care ți-ai dat acordul și o amprentă criptată (hash) a adresei IP. Adresa IP nu o păstrăm în clar.",
+            "Jurnalele serverului: furnizorul care găzduiește site-ul poate înregistra, pentru securitate și funcționare, adresa IP și ora accesării.",
           ],
         },
-        { type: "p", text: "Vă rugăm să nu includeți categorii speciale de date cu caracter personal (de exemplu date privind sănătatea) în câmpurile cu text liber; formularele sunt destinate solicitărilor de transport ale companiilor." },
+        {
+          type: "p",
+          text: "Dacă ești transportator, verificăm și informații publice despre firma ta (de exemplu în baza de date ANAF), iar înainte de prima cursă confirmăm asigurarea CMR direct la asigurator.",
+        },
+        { type: "p", text: "Te rugăm să nu ne trimiți prin formulare date sensibile, de exemplu despre sănătate. Formularele sunt pentru cereri de transport între firme." },
       ],
     },
     {
       id: "purposes",
-      title: "De ce le prelucrăm și pe ce temei legal",
+      title: "De ce folosim datele și pe ce temei legal",
       blocks: [
         {
           type: "table",
           rows: [
-            ["Răspunsul la o solicitare de transport și pregătirea unei oferte", "Demersuri înainte de încheierea unui contract (art. 6 alin. (1) lit. b) GDPR) și interesul nostru legitim de a gestiona solicitările comerciale (art. 6 alin. (1) lit. f))"],
-            ["Evaluarea unui posibil parteneriat cu un transportator", "Demersuri înainte de încheierea unui contract (art. 6 alin. (1) lit. b)) și interes legitim (art. 6 alin. (1) lit. f))"],
-            ["Coordonarea unui transport confirmat cu părțile implicate", "Executarea unui contract (art. 6 alin. (1) lit. b))"],
-            ["Păstrarea evidențelor contabile și fiscale", "Obligație legală (art. 6 alin. (1) lit. c)) conform legislației contabile și fiscale din România"],
-            ["Securitate, prevenirea abuzurilor și limitarea numărului de trimiteri prin formulare", "Interes legitim (art. 6 alin. (1) lit. f))"],
-            ["Cookie-uri de analiză, dacă și când vor fi configurate", "Consimțământ (art. 6 alin. (1) lit. a)), a se vedea Politica de cookie-uri"],
+            ["Să îți răspundem la cerere și să îți trimitem o ofertă", "Demersuri făcute la cererea ta înainte de un contract (art. 6 alin. (1) lit. b) GDPR) și interesul nostru legitim de a răspunde cererilor primite de la firme (art. 6 alin. (1) lit. f))"],
+            ["Să te sunăm, dacă ne-ai cerut un apel", "Demersuri făcute la cererea ta înainte de un contract (art. 6 alin. (1) lit. b))"],
+            ["Să evaluăm și să verificăm o colaborare cu firma ta de transport", "Demersuri înainte de un contract (art. 6 alin. (1) lit. b)) și interesul nostru legitim de a lucra doar cu transportatori verificați (art. 6 alin. (1) lit. f))"],
+            ["Să organizăm și să coordonăm o cursă confirmată", "Executarea contractului (art. 6 alin. (1) lit. b))"],
+            ["Să ținem evidența contabilă și fiscală", "Obligație legală (art. 6 alin. (1) lit. c)), conform legislației din România"],
+            ["Să vedem din ce pagini și campanii vin cererile", "Interes legitim (art. 6 alin. (1) lit. f))"],
+            ["Să protejăm site-ul de abuzuri și de trimiteri automate", "Interes legitim (art. 6 alin. (1) lit. f))"],
           ],
         },
-        { type: "p", text: "Nu folosim datele din formulare pentru e-mailuri de marketing sau newslettere și nu luăm decizii automate care să producă efecte juridice asupra dumneavoastră." },
+        {
+          type: "p",
+          text: "Nu îți trimitem newslettere sau e-mailuri de marketing pe baza datelor din formulare. Nu luăm decizii automate care să aibă efecte juridice asupra ta.",
+        },
       ],
     },
     {
       id: "recipients",
-      title: "Cine primește datele",
+      title: "Cine mai vede datele",
       blocks: [
-        { type: "p", text: "Datele cu caracter personal sunt transmise numai în măsura necesară scopurilor de mai sus." },
+        { type: "p", text: "Cererile tale le văd colegii din echipa AXEL SAFE TRANSPORTING care se ocupă de ele. Mai departe, le transmitem doar cât e nevoie:" },
         {
           type: "list",
           items: [
-            "Transportatori independenți: datele de contact și detaliile transportului necesare pentru organizarea unui transport confirmat.",
-            `Furnizorul de găzduire și infrastructură al site-ului: ${TBC}`,
-            `Serviciul de formulare și baza de date folosite pentru stocarea solicitărilor: ${TBC}`,
-            `Serviciul de e-mail folosit pentru notificarea echipei noastre la solicitări noi: ${TBC}`,
-            "Consultanți profesioniști (contabili, avocați) și autorități publice, atunci când legea o cere.",
+            "Transportatorului care face cursa: doar datele de contact și detaliile necesare pentru încărcare și livrare, după ce ai confirmat transportul.",
+            "Furnizorilor noștri tehnici: firma care găzduiește site-ul, furnizorul bazei de date în care se salvează cererile și serviciul de e-mail prin care echipa e anunțată de o cerere nouă. Ei lucrează doar după instrucțiunile noastre, pe bază de contract.",
+            "Contabilului, avocatului sau autorităților publice, atunci când legea ne obligă.",
           ],
         },
-        { type: "p", text: "Furnizorii de servicii acționează ca persoane împuternicite, pe baza unor acorduri scrise, și pot prelucra datele numai conform instrucțiunilor noastre." },
+        {
+          type: "p",
+          text: "Dacă ne scrii pe WhatsApp, mesajele trec prin serviciul WhatsApp (Meta Platforms), conform regulilor lor de confidențialitate.",
+        },
+        { type: "p", text: "Nu vindem și nu închiriem datele tale nimănui." },
       ],
     },
     {
@@ -102,67 +115,76 @@ export const privacyPolicy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: `Furnizorii noștri de servicii pot stoca sau accesa date în afara Spațiului Economic European ${TBC}. În astfel de cazuri ne bazăm pe o decizie privind caracterul adecvat emisă de Comisia Europeană sau pe clauzele contractuale standard, iar dumneavoastră puteți solicita o copie a garanțiilor aplicabile.`,
+          text: "Unii furnizori tehnici pot avea servere sau personal în afara Spațiului Economic European. În acest caz, transferul se face doar pe baza unei decizii de adecvare a Comisiei Europene (de exemplu EU-US Data Privacy Framework) sau a clauzelor contractuale standard aprobate de Comisie. Ne poți cere o copie a garanțiilor aplicabile.",
         },
       ],
     },
     {
       id: "retention",
-      title: "Cât timp le păstrăm",
+      title: "Cât timp păstrăm datele",
       blocks: [
         {
           type: "list",
           items: [
-            `Solicitările care nu duc la un contract: ${TBC} (propunere: 12 luni de la ultimul contact).`,
-            `Solicitările care duc la un transport sau la un parteneriat: pe durata relației comerciale și ulterior, cât este necesar pentru eventuale pretenții legale ${TBC}.`,
-            "Documentele contabile: 10 ani, conform legislației din România.",
-            `Jurnalele serverului: ${TBC} (stabilit de furnizorul de găzduire).`,
+            "Cererile care nu ajung la o cursă sau la o colaborare: 12 luni de la ultimul contact, apoi le ștergem.",
+            "Cererile care ajung la o cursă sau la o colaborare: pe durata colaborării și încă 3 ani după aceea, cât durează termenul general de prescripție pentru eventuale pretenții.",
+            "Documentele contabile și fiscale: cât cere legislația contabilă și fiscală din România.",
+            "Jurnalele serverului: o perioadă scurtă, stabilită de furnizorul de găzduire.",
           ],
         },
       ],
     },
     {
       id: "rights",
-      title: "Drepturile dumneavoastră",
+      title: "Drepturile tale",
       blocks: [
-        { type: "p", text: "În temeiul GDPR, aveți dreptul:" },
+        { type: "p", text: "Conform GDPR, ai dreptul:" },
         {
           type: "list",
           items: [
-            "de acces la datele cu caracter personal pe care le deținem despre dumneavoastră;",
-            "la rectificarea datelor inexacte și la completarea datelor incomplete;",
-            "la ștergerea datelor, atunci când nu mai există un temei legal pentru continuarea prelucrării;",
-            "la restricționarea prelucrării, în situațiile prevăzute la art. 18 GDPR;",
-            "la portabilitatea datelor pe care ni le-ați furnizat, atunci când prelucrarea se bazează pe contract sau pe consimțământ;",
-            "de a vă opune prelucrării întemeiate pe interesele noastre legitime;",
-            "de a vă retrage consimțământul în orice moment, atunci când prelucrarea se bazează pe consimțământ, fără a afecta legalitatea prelucrării anterioare.",
+            "să afli ce date avem despre tine și să primești o copie a lor;",
+            "să ne ceri să corectăm datele greșite sau să le completăm;",
+            "să ne ceri să ștergem datele, când nu mai avem un motiv legal să le păstrăm;",
+            "să ne ceri să restricționăm folosirea lor, în situațiile de la art. 18 GDPR;",
+            "să primești datele pe care ni le-ai dat într-un format ușor de transferat, când le folosim pe baza unui contract sau a acordului tău;",
+            "să te opui oricând folosirii datelor pe baza interesului nostru legitim;",
+            "să îți retragi oricând acordul, când folosirea datelor se bazează pe acord, fără să afecteze ce s-a făcut înainte.",
           ],
         },
         {
           type: "p",
-          text: "Pentru exercitarea acestor drepturi, contactați-ne folosind datele din secțiunea 1. Răspundem în termen de o lună, termen care poate fi prelungit cu încă două luni pentru cererile complexe, și vă putem cere să vă confirmați identitatea.",
+          text: "Ca să îți exerciți aceste drepturi, scrie-ne la adresa de e-mail din secțiunea 1. Răspunsul e gratuit și îl primești în cel mult o lună. Pentru cererile complicate, termenul se poate prelungi cu încă două luni, dar te anunțăm. Putem să îți cerem să îți confirmi identitatea.",
         },
         {
           type: "p",
-          text: "Aveți și dreptul de a depune o plângere la autoritatea de supraveghere din România: Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP), B-dul G-ral. Gheorghe Magheru 28-30, Sector 1, 010336 București, România, www.dataprotection.ro.",
+          text: "Dacă nu ești mulțumit de cum folosim datele tale, poți depune o plângere la Autoritatea Națională de Supraveghere a Prelucrării Datelor cu Caracter Personal (ANSPDCP), B-dul G-ral. Gheorghe Magheru 28-30, Sector 1, 010336 București, www.dataprotection.ro.",
         },
       ],
     },
     {
       id: "security",
-      title: "Securitate",
+      title: "Cum protejăm datele",
       blocks: [
         {
-          type: "p",
-          text: "Aplicăm măsuri tehnice și organizatorice adecvate riscului, printre care conexiuni criptate (HTTPS), acces limitat la persoanele care gestionează solicitările și limitarea numărului de trimiteri prin formulare. Nicio metodă de transmitere prin internet nu este complet sigură.",
+          type: "list",
+          items: [
+            "Site-ul folosește conexiune criptată (HTTPS).",
+            "Adresa IP nu se salvează în clar, ci doar ca amprentă criptată.",
+            "La cereri au acces doar colegii care se ocupă de ele, fiecare cu contul și parola lui.",
+            "Limităm numărul de trimiteri prin formulare, ca să oprim abuzurile.",
+          ],
         },
+        { type: "p", text: "Nicio transmisie prin internet nu e sigură 100%, dar luăm măsurile potrivite pentru riscurile reale." },
       ],
     },
     {
       id: "changes",
-      title: "Modificări ale acestei politici",
+      title: "Modificări",
       blocks: [
-        { type: "p", text: "Putem actualiza această politică pentru a reflecta schimbări în modul în care prelucrăm datele sau în legislație. Versiunea curentă este publicată întotdeauna pe această pagină, împreună cu data ultimei actualizări." },
+        {
+          type: "p",
+          text: "Putem actualiza această politică atunci când schimbăm felul în care folosim datele sau când se schimbă legea. Varianta în vigoare e mereu pe această pagină, cu data ultimei actualizări sus.",
+        },
       ],
     },
   ],
@@ -172,8 +194,8 @@ export const cookiePolicy: LegalDoc = {
   key: "cookies",
   eyebrow: "LEGAL / COOKIE-URI",
   title: "Politica de cookie-uri",
-  description: `Ce cookie-uri și tehnologii similare folosește acest site și cum solicită ${legalName} consimțământul.`,
-  status: `Versiune: draft pentru revizuire juridică · Ultima actualizare: ${TBC}`,
+  description: `Ce cookie-uri folosește site-ul ${legalName} și de ce nu îți afișăm un banner de cookie-uri.`,
+  status: `Ultima actualizare: ${UPDATED}`,
   sections: [
     {
       id: "what-are-cookies",
@@ -181,45 +203,58 @@ export const cookiePolicy: LegalDoc = {
       blocks: [
         {
           type: "p",
-          text: "Cookie-urile sunt fișiere text de mici dimensiuni, stocate pe dispozitivul dumneavoastră de către un site. Tehnologii similare (cum ar fi stocarea locală) pot servi aceluiași scop. Această politică le acoperă pe amândouă.",
+          text: "Cookie-urile sunt fișiere mici pe care un site le salvează în browserul tău. Tehnologiile asemănătoare, cum ar fi stocarea locală (local storage), fac cam același lucru. Pagina aceasta le acoperă pe toate.",
         },
       ],
     },
     {
       id: "cookies-we-use",
-      title: "Cookie-urile folosite în prezent pe acest site",
+      title: "Ce cookie-uri folosește acest site",
       blocks: [
         {
           type: "p",
-          text: "În prezent, acest site setează numai cookie-uri și elemente de stocare strict necesare, fără de care site-ul nu poate funcționa și pentru care nu este necesar consimțământul dumneavoastră, potrivit art. 4 alin. (5) din Legea nr. 506/2004 și Directivei ePrivacy.",
+          text: "Pe scurt: niciunul pentru vizitatori. Paginile publice ale site-ului nu salvează cookie-uri și nu folosesc stocarea locală în browserul tău. De aceea nu îți afișăm un banner de cookie-uri.",
         },
+        { type: "p", text: "Nu folosim cookie-uri de analiză, de publicitate sau de rețele sociale și nu te urmărim de pe un site pe altul." },
         {
           type: "table",
           rows: [
-            ["Protecția formularelor", `Valori tehnice folosite pentru a preveni trimiterile automate și pentru a limita numărul de trimiteri prin formulare. Numai pe durata sesiunii. ${TBC}`],
-            ["Preferințe", `Opțiunea dumneavoastră privind cookie-urile opționale, după instalarea unui banner de consimțământ. 12 luni ${TBC}`],
+            [
+              "axel_admin_session (doar pentru echipă)",
+              "Se salvează numai când un coleg AXEL SAFE TRANSPORTING intră în zona internă de administrare. Ține sesiunea deschisă cel mult 12 ore și se șterge la ieșirea din cont. Este strict necesar, deci nu cere acord (art. 4 alin. (5) din Legea nr. 506/2004). Vizitatorii site-ului nu îl primesc.",
+            ],
+            ["Protecția formularelor", "Se face pe server, fără cookie-uri în browserul tău."],
+            ["Fonturi", "Le încărcăm de pe serverul nostru, nu de la Google, așa că deschiderea paginii nu trimite date către Google Fonts."],
+            ["Butonul WhatsApp", "E doar un link. WhatsApp poate seta cookie-uri abia după ce dai click și ajungi pe site-ul sau în aplicația lor, conform regulilor WhatsApp."],
           ],
         },
-        { type: "p", text: "Nu sunt folosite cookie-uri de publicitate, de rețele sociale sau de urmărire între site-uri." },
       ],
     },
     {
       id: "analytics",
-      title: "Cookie-uri de analiză (numai după consimțământ)",
+      title: "Dacă vom adăuga cookie-uri opționale",
       blocks: [
         {
           type: "p",
-          text: `Este posibil să introducem un instrument de analiză care respectă confidențialitatea, pentru a înțelege cum este folosit site-ul. Cookie-urile de analiză vor fi setate numai după ce vă dați consimțământul prin bannerul de cookie-uri, iar consimțământul va putea fi retras în orice moment din același banner. Instrumentul și perioada de păstrare: ${TBC}.`,
+          text: "Pe viitor s-ar putea să folosim instrumente de analiză sau de publicitate, de exemplu ca să vedem ce campanii aduc cereri. Înainte să le pornim:",
+        },
+        {
+          type: "list",
+          items: [
+            "îți cerem acordul printr-un banner, iar cookie-urile opționale pornesc doar dacă accepți;",
+            "poți refuza la fel de ușor cum accepți și poți retrage acordul oricând;",
+            "actualizăm această pagină cu lista exactă a cookie-urilor, rolul lor și cât timp rămân în browser.",
+          ],
         },
       ],
     },
     {
       id: "managing",
-      title: "Gestionarea cookie-urilor",
+      title: "Cum controlezi cookie-urile",
       blocks: [
         {
           type: "p",
-          text: "Puteți șterge sau bloca cookie-urile din setările browserului. Blocarea cookie-urilor strict necesare poate împiedica funcționarea formularelor. Instrucțiunile pentru browserele uzuale sunt disponibile pe paginile lor de asistență.",
+          text: "Poți vedea, bloca sau șterge cookie-urile din setările browserului. Chrome, Firefox, Safari și Edge au pagini de ajutor care arată exact cum. Pe acest site, blocarea cookie-urilor nu schimbă nimic pentru tine, pentru că paginile publice nu le folosesc.",
         },
       ],
     },
@@ -227,8 +262,8 @@ export const cookiePolicy: LegalDoc = {
       id: "contact",
       title: "Contact",
       blocks: [
-        { type: "p", text: `Întrebările legate de cookie-uri pot fi trimise către ${legalName}, ${addressLine}, sau prin e-mail la ${companyData.email.value}.` },
-        { type: "p", text: "Pentru modul în care prelucrăm datele cu caracter personal în general, consultați Politica de confidențialitate." },
+        { type: "p", text: `Pentru întrebări despre cookie-uri, scrie-ne la ${companyData.email.value} sau pe adresa ${legalName}, ${addressLine}.` },
+        { type: "p", text: "Despre cum folosim datele personale în general, găsești detalii în Politica de confidențialitate." },
       ],
     },
   ],
