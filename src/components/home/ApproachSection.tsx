@@ -51,19 +51,22 @@ export function ApproachSection({
       )}
       <div className="wrap relative">
         <div className="grid-12 items-end gap-y-8">
-          <Reveal early className="col-span-12 lg:col-span-7" data-speed="0.05">
+          {/* without a lead paragraph the title takes the full row, so each title line stays on one line */}
+          <Reveal early className={`col-span-12 ${t.text ? "lg:col-span-7" : ""}`} data-speed="0.05">
             <MobileEyebrow>{t.eyebrow}</MobileEyebrow>
             <h2 className="t-h2">
               {t.titleLines.map((l) => (
-                <span key={l} className="block">
+                <span key={l} className={`block ${t.text ? "" : "lg:whitespace-nowrap"}`}>
                   {l}
                 </span>
               ))}
             </h2>
           </Reveal>
-          <Reveal early className="col-span-12 lg:col-span-4 lg:col-start-9" delay={80}>
-            {t.text ? <p className="t-lead">{t.text}</p> : null}
-          </Reveal>
+          {t.text ? (
+            <Reveal early className="col-span-12 lg:col-span-4 lg:col-start-9" delay={80}>
+              <p className="t-lead">{t.text}</p>
+            </Reveal>
+          ) : null}
         </div>
 
         <Rail as="ol" className={`m-block mt-16 grid grid-cols-1 gap-4 sm:grid-cols-2 md:mt-14 ${t.cards.length > 4 ? "lg:grid-cols-3" : "lg:grid-cols-4"} lg:gap-5`}>
