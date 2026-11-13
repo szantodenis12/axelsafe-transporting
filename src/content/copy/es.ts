@@ -87,7 +87,7 @@ export const es: Dictionary = {
     rights: "AXEL SAFE TRANSPORTING. Todos los derechos reservados.",
     credit: "Web realizada por",
     social: "También estamos en",
-    cta: "Solicitar presupuesto",
+    cta: "Pide presupuesto",
     nav: "Navegación del pie de página",
     legalNav: "Información legal",
     services: "Servicios",

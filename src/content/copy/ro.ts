@@ -87,7 +87,7 @@ export const ro: Dictionary = {
     rights: "AXEL SAFE TRANSPORTING. Toate drepturile rezervate.",
     credit: "Site realizat de",
     social: "Ne găsești și pe",
-    cta: "Solicitați o ofertă",
+    cta: "Solicită o ofertă",
     nav: "Navigare în subsol",
     legalNav: "Informații legale",
     services: "Servicii",

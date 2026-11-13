@@ -84,7 +84,7 @@ export const en = {
     rights: "AXEL SAFE TRANSPORTING. All rights reserved.",
     credit: "Website by",
     social: "Find us on",
-    cta: "Request a Quote",
+    cta: "Request a quote",
     nav: "Footer navigation",
     legalNav: "Legal",
     services: "Services",
